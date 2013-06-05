@@ -36,10 +36,12 @@
 						},
 						"Street": {
 							"type":"string",
-							"required":true
+							"description":"the street your meeting place",
+							"required":false
 						},
 						"Zipcode": {
 							"type":"string",
+							"description":"the zip code of your meeting place",
 							"required":false
 						}
 					}
@@ -67,6 +69,7 @@
 				},
 				"facebook": {
 					"type":"string",
+					"description":"your community's facebook account",
 					"required":false
 				},
 				"identica": {
@@ -76,10 +79,12 @@
 				},
 				"irc": {
 					"type":"string",
+					"description":"your community's irc channel",
 					"required":false
 				},
 				"jabber": {
 					"type":"string",
+					"description":"a jabber account someone reads",
 					"required":false
 				},
 				"ml": {
@@ -89,10 +94,12 @@
 				},
 				"phone": {
 					"type":"string",
+					"description":"if your community has a phone number",
 					"required":false
 				},
 				"twitter": {
 					"type":"string",
+					"description":"your community's twitter account",
 					"required":false
 				}
 			}
@@ -119,12 +126,12 @@
 						"title": {
 							"type":"string",
 							"description": "name of the event",
-							"required":true
+							"required":false
 						},
 						"timestamp": {
 							"type":"number",
 							"description": "Unix timestamp when the event happens",
-							"required":true
+							"required":false
 						},
 						"location": {
 							"type":"string",
@@ -138,6 +145,7 @@
 		},
 		"feeds": {
 			"type":"array",
+			"description":"Feeds you provide your commnutiy",
 			"required":false,
 			"items":
 				{
@@ -146,14 +154,17 @@
 					"properties":{
 						"name": {
 							"type":"string",
+							"description":"name of the feed",
 							"required":true
 						},
 						"type": {
 							"type":"string",
+							"description":"type of the feed",
 							"required":false
 						},
 						"url": {
 							"type":"string",
+							"description":"url of the feed",
 							"required":true
 						}
 					}
@@ -228,7 +239,23 @@
 						"ipv6": {
 							"type":"array",
 							"description": "ipv6 networks used by your community",
-							"required":false
+							"required":false,
+							"items":
+								"type":"object",
+									"title": "ipv6 network object",
+									"required":false,
+									"properties":{
+										"prefixlength": {
+											"type":"integer",
+											"description":"prefix length",
+											"required":false
+										},
+										"prefix": {
+											"type":"string",
+											"description": "ipv6 network prefix",
+											"required":false
+										}
+									}
 						},
 						"ipv4": {
 							"type":"array",
@@ -242,6 +269,7 @@
 									"properties":{
 										"netmask": {
 											"type":"integer",
+											"description":"the netmask valid for this network",
 											"required":false
 										},
 										"network": {
