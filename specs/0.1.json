@@ -155,7 +155,7 @@
 						"name": {
 							"type":"string",
 							"description":"name of the feed",
-							"required":true
+							"required":false
 						},
 						"type": {
 							"type":"string",
@@ -165,7 +165,7 @@
 						"url": {
 							"type":"string",
 							"description":"url of the feed",
-							"required":true
+							"required":false
 						}
 					}
 				}
