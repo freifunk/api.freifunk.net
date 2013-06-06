@@ -1,317 +1,318 @@
-{
-    	"type":"object",
-	"description": "Freifunk Community API 0.1",
-	"required":false,
-	"properties":{
-		"api": {
-			"type":"string",
-			"description": "The Freifunk Community API version you use",
-			"enum" : ["0.1"],
-			"required":true
-		},
-		"name": {
-			"type":"string",
-			"description": "The name of your community",
-			"required":true
-		},
-		"location": {
-			"type":"object",
-			"description": "Position data such as a postal address or geographic coordinates",
-			"required":true,
-			"properties":{
-				"city": {
-					"type":"string",
-					"description": "name of your city or region",
-					"required":true
-				},
-				"address": {
-					"type":"object",
-					"description": "The address of the place you meet",
-					"required":false,
-					"properties":{
-						"Name": {
-							"type":"string",
-							"description": "the name of place you meet",
-							"required":false
-						},
-						"Street": {
-							"type":"string",
-							"description":"the street your meeting place",
-							"required":false
-						},
-						"Zipcode": {
-							"type":"string",
-							"description":"the zip code of your meeting place",
-							"required":false
+{ "schema" :
+	{
+	    	"type":"object",
+		"description": "Freifunk Community API 0.1",
+		"required":false,
+		"properties":{
+			"api": {
+				"type":"string",
+				"description": "The Freifunk Community API version you use",
+				"enum" : ["0.1"],
+				"required":true
+			},
+			"name": {
+				"type":"string",
+				"description": "The name of your community",
+				"required":true
+			},
+			"location": {
+				"type":"object",
+				"description": "Position data such as a postal address or geographic coordinates",
+				"required":true,
+				"properties":{
+					"city": {
+						"type":"string",
+						"description": "name of your city or region",
+						"required":true
+					},
+					"address": {
+						"type":"object",
+						"description": "The address of the place you meet",
+						"required":false,
+						"properties":{
+							"Name": {
+								"type":"string",
+								"description": "the name of place you meet",
+								"required":false
+							},
+							"Street": {
+								"type":"string",
+								"description":"the street your meeting place",
+								"required":false
+							},
+							"Zipcode": {
+								"type":"string",
+								"description":"the zip code of your meeting place",
+								"required":false
+							}
 						}
-					}
-				},
-				"lat": {
-					"type":"number",
-					"description": "Latitude of your city",
-					"required":true
-				},
-				"lon": {
-					"type":"number",
-					"description": "Longitude of your city",
-					"required":true
-				}
-			}
-		},
-		"contact": {
-			"type":"object",
-			"required":true,
-			"properties":{
-				"email": {
-					"type":"string",
-					"description": "Email address to which other people can contact your community",
-					"required":false
-				},
-				"facebook": {
-					"type":"string",
-					"description":"your community's facebook account",
-					"required":false
-				},
-				"identica": {
-					"type":"string",
-					"description": "your community's identica account",
-					"required":false
-				},
-				"irc": {
-					"type":"string",
-					"description":"your community's irc channel",
-					"required":false
-				},
-				"jabber": {
-					"type":"string",
-					"description":"a jabber account someone reads",
-					"required":false
-				},
-				"ml": {
-					"type":"string",
-					"description": "The email address of your mailing list. If you use google groups then the email looks like your-group@googlegroups.com",
-					"required":false
-				},
-				"phone": {
-					"type":"string",
-					"description":"if your community has a phone number",
-					"required":false
-				},
-				"twitter": {
-					"type":"string",
-					"description":"your community's twitter account",
-					"required":false
-				}
-			}
-		},
-		"url": {
-			"type":"string",
-			"description": "The main website",
-			"required":true
-		},
-		"events": {
-			"type":"array",
-			"description": "These are events something like 'X has entered/triggered/did Y at timestamp Z'",
-			"required":false,
-			"items":
-				{
-					"type":"object",
-					"required":false,
-					"properties":{
-						"extra": {
-							"type":"string",
-							"description": "An custom text field",
-							"required":false
-						},
-						"title": {
-							"type":"string",
-							"description": "name of the event",
-							"required":false
-						},
-						"timestamp": {
-							"type":"number",
-							"description": "Unix timestamp when the event happens",
-							"required":false
-						},
-						"location": {
-							"type":"string",
-							"description": "location of the event",
-							"required":false
-						}
+					},
+					"lat": {
+						"type":"number",
+						"description": "Latitude of your city",
+						"required":true
+					},
+					"lon": {
+						"type":"number",
+						"description": "Longitude of your city",
+						"required":true
 					}
 				}
-			
-
-		},
-		"feeds": {
-			"type":"array",
-			"description":"Feeds you provide your commnutiy",
-			"required":false,
-			"items":
-				{
-					"type":"object",
-					"required":false,
-					"properties":{
-						"name": {
-							"type":"string",
-							"description":"name of the feed",
-							"required":false
-						},
-						"type": {
-							"type":"string",
-							"description":"type of the feed",
-							"required":false
-						},
-						"url": {
-							"type":"string",
-							"description":"url of the feed",
-							"required":false
-						}
+			},
+			"contact": {
+				"type":"object",
+				"required":true,
+				"properties":{
+					"email": {
+						"type":"string",
+						"description": "Email address to which other people can contact your community",
+						"required":false
+					},
+					"facebook": {
+						"type":"string",
+						"description":"your community's facebook account",
+						"required":false
+					},
+					"identica": {
+						"type":"string",
+						"description": "your community's identica account",
+						"required":false
+					},
+					"irc": {
+						"type":"string",
+						"description":"your community's irc channel",
+						"required":false
+					},
+					"jabber": {
+						"type":"string",
+						"description":"a jabber account someone reads",
+						"required":false
+					},
+					"ml": {
+						"type":"string",
+						"description": "The email address of your mailing list. If you use google groups then the email looks like your-group@googlegroups.com",
+						"required":false
+					},
+					"phone": {
+						"type":"string",
+						"description":"if your community has a phone number",
+						"required":false
+					},
+					"twitter": {
+						"type":"string",
+						"description":"your community's twitter account",
+						"required":false
 					}
 				}
-			
-
-		},
-		"state": {
-			"type":"object",
-			"description": "A collection of status-related data. Actual open/closed status, icons, last change timestamp etc.",
-			"required":true,
-			"properties":{
-				"nodes": {
-					"type":"integer",
-					"description": "number of active nodes",
-					"required":false
-				},
-				"lastchange": {
-					"type":"number",
-					"description": "At what (unix) timestamp has your community status lastly changed?",
-					"required":true
-				},
-				"message": {
-					"type":"string",
-					"description": "A free-form string something like 'open for public', 'members only' or whatever you want it to be)",
-					"required":false
-				}
-			}
-		},
-		"techDetails": {
-			"type":"object",
-			"id": "http://wiki.freifunk.net/Freifunk_Firmware/%C3%9Cbersicht_Communities",
-			"description": "technical details of your community's freifunk implementation",
-			"required":false,
-			"properties":{
-				"störerhaftung": {
-					"description": "how the German störerhaftung is handled",
-					"required":false,
-					"type":"string"
-				},
-				"bootstrap": {
-					"type":"string",
-					"description": "how to deal with fresh routers",
-					"required":false
-				},
-				"firmware": {
-					"type":"object",
-					"required":false,
-					"properties":{
-						"url": {
-							"type":"string",
-							"description": "link to your firmware images or docs",
-							"required":false
-						},
-						"name": {
-							"type":"string",
-							"description": "name of your firmware",
-							"required":false
+			},
+			"url": {
+				"type":"string",
+				"description": "The main website",
+				"required":true
+			},
+			"events": {
+				"type":"array",
+				"description": "These are events something like 'X has entered/triggered/did Y at timestamp Z'",
+				"required":false,
+				"items":
+					{
+						"type":"object",
+						"required":false,
+						"properties":{
+							"extra": {
+								"type":"string",
+								"description": "An custom text field",
+								"required":false
+							},
+							"title": {
+								"type":"string",
+								"description": "name of the event",
+								"required":false
+							},
+							"timestamp": {
+								"type":"number",
+								"description": "Unix timestamp when the event happens",
+								"required":false
+							},
+							"location": {
+								"type":"string",
+								"description": "location of the event",
+								"required":false
+							}
 						}
 					}
-				},
-				"keyexchange": {
-					"type":"string",
-					"description": "needs to be defined",
-					"required":false
-				},
-				"networks": {
-					"type":"object",
-					"description": "networks used by your community",
-					"required":false,
-					"properties":{
-						"ipv6": {
-							"type":"array",
-							"description": "ipv6 networks used by your community",
-							"required":false,
-							"items": {
-									"type":"object",
-									"title": "ipv6 network object",
-									"required":false,
-									"properties":{
-										"prefixlength": {
-											"type":"integer",
-											"description":"prefix length",
-											"required":false
-										},
-										"prefix": {
-											"type":"string",
-											"description": "ipv6 network prefix",
-											"required":false
+				
+	
+			},
+			"feeds": {
+				"type":"array",
+				"description":"Feeds you provide your commnutiy",
+				"required":false,
+				"items":
+					{
+						"type":"object",
+						"required":false,
+						"properties":{
+							"name": {
+								"type":"string",
+								"description":"name of the feed",
+								"required":false
+							},
+							"type": {
+								"type":"string",
+								"description":"type of the feed",
+								"required":false
+							},
+							"url": {
+								"type":"string",
+								"description":"url of the feed",
+								"required":false
+							}
+						}
+					}
+				
+	
+			},
+			"state": {
+				"type":"object",
+				"description": "A collection of status-related data. Actual open/closed status, icons, last change timestamp etc.",
+				"required":true,
+				"properties":{
+					"nodes": {
+						"type":"integer",
+						"description": "number of active nodes",
+						"required":false
+					},
+					"lastchange": {
+						"type":"number",
+						"description": "At what (unix) timestamp has your community status lastly changed?",
+						"required":true
+					},
+					"message": {
+						"type":"string",
+						"description": "A free-form string something like 'open for public', 'members only' or whatever you want it to be)",
+						"required":false
+					}
+				}
+			},
+			"techDetails": {
+				"type":"object",
+				"id": "http://wiki.freifunk.net/Freifunk_Firmware/%C3%9Cbersicht_Communities",
+				"description": "technical details of your community's freifunk implementation",
+				"required":false,
+				"properties":{
+					"störerhaftung": {
+						"description": "how the German störerhaftung is handled",
+						"required":false,
+						"type":"string"
+					},
+					"bootstrap": {
+						"type":"string",
+						"description": "how to deal with fresh routers",
+						"required":false
+					},
+					"firmware": {
+						"type":"object",
+						"required":false,
+						"properties":{
+							"url": {
+								"type":"string",
+								"description": "link to your firmware images or docs",
+								"required":false
+							},
+							"name": {
+								"type":"string",
+								"description": "name of your firmware",
+								"required":false
+							}
+						}
+					},
+					"keyexchange": {
+						"type":"string",
+						"description": "needs to be defined",
+						"required":false
+					},
+					"networks": {
+						"type":"object",
+						"description": "networks used by your community",
+						"required":false,
+						"properties":{
+							"ipv6": {
+								"type":"array",
+								"description": "ipv6 networks used by your community",
+								"required":false,
+								"items": {
+										"type":"object",
+										"title": "ipv6 network object",
+										"required":false,
+										"properties":{
+											"prefixlength": {
+												"type":"integer",
+												"description":"prefix length",
+												"required":false
+											},
+											"prefix": {
+												"type":"string",
+												"description": "ipv6 network prefix",
+												"required":false
+											}
 										}
 									}
-								}
-						},
-						"ipv4": {
-							"type":"array",
-							"description": "ipv4 networks used by your community",
-							"required":false,
-							"items":
-								{
-									"type":"object",
-									"title": "ipv4 network object",
-									"required":false,
-									"properties":{
-										"netmask": {
-											"type":"integer",
-											"description":"the netmask valid for this network",
-											"required":false
-										},
-										"network": {
-											"type":"string",
-											"description": "network name (e.g. 10.63.x.y)",
-											"required":false
+							},
+							"ipv4": {
+								"type":"array",
+								"description": "ipv4 networks used by your community",
+								"required":false,
+								"items":
+									{
+										"type":"object",
+										"title": "ipv4 network object",
+										"required":false,
+										"properties":{
+											"netmask": {
+												"type":"integer",
+												"description":"the netmask valid for this network",
+												"required":false
+											},
+											"network": {
+												"type":"string",
+												"description": "network name (e.g. 10.63.x.y)",
+												"required":false
+											}
 										}
 									}
-								}
-							
-
+								
+	
+							}
 						}
+					},
+					"routing": {
+						"description": "routing protocoll used within your community",
+						"required":false,
+				                "enum" : ["OLSR","BATMAN","Babel","802.11s"]
+					},
+					"splashpage": {
+						"type":"string",
+						"description": "what kind of splashpage does your community use?",
+						"required":false
+					},
+					"topodata": {
+						"type":"string",
+						"description": "link to your topology data (dot-files? needs to be defined)",
+						"required":false
+					},
+					"updatemode": {
+						"type":"string",
+						"description": "how do you deploy firmware updates?",
+						"required":false
+					},
+					"vpn": {
+						"type":"string",
+						"description": "implementation of inner city vpn",
+						"required":false
 					}
-				},
-				"routing": {
-					"description": "routing protocoll used within your community",
-					"required":false,
-			                "enum" : ["OLSR","BATMAN","Babel","802.11s"]
-				},
-				"splashpage": {
-					"type":"string",
-					"description": "what kind of splashpage does your community use?",
-					"required":false
-				},
-				"topodata": {
-					"type":"string",
-					"description": "link to your topology data (dot-files? needs to be defined)",
-					"required":false
-				},
-				"updatemode": {
-					"type":"string",
-					"description": "how do you deploy firmware updates?",
-					"required":false
-				},
-				"vpn": {
-					"type":"string",
-					"description": "implementation of inner city vpn",
-					"required":false
 				}
 			}
 		}
 	}
 }
-
