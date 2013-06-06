@@ -1,5 +1,5 @@
 {
-    "type":"object",
+    	"type":"object",
 	"description": "Freifunk Community API 0.1",
 	"required":false,
 	"properties":{
@@ -240,8 +240,8 @@
 							"type":"array",
 							"description": "ipv6 networks used by your community",
 							"required":false,
-							"items":
-								"type":"object",
+							"items": {
+									"type":"object",
 									"title": "ipv6 network object",
 									"required":false,
 									"properties":{
@@ -256,6 +256,7 @@
 											"required":false
 										}
 									}
+								}
 						},
 						"ipv4": {
 							"type":"array",
