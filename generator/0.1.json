@@ -8,13 +8,17 @@
 				"type":"string",
 				"description": "The Freifunk Community API version you use",
 				"enum" : ["0.1"],
-				"required":true,
-				"default" : "0.1"
+				"required":true
 			},
 			"name": {
 				"type":"string",
 				"description": "The name of your community",
 				"required":true
+			},
+			"metacommunity": {
+				"type":"string",
+				"description": "if you local community belongs to a bigger community, e.g. Freifunk Rheinland, Freifunk Franken",
+				"required":false
 			},
 			"location": {
 				"type":"object",
