@@ -2,6 +2,7 @@
         console.log(schema); // this will show the info it in firebug console
 	schema.form = [
 	"name",
+	"metacommunity",
         "url",
         "state",
         {
