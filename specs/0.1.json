@@ -15,6 +15,11 @@
 				"description": "The name of your community",
 				"required":true
 			},
+			"metacommunity": {
+				"type":"string",
+				"description": "if you local community belongs to a bigger community, e.g. Freifunk Rheinland, Freifunk Franken",
+				"required":false
+			},
 			"location": {
 				"type":"object",
 				"description": "Position data such as a postal address or geographic coordinates",
