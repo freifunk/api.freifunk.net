@@ -2,36 +2,35 @@
         console.log(schema); // this will show the info it in firebug console
 	schema.form = [
 	"name",
-	"metacommunity",
-        "url",
+        "metacommunity",
+	"url",
         "state",
-        {
+	{
                 "type": "fieldset",
-                "title": "Location",
-                "expandable": true,
+                "expanded": true,
                 "items": "location"
         },
         {
                 "type": "fieldset",
-                "title": "Contact",
-                "expandable": true,
+		"title":"Contact (one required)",
+		"expandable": true,
                 "items": "contact"
         },
         {
                 "type": "fieldset",
-                "title": "Events",
+		"title":"Events",
                 "expandable": true,
                 "items": "events"
         },
         {
                 "type": "fieldset",
-                "title": "Feeds",
+		"title":"Feeds",
                 "expandable": true,
                 "items": "feeds"
         },
         {
                 "type": "fieldset",
-                "title": "Technical details",
+		"title":"Technical Details",
                 "expandable": true,
                 "items": "techDetails"
         },

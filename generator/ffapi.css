@@ -5,4 +5,15 @@
 .expanded > legend:before {
   content: '\25BE';
 }
+.jsonform-required > label:after {
+  content: ' *';
+  color: red;
+}
+
+.jsonform-hasrequired:after {
+  content: '* Required field';
+  display: block;
+  color: red;
+  padding-top: 1em;
+}
 
