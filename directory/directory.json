@@ -1,3 +1,4 @@
 {
-	"weimarnetz" : "http://weimarnetz.de/weimarnetz.json"
+	"weimarnetz" : "http://weimarnetz.de/weimarnetz.json",
+	"gronau" : "http://freifunk.liztv.net/ffapi/gronau.json"
 }
