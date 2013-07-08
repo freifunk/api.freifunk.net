@@ -5,27 +5,33 @@
 		"required":false,
 		"properties":{
 			"api": {
+				"title":"API",
 				"type":"string",
 				"description": "The Freifunk Community API version you use",
 				"enum" : ["0.1"],
+				"default" : "0.1",
 				"required":true
 			},
 			"name": {
+				"title":"Name",
 				"type":"string",
 				"description": "The name of your community",
 				"required":true
 			},
 			"metacommunity": {
+				"title":"Metacommunity",
 				"type":"string",
-				"description": "if you local community belongs to a bigger community, e.g. Freifunk Rheinland, Freifunk Franken",
+				"description": "The name of your meta community. if you local community belongs to a bigger community",
 				"required":false
 			},
 			"location": {
+				"title":"Location",
 				"type":"object",
 				"description": "Position data such as a postal address or geographic coordinates",
 				"required":true,
 				"properties":{
 					"city": {
+						"title":"City",
 						"type":"string",
 						"description": "name of your city or region",
 						"required":true
@@ -36,16 +42,19 @@
 						"required":false,
 						"properties":{
 							"Name": {
+								"title":"Name of your place",
 								"type":"string",
 								"description": "the name of place you meet",
 								"required":false
 							},
 							"Street": {
+								"title":"Street",
 								"type":"string",
 								"description":"the street your meeting place",
 								"required":false
 							},
 							"Zipcode": {
+								"title":"ZIP",
 								"type":"string",
 								"description":"the zip code of your meeting place",
 								"required":false
@@ -53,11 +62,13 @@
 						}
 					},
 					"lat": {
+						"title":"Latitude",
 						"type":"number",
 						"description": "Latitude of your city",
 						"required":true
 					},
 					"lon": {
+						"title":"Longitude",
 						"type":"number",
 						"description": "Longitude of your city",
 						"required":true
@@ -69,41 +80,49 @@
 				"required":true,
 				"properties":{
 					"email": {
+						"title":"Email",
 						"type":"string",
 						"description": "Email address to which other people can contact your community",
 						"required":false
 					},
 					"facebook": {
+						"title":"facebook",
 						"type":"string",
 						"description":"your community's facebook account",
 						"required":false
 					},
 					"identica": {
+						"title":"Identica",
 						"type":"string",
 						"description": "your community's identica account",
 						"required":false
 					},
 					"irc": {
+						"title":"IRC",
 						"type":"string",
 						"description":"your community's irc channel",
 						"required":false
 					},
 					"jabber": {
+						"title":"Jabber",
 						"type":"string",
 						"description":"a jabber account someone reads",
 						"required":false
 					},
 					"ml": {
+						"title":"Mailinglist",
 						"type":"string",
 						"description": "The email address of your mailing list. If you use google groups then the email looks like your-group@googlegroups.com",
 						"required":false
 					},
 					"phone": {
+						"title":"Phone",
 						"type":"string",
 						"description":"if your community has a phone number",
 						"required":false
 					},
 					"twitter": {
+						"title":"Twitter",
 						"type":"string",
 						"description":"your community's twitter account",
 						"required":false
@@ -111,6 +130,7 @@
 				}
 			},
 			"url": {
+				"title":"Homepage",
 				"type":"string",
 				"description": "The main website",
 				"required":true
@@ -125,21 +145,25 @@
 						"required":false,
 						"properties":{
 							"extra": {
+								"title":"Extra information",
 								"type":"string",
 								"description": "An custom text field",
 								"required":false
 							},
 							"title": {
+								"title":"Title",
 								"type":"string",
 								"description": "name of the event",
 								"required":false
 							},
 							"timestamp": {
+								"title":"Timestamp",
 								"type":"number",
 								"description": "Unix timestamp when the event happens",
 								"required":false
 							},
 							"location": {
+								"title":"Location",
 								"type":"string",
 								"description": "location of the event",
 								"required":false
@@ -151,7 +175,7 @@
 			},
 			"feeds": {
 				"type":"array",
-				"description":"Feeds you provide your commnutiy",
+				"description":"Feeds you provide your community",
 				"required":false,
 				"items":
 					{
@@ -159,16 +183,19 @@
 						"required":false,
 						"properties":{
 							"name": {
+								"title":"Feed name",
 								"type":"string",
 								"description":"name of the feed",
 								"required":false
 							},
 							"type": {
+								"title":"Feed type",
 								"type":"string",
 								"description":"type of the feed",
 								"required":false
 							},
 							"url": {
+								"title":"URL",
 								"type":"string",
 								"description":"url of the feed",
 								"required":false
@@ -184,16 +211,19 @@
 				"required":true,
 				"properties":{
 					"nodes": {
+						"title":"Active Nodes",
 						"type":"integer",
 						"description": "number of active nodes",
 						"required":false
 					},
 					"lastchange": {
+						"title":"Last Change",
 						"type":"number",
 						"description": "At what (unix) timestamp has your community status lastly changed?",
 						"required":true
 					},
 					"message": {
+						"title":"Message",
 						"type":"string",
 						"description": "A free-form string something like 'open for public', 'members only' or whatever you want it to be)",
 						"required":false
@@ -206,12 +236,14 @@
 				"description": "technical details of your community's freifunk implementation",
 				"required":false,
 				"properties":{
-					"störerhaftung": {
+					"störerhaftung":{ 
+						"title":"Störerhaftung",
 						"description": "how the German störerhaftung is handled",
 						"required":false,
 						"type":"string"
 					},
 					"bootstrap": {
+						"title":"Bootstrap",
 						"type":"string",
 						"description": "how to deal with fresh routers",
 						"required":false
@@ -221,11 +253,13 @@
 						"required":false,
 						"properties":{
 							"url": {
+								"title":"Firmware download and docs",
 								"type":"string",
 								"description": "link to your firmware images or docs",
 								"required":false
 							},
 							"name": {
+								"title":"Firmware Name",
 								"type":"string",
 								"description": "name of your firmware",
 								"required":false
@@ -238,6 +272,7 @@
 						"required":false
 					},
 					"networks": {
+						"title":"Networks",
 						"type":"object",
 						"description": "networks used by your community",
 						"required":false,
@@ -292,26 +327,32 @@
 						}
 					},
 					"routing": {
-						"description": "routing protocoll used within your community",
+						"title":"Routing protocol",
+						"description": "routing protocol used within your community",
 						"required":false,
-				                "enum" : ["OLSR","BATMAN","Babel","802.11s"]
+				                "enum" : ["","OLSR","BATMAN","Babel","802.11s"],
+						"default":""
 					},
 					"splashpage": {
+						"title":"Splash Page",
 						"type":"string",
 						"description": "what kind of splashpage does your community use?",
 						"required":false
 					},
 					"topodata": {
+						"title":"Topology data",
 						"type":"string",
 						"description": "link to your topology data (dot-files? needs to be defined)",
 						"required":false
 					},
 					"updatemode": {
+						"title":"Updatemode",
 						"type":"string",
 						"description": "how do you deploy firmware updates?",
 						"required":false
 					},
 					"vpn": {
+						"title":"VPN",
 						"type":"string",
 						"description": "implementation of inner city vpn",
 						"required":false
