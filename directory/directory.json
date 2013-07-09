@@ -1,6 +1,6 @@
 {
 	"gronau" : "http://freifunk.liztv.net/ffapi/gronau.json",
-	"jena" : "http://freifunk-jena.de/jena.json"
+	"jena" : "http://freifunk-jena.de/jena.json",
 	"weimarnetz" : "http://weimarnetz.de/weimarnetz.json",
 	"wuppertal" : "http://freifunk-wuppertal.net/ffwtal.json"
 }
