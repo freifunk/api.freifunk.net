@@ -236,7 +236,7 @@
 				"description": "technical details of your community's freifunk implementation",
 				"required":false,
 				"properties":{
-					"störerhaftung":{ 
+					"stoererhaftung":{ 
 						"title":"Störerhaftung",
 						"description": "how the German störerhaftung is handled",
 						"required":false,
