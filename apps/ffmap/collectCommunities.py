@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+#this script is intented to collect data from all communities within the directory:q
+
 import json
 import urllib
 from optparse import OptionParser
