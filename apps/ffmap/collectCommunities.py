@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 
-#this script is intented to collect data from all communities within the directory:q
-
 import json
 import urllib
 from optparse import OptionParser
@@ -13,7 +11,7 @@ def log(logLevel, message):
 		print("Message from engine room (level " + str(logLevel) + "): " + message)
 
 #define some constants
-ffDirUrl = "https://raw.github.com/freifunk/api.freifunk.net/master/directory/directory.json" # TODO! host directory somewhere else, don't use raw github files
+ffDirUrl = "https://raw.github.com/freifunk/api.freifunk.net/master/directory/directory.json"
 ffMapOutput = "/var/www/ffmap/ffMap.json"
 
 #read some command line arguments
@@ -39,6 +37,14 @@ for community in ffDirectory:
 	log(3, "working on community: " + ffDirectory[community])
 	try:
 		ffApi = json.loads(urlopen(ffDirectory[community]).readall().decode('utf-8'))
+	except UnicodeError as e:
+		try:
+			ffApi = json.loads(urlopen(ffDirectory[community]).readall().decode('iso8859_2'))
+			log(0, "Unicode Error: " + ffDirectory[community] + ": " + str(e) + ", try iso8859_2 instead")
+			pass
+		except BaseException as e:
+			log(0, "Error reading community api file " + ffDirectory[community] + ": " + str(e))
+			continue
 	except BaseException as e:
 		log(0, "Error reading community api file " + ffDirectory[community] + ": " + str(e))
 		continue
