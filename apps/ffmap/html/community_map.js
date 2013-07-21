@@ -18,19 +18,44 @@ var FFCommunityMapWidget = function(options, map_options) {
 	  html += 'Nodes: ' +props.nodes + '<br/>';
 	}
 	if (props.url) {
-	  html += '<a href=\"' + props.url + '\" target=\"_window\">'+ props.url + '</a><br/>';
+	  if (props.url && !props.url.match(/^http([s]?):\/\/.*/)) {
+	    html += '<a href=\"http://' + props.url + '\" target=\"_window\">http://'+ props.url + '</a><br/>';
+	  }
+	  else {
+	    html += '<a href=\"' + props.url + '\" target=\"_window\">'+ props.url + '</a><br/>';
+	  }
 	}
 	if (props.ml) {
 	  html += '<a href=\"mailto:' + props.ml + '\">Mailingliste</a><br/>';
+	}
+	if (props.phone) {
+	  html += '<a href=\"tel:' + props.phone + '\"><img src=\"icons/phone/phone-48-black.png\" alt=\"' + props.phone + '\"/></a>';
+	}
+	if (props.email) {
+	  html += '<a href=\"mailto:' + props.email + '\"><img src=\"icons/email/email-48-black.png\"/></a>';
 	}
 	if (props.facebook) {
 	  html += '<a href=\"' + props.facebook + '\" target=\"_window\"><img src=\"icons/facebook/facebook-48-black.png\"/></a>';
 	}
 	if (props.twitter) {
-	  html += '<a href=\"' + props.twitter + '\" target=\"_window\"><img src=\"icons/twitter/twitter-48-black.png\"/></a>';
+	  if (props.twitter && !props.twitter.match(/^http([s]?):\/\/.*/)) {
+	  	html += '<a href=\"https://twitter.com/' + props.twitter + '\" target=\"_window\"><img src=\"icons/twitter/twitter-48-black.png\" alt=\"@' + props.twitter + '\" title=\"@' + props.twitter + '\"/></a>';
+	  }
+	  else {
+	  	html += '<a href=\"' + props.twitter + '\" target=\"_window\"><img src=\"icons/twitter/twitter-48-black.png\" /></a>';
+	  }		
 	}
-	if (props.email) {
-	  html += '<a href=\"mailto:' + props.email + '\"><img src=\"icons/email/email-48-black.png\"/></a>';
+	if (props.irc) {
+	  html += '<a href=\"irc:' + props.irc + '\"><img src=\"icons/irc/irc-48-black.png\"/></a>';
+	}
+	if (props.jabber) {
+	  html += '<a href=\"xmpp:' + props.jabber + '\"><img src=\"icons/jabber/jabber-48-black.png\"/></a>';
+	}
+	if (props.identica) {
+	  html += '<a href=\"identica:' + props.identicy + '\"><img src=\"icons/identica/identica-48-black.png\"/></a>';
+	}
+	if (props.events) {
+	  html += '<hline/><h3>Events</h3>';
 	}
         return html;
     },
