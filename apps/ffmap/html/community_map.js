@@ -84,11 +84,12 @@ var FFCommunityMapWidget = function(options, map_options) {
           //title: feature.properties.name,
           //riseOnHover: true
 	  stroke: true,
-	  opacity: 1,
+	  weight: 10,
+	  opacity: 0.3,
 	  color: '#009ee0',
 	  fill: true,
 	  fillColor: '#009ee0',
-	  fillOpacity: 0.5
+	  fillOpacity: 0.7
         })
       },
       onEachFeature: function(feature, layer) {
