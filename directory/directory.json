@@ -11,5 +11,6 @@
 	"hamburg" : "http://meta.hamburg.freifunk.net/ffhh.json",
 	"franken" : "https://raw.github.com/mojoaxel/freifunkfranken-community/master/freifunkfranken.json",
 	"kbu" : "http://map.kbu.freifunk.net/ffapi/ffapi.json",
-	"augsburg": "http://www.wgaugsburg.de/ffapi/ffapi.json"
+	"augsburg": "http://www.wgaugsburg.de/ffapi/ffapi.json",
+	"wahlsdorf": "http://rensky.net/freifunk/wahlsdorf.json"
 }
