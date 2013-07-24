@@ -42,17 +42,17 @@ var FFCommunityMapWidget = function(options, map_options) {
 	  	html += '<a href=\"https://twitter.com/' + props.twitter + '\" target=\"_window\"><img src=\"icons/icon_twitter.png\" alt=\"@' + props.twitter + '\" title=\"@' + props.twitter + '\"/></a>';
 	  }
 	  else {
-	  	html += '<a href=\"' + props.twitter + '\" target=\"_window\"><img src=\"icons/icon-twitter.png\" /></a>';
+	  	html += '<a href=\"' + props.twitter + '\" target=\"_window\"><img src=\"icons/icon_twitter.png\" /></a>';
 	  }		
 	}
 	if (props.irc) {
-	  html += '<a href=\"irc:' + props.irc + '\"><img src=\"icons/icon-irc.png\"/></a>';
+	  html += '<a href=\"irc:' + props.irc + '\"><img src=\"icons/icon_irc.png\"/></a>';
 	}
 	if (props.jabber) {
-	  html += '<a href=\"xmpp:' + props.jabber + '\"><img src=\"icons/icon-jabber.png\"/></a>';
+	  html += '<a href=\"xmpp:' + props.jabber + '\"><img src=\"icons/icon_jabber.png\"/></a>';
 	}
 	if (props.identica) {
-	  html += '<a href=\"identica:' + props.identicy + '\"><img src=\"icons/icon-identica.png\"/></a>';
+	  html += '<a href=\"identica:' + props.identicy + '\"><img src=\"icons/icon_identica.png\"/></a>';
 	}
 	if (props.events) {
 	  html += '<hline/><h3>Events</h3>';
