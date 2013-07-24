@@ -29,30 +29,30 @@ var FFCommunityMapWidget = function(options, map_options) {
 	  html += '<a href=\"mailto:' + props.ml + '\">Mailingliste</a><br/>';
 	}
 	if (props.phone) {
-	  html += '<a href=\"tel:' + props.phone + '\"><img src=\"icons/phone/phone-48-black.png\" alt=\"' + props.phone + '\"/></a>';
+	  html += '<a href=\"tel:' + props.phone + '\"><img src=\"icons/icon_telefon.png\" alt=\"' + props.phone + '\"/></a>';
 	}
 	if (props.email) {
-	  html += '<a href=\"mailto:' + props.email + '\"><img src=\"icons/email/email-48-black.png\"/></a>';
+	  html += '<a href=\"mailto:' + props.email + '\"><img src=\"icons/icon_email.png\"/></a>';
 	}
 	if (props.facebook) {
-	  html += '<a href=\"' + props.facebook + '\" target=\"_window\"><img src=\"icons/facebook/facebook-48-black.png\"/></a>';
+	  html += '<a href=\"' + props.facebook + '\" target=\"_window\"><img src=\"icons/icon_facebook.png\"/></a>';
 	}
 	if (props.twitter) {
 	  if (props.twitter && !props.twitter.match(/^http([s]?):\/\/.*/)) {
-	  	html += '<a href=\"https://twitter.com/' + props.twitter + '\" target=\"_window\"><img src=\"icons/twitter/twitter-48-black.png\" alt=\"@' + props.twitter + '\" title=\"@' + props.twitter + '\"/></a>';
+	  	html += '<a href=\"https://twitter.com/' + props.twitter + '\" target=\"_window\"><img src=\"icons/icon_twitter.png\" alt=\"@' + props.twitter + '\" title=\"@' + props.twitter + '\"/></a>';
 	  }
 	  else {
-	  	html += '<a href=\"' + props.twitter + '\" target=\"_window\"><img src=\"icons/twitter/twitter-48-black.png\" /></a>';
+	  	html += '<a href=\"' + props.twitter + '\" target=\"_window\"><img src=\"icons/icon-twitter.png\" /></a>';
 	  }		
 	}
 	if (props.irc) {
-	  html += '<a href=\"irc:' + props.irc + '\"><img src=\"icons/irc/irc-48-black.png\"/></a>';
+	  html += '<a href=\"irc:' + props.irc + '\"><img src=\"icons/icon-irc.png\"/></a>';
 	}
 	if (props.jabber) {
-	  html += '<a href=\"xmpp:' + props.jabber + '\"><img src=\"icons/jabber/jabber-48-black.png\"/></a>';
+	  html += '<a href=\"xmpp:' + props.jabber + '\"><img src=\"icons/icon-jabber.png\"/></a>';
 	}
 	if (props.identica) {
-	  html += '<a href=\"identica:' + props.identicy + '\"><img src=\"icons/identica/identica-48-black.png\"/></a>';
+	  html += '<a href=\"identica:' + props.identicy + '\"><img src=\"icons/icon-identica.png\"/></a>';
 	}
 	if (props.events) {
 	  html += '<hline/><h3>Events</h3>';
