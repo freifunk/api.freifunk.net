@@ -88,13 +88,13 @@
 					"facebook": {
 						"title":"facebook",
 						"type":"string",
-						"description":"your community's facebook account",
+						"description":"URL to your community's facebook account",
 						"required":false
 					},
 					"identica": {
 						"title":"Identica",
 						"type":"string",
-						"description": "your community's identica account",
+						"description": "URL to your community's identica account",
 						"required":false
 					},
 					"irc": {
@@ -121,10 +121,16 @@
 						"description":"if your community has a phone number",
 						"required":false
 					},
+					"googleplus": {
+						"title":"Google+",
+						"type":"string",
+						"description":"URL to your community's g+ account",
+						"required":false
+					},
 					"twitter": {
 						"title":"Twitter",
 						"type":"string",
-						"description":"your community's twitter account",
+						"description":"URL to your community's twitter account",
 						"required":false
 					}
 				}

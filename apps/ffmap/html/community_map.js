@@ -54,6 +54,9 @@ var FFCommunityMapWidget = function(options, map_options) {
 	if (props.identica) {
 	  html += '<a href=\"identica:' + props.identicy + '\"><img src=\"icons/icon_identica.png\"/></a>';
 	}
+	if (props.googleplus) {
+	  html += '<a href=\"identica:' + props.googleplus + '\"><img src=\"icons/icon_googleplus.png\"/></a>';
+	}
 	if (props.events) {
 	  html += '<hline/><h3>Events</h3>';
 	}
