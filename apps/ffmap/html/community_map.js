@@ -1,4 +1,4 @@
-var FFCommunityMapWidget = function(options, map_options) {
+var FFCommunityMapWidget = function(options, map_options, link) {
   var options = L.extend({
     divId: 'map',
     geoJSONUrl: 'http://weimarnetz.de/ffmap/ffMap.json',
@@ -79,7 +79,12 @@ var FFCommunityMapWidget = function(options, map_options) {
   widget.tiles = L.tileLayer(options['tileUrl'], options['tileOptions']).addTo(widget.map);
   //widget.map.fitBounds(options['fitBounds']);
   widget.map.setView(options['center'],options['zoom']);
-
+  
+  if (link) {
+    widget.map.on('click', function(e) {
+      window.location = link;
+    });
+  }
   $.getJSON(options['geoJSONUrl'], function(geojson) {
     L.geoJson(geojson, {
       pointToLayer: function(feature, latlng) {
@@ -96,7 +101,14 @@ var FFCommunityMapWidget = function(options, map_options) {
         })
       },
       onEachFeature: function(feature, layer) {
-        layer.bindPopup(options['getPopupHTML'](feature.properties));
+	if (! link) {
+          layer.bindPopup(options['getPopupHTML'](feature.properties));
+        }
+        else {
+          layer.on('click', function(e) {
+            window.location = link;
+          });
+        }
       }
     }).addTo(widget.map);
   });
