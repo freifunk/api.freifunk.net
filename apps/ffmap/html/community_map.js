@@ -1,4 +1,4 @@
-var FFCommunityMapWidget = function(options, map_options) {
+var FFCommunityMapWidget = function(options, map_options, link) {
   var options = L.extend({
     divId: 'map',
     geoJSONUrl: 'http://weimarnetz.de/ffmap/ffMap.json',
@@ -29,30 +29,33 @@ var FFCommunityMapWidget = function(options, map_options) {
 	  html += '<a href=\"mailto:' + props.ml + '\">Mailingliste</a><br/>';
 	}
 	if (props.phone) {
-	  html += '<a href=\"tel:' + props.phone + '\"><img src=\"icons/phone/phone-48-black.png\" alt=\"' + props.phone + '\"/></a>';
+	  html += '<a href=\"tel:' + props.phone + '\"><img src=\"icons/icon_telefon.png\" alt=\"' + props.phone + '\"/></a>';
 	}
 	if (props.email) {
-	  html += '<a href=\"mailto:' + props.email + '\"><img src=\"icons/email/email-48-black.png\"/></a>';
+	  html += '<a href=\"mailto:' + props.email + '\"><img src=\"icons/icon_email.png\"/></a>';
 	}
 	if (props.facebook) {
-	  html += '<a href=\"' + props.facebook + '\" target=\"_window\"><img src=\"icons/facebook/facebook-48-black.png\"/></a>';
+	  html += '<a href=\"' + props.facebook + '\" target=\"_window\"><img src=\"icons/icon_facebook.png\"/></a>';
 	}
 	if (props.twitter) {
 	  if (props.twitter && !props.twitter.match(/^http([s]?):\/\/.*/)) {
-	  	html += '<a href=\"https://twitter.com/' + props.twitter + '\" target=\"_window\"><img src=\"icons/twitter/twitter-48-black.png\" alt=\"@' + props.twitter + '\" title=\"@' + props.twitter + '\"/></a>';
+	  	html += '<a href=\"https://twitter.com/' + props.twitter + '\" target=\"_window\"><img src=\"icons/icon_twitter.png\" alt=\"@' + props.twitter + '\" title=\"@' + props.twitter + '\"/></a>';
 	  }
 	  else {
-	  	html += '<a href=\"' + props.twitter + '\" target=\"_window\"><img src=\"icons/twitter/twitter-48-black.png\" /></a>';
+	  	html += '<a href=\"' + props.twitter + '\" target=\"_window\"><img src=\"icons/icon_twitter.png\" /></a>';
 	  }		
 	}
 	if (props.irc) {
-	  html += '<a href=\"irc:' + props.irc + '\"><img src=\"icons/irc/irc-48-black.png\"/></a>';
+	  html += '<a href=\"irc:' + props.irc + '\"><img src=\"icons/icon_irc.png\"/></a>';
 	}
 	if (props.jabber) {
-	  html += '<a href=\"xmpp:' + props.jabber + '\"><img src=\"icons/jabber/jabber-48-black.png\"/></a>';
+	  html += '<a href=\"xmpp:' + props.jabber + '\"><img src=\"icons/icon_jabber.png\"/></a>';
 	}
 	if (props.identica) {
-	  html += '<a href=\"identica:' + props.identicy + '\"><img src=\"icons/identica/identica-48-black.png\"/></a>';
+	  html += '<a href=\"identica:' + props.identicy + '\"><img src=\"icons/icon_identica.png\"/></a>';
+	}
+	if (props.googleplus) {
+	  html += '<a href=\"identica:' + props.googleplus + '\"><img src=\"icons/icon_googleplus.png\"/></a>';
 	}
 	if (props.events) {
 	  html += '<hline/><h3>Events</h3>';
@@ -76,7 +79,12 @@ var FFCommunityMapWidget = function(options, map_options) {
   widget.tiles = L.tileLayer(options['tileUrl'], options['tileOptions']).addTo(widget.map);
   //widget.map.fitBounds(options['fitBounds']);
   widget.map.setView(options['center'],options['zoom']);
-
+  
+  if (link) {
+    widget.map.on('click', function(e) {
+      window.location = link;
+    });
+  }
   $.getJSON(options['geoJSONUrl'], function(geojson) {
     L.geoJson(geojson, {
       pointToLayer: function(feature, latlng) {
@@ -93,7 +101,14 @@ var FFCommunityMapWidget = function(options, map_options) {
         })
       },
       onEachFeature: function(feature, layer) {
-        layer.bindPopup(options['getPopupHTML'](feature.properties));
+	if (! link) {
+          layer.bindPopup(options['getPopupHTML'](feature.properties));
+        }
+        else {
+          layer.on('click', function(e) {
+            window.location = link;
+          });
+        }
       }
     }).addTo(widget.map);
   });
