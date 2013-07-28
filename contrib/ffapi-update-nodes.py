@@ -20,7 +20,7 @@ import time
 
 host = '127.0.0.1'
 port = 9090
-apiFile = "/var/www/ffapi/ffapi.json"
+apiFile = "/var/www/weimarnetz.json"
 
 # End of configuration
 
