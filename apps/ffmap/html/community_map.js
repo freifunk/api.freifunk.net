@@ -6,59 +6,51 @@ var FFCommunityMapWidget = function(options, map_options, link) {
         var html = '';
         console.log(props)
         if (props.name) {
-          html += '<h3>'+props.name+'</h3>';
+	  if (props.url && !props.url.match(/^http([s]?):\/\/.*/)) {
+            html += '<b><a href=\"http://' + props.url + '\" target=\"_window\">'+ props.name + '</a></b><br/>';
+          }
+          else {
+            html += '<b><a href=\"' + props.url + '\" target=\"_window\">'+ props.name + '</a></b><br/>';
+          }
         }
 	if (props.metacommunity) {
-	  html += 'Organisation: ' + props.metacommunity + '<br/>';
+	  html += props.metacommunity + '</br>';
 	}
 	if (props.city){
-	  html += props.city + '</br><br/>';
+	  html += props.city + '<br/>';
 	}
 	if (props.nodes) {
-	  html += 'Nodes: ' +props.nodes + '<br/>';
-	}
-	if (props.url) {
-	  if (props.url && !props.url.match(/^http([s]?):\/\/.*/)) {
-	    html += '<a href=\"http://' + props.url + '\" target=\"_window\">http://'+ props.url + '</a><br/>';
-	  }
-	  else {
-	    html += '<a href=\"' + props.url + '\" target=\"_window\">'+ props.url + '</a><br/>';
-	  }
-	}
-	if (props.ml) {
-	  html += '<a href=\"mailto:' + props.ml + '\">Mailingliste</a><br/>';
+	  html += '<br/>Zug&auml;nge: ' +props.nodes + '<br/>';
 	}
 	if (props.phone) {
-	  html += '<a href=\"tel:' + props.phone + '\"><img src=\"icons/icon_telefon.png\" alt=\"' + props.phone + '\"/></a>';
+	  html += '<br/><a href=\"tel:' + props.phone + '\"><img src=\"http://weimarnetz.de/ffmap/icons/icon_telefon.png\" width="30px" style="margin-right: 15px; vertical-align:middle;" /></a>' + props.phone + '<br/>' ;
 	}
+	html += '<br/>';
 	if (props.email) {
-	  html += '<a href=\"mailto:' + props.email + '\"><img src=\"icons/icon_email.png\"/></a>';
+	  html += '<a href=\"mailto:' + props.email + '\"><img src=\"http://weimarnetz.de/ffmap/icons/icon_email.png\" width="30px" style="margin-right: 15px;"/></a>';
 	}
 	if (props.facebook) {
-	  html += '<a href=\"' + props.facebook + '\" target=\"_window\"><img src=\"icons/icon_facebook.png\"/></a>';
+	  html += '<a href=\"' + props.facebook + '\" target=\"_window\"><img src=\"http://weimarnetz.de/ffmap/icons/icon_facebook.png\" width="30px" style="margin-right: 15px;"/></a>';
 	}
 	if (props.twitter) {
 	  if (props.twitter && !props.twitter.match(/^http([s]?):\/\/.*/)) {
-	  	html += '<a href=\"https://twitter.com/' + props.twitter + '\" target=\"_window\"><img src=\"icons/icon_twitter.png\" alt=\"@' + props.twitter + '\" title=\"@' + props.twitter + '\"/></a>';
+	  	html += '<a href=\"https://twitter.com/' + props.twitter + '\" target=\"_window\"><img src=\"http://weimarnetz.de/ffmap/icons/icon_twitter.png\" width="30px" style="margin-right: 15px;" alt=\"@' + props.twitter + '\" title=\"@' + props.twitter + '\"/></a>';
 	  }
 	  else {
-	  	html += '<a href=\"' + props.twitter + '\" target=\"_window\"><img src=\"icons/icon_twitter.png\" /></a>';
+	  	html += '<a href=\"' + props.twitter + '\" target=\"_window\"><img src=\"http://weimarnetz.de/ffmap/icons/icon_twitter.png\" width="30px" style="margin-right: 15px;"/></a>';
 	  }		
 	}
 	if (props.irc) {
-	  html += '<a href=\"irc:' + props.irc + '\"><img src=\"icons/icon_irc.png\"/></a>';
+	  html += '<a href=\"irc:' + props.irc + '\"><img src=\"http://weimarnetz.de/ffmap/icons/icon_irc.png\" width="30px" style="margin-right: 15px;"/></a>';
 	}
 	if (props.jabber) {
-	  html += '<a href=\"xmpp:' + props.jabber + '\"><img src=\"icons/icon_jabber.png\"/></a>';
+	  html += '<a href=\"xmpp:' + props.jabber + '\"><img src=\"http://weimarnetz.de/ffmap/icons/icon_jabber.png\" width="30px" style="margin-right: 15px;"/></a>';
 	}
 	if (props.identica) {
-	  html += '<a href=\"identica:' + props.identicy + '\"><img src=\"icons/icon_identica.png\"/></a>';
+	  html += '<a href=\"identica:' + props.identicy + '\"><img src=\"http://weimarnetz.de/ffmap/icons/icon_identica.png\" width="30px" style="margin-right: 15px;"/></a>';
 	}
 	if (props.googleplus) {
-	  html += '<a href=\"identica:' + props.googleplus + '\"><img src=\"icons/icon_googleplus.png\"/></a>';
-	}
-	if (props.events) {
-	  html += '<hline/><h3>Events</h3>';
+	  html += '<a href=\"' + props.googleplus + '\" target=\"_window\"><img src=\"http://weimarnetz.de/ffmap/icons/icon_googleplus.png\" width="30px" style="margin-right: 15px;"/></a>';
 	}
         return html;
     },
