@@ -19,3 +19,5 @@ Communitynamen und URL zu den den bereitgestellten Daten. Die erste
 Anwendung soll eine Karte mit darin angezeigten Freifunkcommunities
 sein, um Besuchern und Interessierten einen Überblick zu geben und
 lokale Ansprechpartner zu vermitteln.
+
+Eine erste Karte kann eingesehen werden unter http://weimarnetz.de/ffmap/map.html
