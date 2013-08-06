@@ -14,5 +14,11 @@
 	"augsburg": "http://www.wgaugsburg.de/ffapi/ffapi.json",
 	"wahlsdorf": "http://rensky.net/freifunk/wahlsdorf.json",
 	"dresden" : "http://info.ddmesh.de/info/freifunk.json",
+	"leipzig" : "http://feeds.leipzig.freifunk.net/ffapi/leipzig.json",
+	"leisnig" : "http://feeds.leipzig.freifunk.net/ffapi/leisnig.json",
+	"grossdraxdorf" : "http://feeds.leipzig.freifunk.net/ffapi/grossdraxdorf.json",
+	"gadow" : "http://feeds.leipzig.freifunk.net/ffapi/gadow.json",
+	"zootzen" : "http://feeds.leipzig.freifunk.net/ffapi/zootzen.json",
+	"battlemesh" : "http://feeds.leipzig.freifunk.net/ffapi/battlemesh.json",
 	"kiel" : "http://freifunk.in-kiel.de/ffapi.json"
 }
