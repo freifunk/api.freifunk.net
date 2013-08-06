@@ -13,5 +13,6 @@
 	"kbu" : "http://map.kbu.freifunk.net/ffapi/ffapi.json",
 	"augsburg": "http://www.wgaugsburg.de/ffapi/ffapi.json",
 	"wahlsdorf": "http://rensky.net/freifunk/wahlsdorf.json",
-	"dresden" : "http://info.ddmesh.de/info/freifunk.json" 
+	"dresden" : "http://info.ddmesh.de/info/freifunk.json",
+	"kiel" : "http://freifunk.in-kiel.de/ffapi.json"
 }
