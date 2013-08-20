@@ -20,5 +20,6 @@
 	"gadow" : "http://feeds.leipzig.freifunk.net/ffapi/gadow.json",
 	"zootzen" : "http://feeds.leipzig.freifunk.net/ffapi/zootzen.json",
 	"battlemesh" : "http://feeds.leipzig.freifunk.net/ffapi/battlemesh.json",
-	"kiel" : "http://freifunk.in-kiel.de/ffapi.json"
+	"kiel" : "http://freifunk.in-kiel.de/ffapi.json",
+	"rostock" : "http://www.opennet-initiative.de/api.freifunk.net-status.json"
 }
