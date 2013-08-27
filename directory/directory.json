@@ -22,5 +22,6 @@
 	"battlemesh" : "http://feeds.leipzig.freifunk.net/ffapi/battlemesh.json",
 	"kiel" : "http://freifunk.in-kiel.de/ffapi.json",
 	"rostock" : "http://www.opennet-initiative.de/api.freifunk.net-status.json",
-	"halle" : "http://www.freifunk-halle.net/freifunk-api.json"
+	"halle" : "http://www.freifunk-halle.net/freifunk-api.json",
+	"brilon" : "http://freifunk-brilon.net/map/generator/ffb_api.json"
 }
