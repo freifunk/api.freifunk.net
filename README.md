@@ -20,4 +20,6 @@ Anwendung soll eine Karte mit darin angezeigten Freifunkcommunities
 sein, um Besuchern und Interessierten einen Überblick zu geben und
 lokale Ansprechpartner zu vermitteln.
 
+Die Freifunk API soll die Metadaten der Communities dezentral sammeln und anderen Nutzern zur Verfügung stellen. Die API ist nicht zu verwechseln mit einer Datenbank für Freifunkknoten oder als Verzeichnis von Firmwareeintellungen einzelner Communities.
+
 Eine erste Karte kann eingesehen werden unter http://weimarnetz.de/ffmap/map.html
