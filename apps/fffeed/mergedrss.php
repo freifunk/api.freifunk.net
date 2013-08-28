@@ -35,7 +35,8 @@ class MergedRSS {
 		$items = array();	
 
 		// loop through each feed
-		foreach ($this->myFeeds as $feed_url) { 
+		foreach ($this->myFeeds as $feed_array) {
+			$feed_url = $feed_array[0];
 			// determine my cache file name.  for now i assume they're all kept in a file called "cache"
 			$cache_file = "cache/" . $this->__create_feed_key($feed_url);
 
@@ -71,6 +72,8 @@ class MergedRSS {
 			if (isset($results)) { 
 				// add each item to the master item list
 				foreach ($results as $item) { 
+					$source = $item->addChild('source', 'via ' . $feed_array[1]);
+					$source->addAttribute('url', $feed_array[2]);
 					$items[] = $item;
 				}
 			}

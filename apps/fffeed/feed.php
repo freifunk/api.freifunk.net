@@ -10,18 +10,19 @@ $geofeatures = $json['features'];
 
 // place our feeds in an array
 $feeds = array(
-        'http://blog.freifunk.net/rss.xml'
+        array('http://blog.freifunk.net/rss.xml','blog.freifunk.net','http://blog.freifunk.net')
 );
 
 foreach($geofeatures as $feature)
 {
 	foreach($feature['properties']['feeds'] as $feed )
 	{
-		array_push($feeds, $feed['url']);
+		if ($feed['category'] == "blog") {
+			array_push($feeds, array($feed['url'],$feature['properties']['city'], $feature['properties']['url']))  ;
+		}
 	}
 }
 
-//print_r($feeds);
 
 // set the header type
 header("Content-type: text/xml");
@@ -33,5 +34,5 @@ $feed_date = date("r", mktime(10,0,0,9,8,2010));
 $MergedRSS = new MergedRSS($feeds, "Freifunk Community Feeds", "http://www.freifunk.net/", "This the merged RSS feed of RSS feeds of our community", $feed_date);
 
 //Export the first 10 items to screen
-$MergedRSS->export(false, true, 10);
+$MergedRSS->export(false, true, 50);
 
