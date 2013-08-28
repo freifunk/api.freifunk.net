@@ -194,10 +194,18 @@
 								"description":"name of the feed",
 								"required":false
 							},
+							"category": {
+								"title":"Feed category",
+								"type":"string",
+								"enum":["blog","forum","wiki","others",""],
+								"default":"",
+								"description":"category of the feed like blog entries, forum messages, wiki articles, ...",
+								"required":false
+							},
 							"type": {
 								"title":"Feed type",
 								"type":"string",
-								"description":"type of the feed",
+								"description":"type of the feed like rss, atom, xml",
 								"required":false
 							},
 							"url": {
