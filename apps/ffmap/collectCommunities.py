@@ -61,6 +61,8 @@ for community in ffDirectory:
 		properties['url'] = ffApi['url']
 		if 'metacommunity' in ffApi:
 			properties['metacommunity'] = ffApi['metacommunity']
+		if 'feeds' in ffApi:
+			properties['feeds'] = ffApi['feeds']
 		if 'events' in ffApi:
 			properties['events'] = ffApi['events']
 		if 'nodes' in ffApi['state']:

@@ -94,7 +94,7 @@ var FFCommunityMapWidget = function(options, map_options, link) {
       },
       onEachFeature: function(feature, layer) {
 	if (! link) {
-          layer.bindPopup(options['getPopupHTML'](feature.properties));
+          layer.bindPopup(options['getPopupHTML'](feature.properties), { minWidth: 210 });
         }
         else {
           layer.on('click', function(e) {
