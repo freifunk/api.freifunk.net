@@ -18,7 +18,7 @@ foreach($geofeatures as $feature)
 	foreach($feature['properties']['feeds'] as $feed )
 	{
 		if ($feed['category'] == "blog") {
-			array_push($feeds, array($feed['url'],$feature['properties']['city'], $feature['properties']['url']))  ;
+			array_push($feeds, array($feed['url'],$feature['properties']['name'], $feature['properties']['url']))  ;
 		}
 	}
 }
