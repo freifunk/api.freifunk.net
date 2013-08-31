@@ -4,7 +4,7 @@ var FFCommunityMapWidget = function(options, map_options, link) {
     geoJSONUrl: 'http://weimarnetz.de/ffmap/ffMap.json',
     getPopupHTML: function (props) {
         var html = '';
-        console.log(props)
+//        console.log(props)
         if (props.name) {
 	  if (props.url && !props.url.match(/^http([s]?):\/\/.*/)) {
             html += '<b><a href=\"http://' + props.url + '\" target=\"_window\">'+ props.name + '</a></b><br/>';
@@ -23,7 +23,8 @@ var FFCommunityMapWidget = function(options, map_options, link) {
 	  html += '<br/>Zug&auml;nge: ' +props.nodes + '<br/>';
 	}
 	if (props.phone) {
-	  html += '<br/><a href=\"tel:' + props.phone + '\"><img src=\"http://weimarnetz.de/ffmap/icons/icon_telefon.png\" width="30px" style="margin-right: 15px; vertical-align:middle;" /></a>' + props.phone + '<br/>' ;
+	  //html += '<br/><a href=\"tel:' + props.phone + '\"><img src=\"http://weimarnetz.de/ffmap/icons/icon_telefon.png\" width="30px" style="margin-right: 15px; vertical-align:middle;" /></a>' + props.phone + '<br/>' ;
+	  html += '<br/>&#9990; ' + props.phone + '<br/>';
 	}
 	html += '<br/>';
 	if (props.email) {
@@ -57,7 +58,7 @@ var FFCommunityMapWidget = function(options, map_options, link) {
     fitBounds: [[46.5, 4.0], [55.5, 15.9]],
     zoom: 5,
     center: [51.5, 10.5],
-    tileUrl: 'http://{s}.tile.cloudmade.com/{key}/{styleId}/256/{z}/{x}/{y}.png',
+    tileUrl: 'https://ssl_tiles.cloudmade.com/{key}/{styleId}/256/{z}/{x}/{y}.png',
     tileOptions: {
       key: '3249f584dd674d399238a99850abcbae',
       styleId: 102828,
@@ -72,38 +73,33 @@ var FFCommunityMapWidget = function(options, map_options, link) {
   //widget.map.fitBounds(options['fitBounds']);
   widget.map.setView(options['center'],options['zoom']);
   
-  if (link) {
-    widget.map.on('click', function(e) {
-      window.location = link;
-    });
-  }
+  var clusters = new L.MarkerClusterGroup({ spiderfyOnMaxZoom: false, showCoverageOnHover: false});
+  //var geoJsonLayer; 
   $.getJSON(options['geoJSONUrl'], function(geojson) {
-    L.geoJson(geojson, {
+    var geoJsonLayer = L.geoJson(geojson, {
+      onEachFeature: function(feature, layer) {
+        layer.bindPopup(options['getPopupHTML'](feature.properties), { minWidth: 210 });
+      },
       pointToLayer: function(feature, latlng) {
-        return L.circleMarker(latlng, {
+          var marker = L.circleMarker(latlng, {
           //title: feature.properties.name,
           //riseOnHover: true
 	  stroke: true,
-	  weight: 10,
+  	  weight: 10,
 	  opacity: 0.3,
 	  color: '#009ee0',
 	  fill: true,
 	  fillColor: '#009ee0',
 	  fillOpacity: 0.7
-        })
-      },
-      onEachFeature: function(feature, layer) {
-	if (! link) {
-          layer.bindPopup(options['getPopupHTML'](feature.properties), { minWidth: 210 });
-        }
-        else {
-          layer.on('click', function(e) {
-            window.location = link;
-          });
-        }
+        });
+	clusters.addLayer(marker);	
+	return clusters;
       }
     }).addTo(widget.map);
+    console.log(geoJsonLayer);
   });
+    //widget.map.addLayer(clusters);
+    //clusters.addTo(widget.map);
 
   return widget;
 }
