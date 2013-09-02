@@ -73,8 +73,9 @@ var FFCommunityMapWidget = function(options, map_options, link) {
   //widget.map.fitBounds(options['fitBounds']);
   widget.map.setView(options['center'],options['zoom']);
 
-  var clusters = new L.MarkerClusterGroup({ spiderfyOnMaxZoom: false, showCoverageOnHover: false});
-  //var geoJsonLayer;
+  var clusters = L.markerClusterGroup({ spiderfyOnMaxZoom: false, showCoverageOnHover: false});
+  widget.map.addLayer(clusters);
+
   $.getJSON(options['geoJSONUrl'], function(geojson) {
     var geoJsonLayer = L.geoJson(geojson, {
       onEachFeature: function(feature, layer) {
@@ -92,14 +93,11 @@ var FFCommunityMapWidget = function(options, map_options, link) {
           fillColor: '#009ee0',
           fillOpacity: 0.7
         });
-        clusters.addLayer(marker);
-        return clusters;
+        return marker;
       }
-    }).addTo(widget.map);
+    }).addTo(clusters);
     console.log(geoJsonLayer);
   });
-  //widget.map.addLayer(clusters);
-  //clusters.addTo(widget.map);
 
   return widget;
 }
