@@ -80,21 +80,21 @@ var FFCommunityMapWidget = function(options, map_options, link) {
       onEachFeature: function(feature, layer) {
         layer.bindPopup(options['getPopupHTML'](feature.properties), { minWidth: 210 });
       },
-        pointToLayer: function(feature, latlng) {
-          var marker = L.circleMarker(latlng, {
-            //title: feature.properties.name,
-            //riseOnHover: true
-            stroke: true,
+      pointToLayer: function(feature, latlng) {
+        var marker = L.circleMarker(latlng, {
+          //title: feature.properties.name,
+          //riseOnHover: true
+          stroke: true,
           weight: 10,
           opacity: 0.3,
           color: '#009ee0',
           fill: true,
           fillColor: '#009ee0',
           fillOpacity: 0.7
-          });
-          clusters.addLayer(marker);
-          return clusters;
-        }
+        });
+        clusters.addLayer(marker);
+        return clusters;
+      }
     }).addTo(widget.map);
     console.log(geoJsonLayer);
   });
