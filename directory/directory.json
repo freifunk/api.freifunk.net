@@ -25,5 +25,6 @@
 	"wahlsdorf": "http://rensky.net/freifunk/wahlsdorf.json",
 	"weimarnetz" : "http://weimarnetz.de/weimarnetz.json",
 	"wuppertal" : "http://api.freifunk-wuppertal.net/ffnet/ffwtal.json",
-	"zootzen" : "http://feeds.leipzig.freifunk.net/ffapi/zootzen.json"
+	"zootzen" : "http://feeds.leipzig.freifunk.net/ffapi/zootzen.json",
+	"wiesenburg" : "http://wiki.freifunk.net/images/7/79/Wiesenburg_freifunk_api.json"
 }
