@@ -10,7 +10,8 @@ $geofeatures = $json['features'];
 
 // place our feeds in an array
 $feeds = array(
-        array('http://blog.freifunk.net/rss.xml','blog.freifunk.net','http://blog.freifunk.net')
+        array('http://blog.freifunk.net/rss.xml','blog.freifunk.net','http://blog.freifunk.net'),
+        array('http://freifunkstattangst.de/feed/', 'freifunk statt Angst','http://freifunkstattangst.de')
 );
 
 foreach($geofeatures as $feature)
