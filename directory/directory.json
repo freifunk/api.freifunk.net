@@ -29,5 +29,9 @@
 	"zootzen" : "http://feeds.leipzig.freifunk.net/ffapi/zootzen.json",
 	"wiesenburg" : "http://wiki.freifunk.net/images/7/79/Wiesenburg_freifunk_api.json",
 	"oldenburg" : "https://netmon.freifunk-ol.de/scripts/ffnetapi/ffnetapi.php",
-        "ulm" : "http://drugtestbots.info/ulm.ffapi"
+        "ulm" : "http://drugtestbots.info/ulm.ffapi",
+        "wermelskirchen" : "http://wk.freifunk.net/api.json",
+        "remscheid" : "http://rs.freifunk.net/api.json",
+        "oberhausen" : "http://ob.freifunk.net/api.json",
+        "leverkusen" : "http://lev.freifunk.net/api.json"
 }
