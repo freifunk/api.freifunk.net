@@ -27,6 +27,12 @@ var FFCommunityMapWidget = function(options, map_options, link) {
           html += '<br/>&#9990; ' + props.phone + '<br/>';
         }
         html += '<br/>';
+        if (props.url && !props.url.match(/^http([s]?):\/\/.*/)) {
+          html += '<a href=\"http://' + props.url + '\" target=\"_window\"><img src=\"http://weimarnetz.de/ffmap/icons/icon_www.png\" width="30px" style="margin-right: 15px;"/>/a>';
+        }
+        else {
+          html += '<a href=\"' + props.url + '\" target=\"_window\"><img src=\"http://weimarnetz.de/ffmap/icons/icon_www.png\" width="30px" style="margin-right: 15px;"/></a>';
+        }
         if (props.email) {
           html += '<a href=\"mailto:' + props.email + '\"><img src=\"http://weimarnetz.de/ffmap/icons/icon_email.png\" width="30px" style="margin-right: 15px;"/></a>';
         }
