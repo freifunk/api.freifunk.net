@@ -34,6 +34,8 @@ lokale Ansprechpartner zu vermitteln.
 
 Die Freifunk API soll die Metadaten der Communities dezentral sammeln und anderen Nutzern zur Verfügung stellen. Die API ist nicht zu verwechseln mit einer Datenbank für Freifunkknoten oder als Verzeichnis von Firmwareeintellungen einzelner Communities.
 
+Weitere Informationen zur API sind in einem Blogartikel unter http://blog.freifunk.net/2013/die-neue-freifunk-api-aufruf-zum-mitmachen zusammengefasst.
+
 History
 =======
 
