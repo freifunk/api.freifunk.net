@@ -14,7 +14,7 @@ class MergedRSS {
 		$this->myLink = $channel_link;
 		$this->myDescription = $channel_description;
 		$this->myPubDate = $channel_pubdate;
-		$this->myCacheTime = $time_in_seconds;
+		$this->myCacheTime = $cache_time_in_seconds;
 
 		// initialize feed variable
 		$this->myFeeds = array();
@@ -82,14 +82,13 @@ class MergedRSS {
 
 		// set all the initial, necessary xml data
 		$xml =  "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
-		$xml .= "<rss version=\"2.0\" xmlns:content=\"http://purl.org/rss/1.0/modules/content/\" xmlns:wfw=\"http://wellformedweb.org/CommentAPI/\" xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:atom=\"http://www.w3.org/2005/Atom\" xmlns:sy=\"http://purl.org/rss/1.0/modules/syndication/\" xmlns:slash=\"http://purl.org/rss/1.0/modules/slash/\">\n";
+		$xml .= "<rss version=\"2.0\" xmlns:content=\"http://purl.org/rss/1.0/modules/content/\" xmlns:wfw=\"http://wellformedweb.org/CommentAPI/\" xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:atom=\"http://www.w3.org/2005/Atom\" xmlns:sy=\"http://purl.org/rss/1.0/modules/syndication/\" xmlns:slash=\"http://purl.org/rss/1.0/modules/slash/\" xmlns:itunes=\"http://www.itunes.com/DTDs/Podcast-1.0.dtd\" >\n";
 		$xml .= "<channel>\n";
 		if (isset($this->myTitle)) { $xml .= "\t<title>".$this->myTitle."</title>\n"; }
 		$xml .= "\t<atom:link href=\"http://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']."\" rel=\"self\" type=\"application/rss+xml\" />\n";
 		if (isset($this->myLink)) { $xml .= "\t<link>".$this->myLink."</link>\n"; }
 		if (isset($this->myDescription)) { $xml .= "\t<description>".$this->myDescription."</description>\n"; }
 		if (isset($this->myPubDate)) { $xml .= "\t<pubDate>".$this->myPubDate."</pubDate>\n"; }
-
 
 		// if there are any items to add to the feed, let's do it
 		if (sizeof($items) >0) { 
