@@ -13,9 +13,18 @@
             <div class="span8">
                 <form class="form-inline"></form>
             </div>
-	    <div class="span4">
-                <div id="res" class="alert"></div>
-	    </div>
+            <div class="span4">
+	            <div id="error" class="alert autohide">
+		            <div class="message"></div>
+		            <div class="details"></div>
+	            </div>
+                <div id="result">
+	                <div class="alert autohide"></div>
+                    <textarea id="jsonText" row="288" cols="50" style="margin: 0px 0px 10px; width: 100%; height: 500px;">Paste your existing JSON here ... if you have one. ;-)
+(And do not forget to delete this whole text.)</textarea>
+	                <input id="jsonTakeButton" type="submit" value="Copy values from JSON to form" class="btn">
+                </div>
+            </div>
         </div>
     </div>
     <script type="text/javascript" src="deps/jquery.min.js"></script>
