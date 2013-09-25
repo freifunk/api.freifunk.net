@@ -34,7 +34,7 @@
         "remscheid" : "http://rs.freifunk.net/api.json",
         "oberhausen" : "http://ob.freifunk.net/api.json",
         "leverkusen" : "http://lev.freifunk.net/api.json",
-        "graz" : "http://ffapi.graz.funkfeuer.at/ffapi.json"
+        "graz" : "http://ffapi.graz.funkfeuer.at/ffapi.json",
         "giessen" : "http://www.benny.de/freifunk/giessen.json",
-        "kassel" : "http://www.benny.de/freifunk/kassel.json",
+        "kassel" : "http://www.benny.de/freifunk/kassel.json"
 }
