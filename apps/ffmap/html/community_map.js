@@ -103,17 +103,15 @@ var FFCommunityMapWidget = function(options, map_options, link) {
     }).addTo(clusters);
   });
 
-  /* 
-   * 
-   */
   $('#locationBtn').click(function() {
-    /* disable the location Button visually if 
+    /* disable the location button visually if 
      * location permission is not granted */
     widget.map.on('locationerror', function(e) {
       if (e.code == 1 /*PERMISSION_DENIED*/) {
         $('#locationBtn').addClass('disabled');
       }
     });
+    /* try to read the user location and center map there */
     widget.map.locate({
       setView: true, 
       maxZoom: 8, 
