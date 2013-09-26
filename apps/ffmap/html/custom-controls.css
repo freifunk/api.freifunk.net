@@ -34,12 +34,12 @@
 
 .custom-controls a#locationBtn:hover,
 .custom-controls a#locationBtn:active {
-  background-color: #eee;
+  background-color: #f4f4f4;
 }
 
 .custom-controls a#locationBtn.disabled,
 .custom-controls a#locationBtn.disabled:hover,
 .custom-controls a#locationBtn.disabled:active {
-  background-color: #ccc;
+  background-color: #bbb;
   cursor: default;
 }
