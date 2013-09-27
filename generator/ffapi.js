@@ -63,13 +63,21 @@ var handleSchema = function()
 	var validate = 
 		function(errors, values) {
 			takeJson();
-			handleSubmit(errors, values);
+			handleSubmit();
 		};
 
 	// ---
 
 	$( '#validateButton').bind( 'click', validate);
 	
+	// ---
+
+	var download = 
+		function() {
+			window.location = "data:application/text,"+ $( '#jsonText' ).val();
+		};
+
+	$( '#downloadButton').bind( 'click', download);
 
 	// ---
 
