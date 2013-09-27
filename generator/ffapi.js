@@ -35,6 +35,43 @@ var handleSchema = function()
 	$( '#jsonTakeButton').bind( 'click', takeJson );
 
 	// ---
+	
+	var dirSelect = 
+		function() {
+			$( '#dirselect' ).append($('<option>').text('choose a community from list'));
+			$.getJSON( "php-simple-proxy/ba-simple-proxy.php?url=https://raw.github.com/freifunk/api.freifunk.net/master/directory/directory.json", function(dir) {
+				$.each( dir.contents, function (key, val) {
+					$( '#dirselect' )
+						.append($('<option>', { value : val })
+					        .text(key));
+				});
+			}); 
+		};
+
+	// ---
+
+	$( '#dirselect' ).on('change', function() {
+		$.getJSON( "php-simple-proxy/ba-simple-proxy.php?url=" + this.value, function(communityJson) {
+			$( '#jsonText' )
+				.empty()
+				.val(JSON.stringify( communityJson.contents, null, '  '));
+		});
+	});
+
+	// ---
+	
+	var validate = 
+		function(errors, values) {
+			takeJson();
+			handleSubmit(errors, values);
+		};
+
+	// ---
+
+	$( '#validateButton').bind( 'click', validate);
+	
+
+	// ---
 
 	var handleSubmit =
 		function (errors, values) {
@@ -103,6 +140,8 @@ var handleSchema = function()
 
 		schema.form = formTemplate;
 		schema.onSubmit = handleSubmit;
+
+		directory = dirSelect();
 
 		$('form').jsonForm( schema );
 
