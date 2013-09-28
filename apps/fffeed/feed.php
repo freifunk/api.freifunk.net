@@ -28,6 +28,7 @@ foreach($geofeatures as $feature)
 }
 
 
+
 // set the header type
 header("Content-type: text/xml");
 
