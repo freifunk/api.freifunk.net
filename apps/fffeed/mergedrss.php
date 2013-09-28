@@ -71,7 +71,9 @@ class MergedRSS {
 
 			if (isset($results)) { 
 				// add each item to the master item list
-				foreach ($results as $item) { 
+				foreach ($results as $item) {
+					//convert title to utf-8 (i.e. from facebook feeds)
+					$item->title = html_entity_decode($item->title, ENT_QUOTES,  'UTF-8');
 					$source = $item->addChild('source', 'via ' . $feed_array[1]);
 					$source->addAttribute('url', $feed_array[2]);
 					$items[] = $item;
@@ -134,6 +136,8 @@ class MergedRSS {
 	private function __fetch_rss_from_url($url) {
 		// Create new SimpleXMLElement instance
 		try {
+			//set user agent, i.e. facebook.com doesn't deliver feeds to unknown browsers
+			ini_set('user_agent', 'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3');
 			$sxe = new SimpleXMLElement($url, null, true);
 			return $sxe;
 		} catch (Exception $e) {
@@ -145,5 +149,6 @@ class MergedRSS {
 	private function __create_feed_key($url) { 
 		return preg_replace('/[^a-zA-Z0-9\.]/', '_', $url) . 'cache';
 	}
+
 }
 
