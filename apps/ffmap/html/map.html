@@ -7,12 +7,19 @@
     <script src="leaflet.markercluster-src.js"></script>
     <script src="jquery-1.9.1.js"></script>
     <script src="community_map.js"></script>
+    <link rel="stylesheet" href="custom-controls.css" />
     <link rel="stylesheet" href="MarkerCluster.css" />
     <link rel="stylesheet" href="MarkerCluster.Default.css" />
     <!--[if lte IE 8]><link rel="stylesheet" href="MarkerCluster.Default.ie.css" /><![endif]-->
   </head>
   <body>
-    <div id="map" style="height: 500px; width: 700px;"></div>
+    <div id="map" style="height: 500px; width: 700px;">
+      <div class="custom-controls">
+        <ul>
+          <li><a id="locationBtn" href="#" alt="center to my location"></a></li>
+        </ul>
+      </div>
+    </div>
     <script>
       var widget = FFCommunityMapWidget();
     </script>

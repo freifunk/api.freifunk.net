@@ -4,7 +4,6 @@ var FFCommunityMapWidget = function(options, map_options, link) {
       geoJSONUrl: 'http://weimarnetz.de/ffmap/ffMap.json',
       getPopupHTML: function (props) {
         var html = '';
-        //        console.log(props)
         if (props.name) {
           if (props.url && !props.url.match(/^http([s]?):\/\/.*/)) {
             html += '<b><a href=\"http://' + props.url + '\" target=\"_window\">'+ props.name + '</a></b><br/>';
@@ -102,8 +101,23 @@ var FFCommunityMapWidget = function(options, map_options, link) {
         return marker;
       }
     }).addTo(clusters);
-    console.log(geoJsonLayer);
   });
 
+  $('#locationBtn').click(function() {
+    /* disable the location button visually if 
+     * location permission is not granted */
+    widget.map.on('locationerror', function(e) {
+      if (e.code == 1 /*PERMISSION_DENIED*/) {
+        $('#locationBtn').addClass('disabled');
+      }
+    });
+    /* try to read the user location and center map there */
+    widget.map.locate({
+      setView: true, 
+      maxZoom: 8, 
+      timeout: 30000
+    });
+  });
+  
   return widget;
 }
