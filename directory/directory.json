@@ -8,6 +8,7 @@
 	"dresden" : "http://info.ddmesh.de/info/freifunk.json",
 	"franken" : "https://raw.github.com/FreifunkFranken/freifunkfranken-community/master/freifunkfranken.json",
 	"fuerth" : "https://raw.github.com/FreifunkFranken/freifunkfranken-community/master/freifunkfuerth.json",
+	"unfinden" : "https://raw.github.com/FreifunkFranken/freifunkfranken-community/master/freifunkunfinden.json",
 	"frankfurt_am_main" : "http://kdserv.dyndns.org/ff-frankfurt.json",
 	"gadow" : "http://feeds.leipzig.freifunk.net/ffapi/gadow.json",
 	"gronau" : "http://freifunk.liztv.net/ffapi/gronau.json",
