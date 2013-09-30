@@ -8,8 +8,7 @@
         {
           "netmask": 16,
           "network": "10.63.0.0"
-        },
-        {}
+        }
       ]
     },
     "splashpage": "captive portal",
