@@ -1,47 +1,49 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8" />
-<title>Get you own FreifunkAPI file</title>
-<link rel="stylesheet" style="text/css" href="jsonform/deps/opt/bootstrap.css" />
-<link rel="stylesheet" style="text/css" href="ffapi.css" />
-</head>
-<body>
-  <div class="container-fluid">
-    <h1>Get your own FreifunkAPI file</h1>
-    <div class="row-fluid">
-      <div class="span8">
-        <form class="form-inline"></form>
-      </div>
-      <div class="span4">
-        <div id="error" class="alert autohide">
-          <div class="message"></div>
-          <div class="details"></div>
+  <head>
+    <meta charset="utf-8" />
+    <title>Get you own FreifunkAPI file</title>
+    <link rel="stylesheet" style="text/css" href="jsonform/deps/opt/bootstrap.css" />
+    <link rel="stylesheet" style="text/css" href="ffapi.css" />
+  </head>
+  <body>
+    <div class="container-fluid">
+        <h1>Get your own FreifunkAPI file</h1>
+        <div class="row-fluid">
+            <div class="span8">
+                <form class="form-inline"></form>
+            </div>
+            <div class="span4">
+	            <div id="error" class="alert autohide">
+		            <div class="message"></div>
+		            <div class="details"></div>
+	            </div>
+		<div id="directory">
+		    <select id="dirselect"></select>
+		</div>
+                <div id="result">
+	                <div class="alert autohide message"></div>
+                    <textarea id="jsonText" row="288" cols="50" style="margin: 0px 0px 10px; width: 100%; height: 500px;" placeholder="Select your community file from the list or paste your existing JSON here ... if you have one. ;-)"></textarea>
+<!--	                <input id="jsonTakeButton" type="submit" value="Copy values from JSON to form" class="btn">-->
+			<div class="btn-group">
+			  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+			    Action
+			    <span class="caret"></span>
+			  </a><ul class="dropdown-menu">
+ 			    <li id="jsonTakeButton"><a href="#">JSON to form</a></li>
+			    <!--<li id="validateButton"><a href="#">Validate</a></li>-->
+			    <li id="downloadButton"><a href="#">Download</a></li>
+			  </ul>
+			</div>
+                </div>
+            </div>
         </div>
-        <div id="directory">
-          <select id="dirselect"></select>
-        </div>
-        <div id="result">
-          <div class="alert autohide message"></div>
-          <textarea id="jsonText" row="288" cols="50" style="margin: 0px 0px 10px; width: 100%; height: 500px;" placeholder="Select your community file from the list or paste your existing JSON here ... if you have one. ;-)"></textarea>
-          <!-- <input id="jsonTakeButton" type="submit" value="Copy values from JSON to form" class="btn">-->
-          <div class="btn-group">
-            <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">Action <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li id="jsonTakeButton"><a href="#">JSON to form</a></li>
-              <!--<li id="validateButton"><a href="#">Validate</a></li>-->
-              <li id="downloadButton"><a href="#">Download</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-  <script type="text/javascript" src="jsonform/deps/jquery.min.js"></script>
-  <script type="text/javascript" src="jsonform/deps/underscore.js"></script>
-  <script type="text/javascript" src="jsonform/deps/opt/jsv.js"></script>
-  <script type="text/javascript" src="jsonform/deps/opt/bootstrap-dropdown.js"></script>
-  <script type="text/javascript" src="jsonform/lib/jsonform.js"></script>
-  <script type="text/javascript" src="ffapi.js"></script>
-</body>
+    <script type="text/javascript" src="jsonform/deps/jquery.min.js"></script>
+    <script type="text/javascript" src="jsonform/deps/underscore.js"></script>
+    <script type="text/javascript" src="jsonform/deps/opt/jsv.js"></script>
+    <script type="text/javascript" src="jsonform/deps/opt/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="jsonform/lib/jsonform.js"></script>
+    <script type="text/javascript" src="ffapi.js"></script>
+  </body>
 </html>
