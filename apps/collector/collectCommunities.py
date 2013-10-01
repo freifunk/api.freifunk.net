@@ -14,7 +14,7 @@ def log(logLevel, message):
 #load directory
 def loadDirectory(url):
 	try:
-		ffDirectoryRaw = urlopen(url)
+		ffDirectoryRaw = urlopen(url, None, 10)
 	except BaseException as e:
 		log(0, "error reading directory " + str(e))
 		exit(1)
@@ -52,7 +52,7 @@ def summarizedJson(ffDir, path):
 	for community in ffDir:
 		log(3, "working on community: " + ffDir[community])
 		try:
-			ffApi = json.loads(urlopen(ffDir[community]).readall().decode('utf-8'))
+			ffApi = json.loads(urlopen(ffDir[community], None, 10).readall().decode('utf-8'))
 		except UnicodeError as e:
 			try:
 				ffApi = json.loads(urlopen(ffDir[community]).readall().decode('iso8859_2'))
