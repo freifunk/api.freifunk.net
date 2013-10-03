@@ -8,6 +8,7 @@
 	"dresden" : "http://info.ddmesh.de/info/freifunk.json",
 	"franken" : "https://raw.github.com/FreifunkFranken/freifunkfranken-community/master/freifunkfranken.json",
 	"fuerth" : "https://raw.github.com/FreifunkFranken/freifunkfranken-community/master/freifunkfuerth.json",
+	"unfinden" : "https://raw.github.com/FreifunkFranken/freifunkfranken-community/master/freifunkunfinden.json",
 	"frankfurt_am_main" : "http://kdserv.dyndns.org/ff-frankfurt.json",
 	"gadow" : "http://feeds.leipzig.freifunk.net/ffapi/gadow.json",
 	"gronau" : "http://freifunk.liztv.net/ffapi/gronau.json",
@@ -35,7 +36,9 @@
         "remscheid" : "http://rs.freifunk.net/api.json",
         "oberhausen" : "http://ob.freifunk.net/api.json",
         "leverkusen" : "http://lev.freifunk.net/api.json",
+        "gelsenkirchen" : "http://ge.freifunk.net/api.json",
         "graz" : "http://ffapi.graz.funkfeuer.at/ffapi.json",
         "giessen" : "http://www.benny.de/freifunk/giessen.json",
         "kassel" : "http://www.benny.de/freifunk/kassel.json"
+        
 }
