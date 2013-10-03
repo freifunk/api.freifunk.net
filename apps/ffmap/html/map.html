@@ -1,36 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>freifunk community map example</title>
-    <link rel="stylesheet" href="leaflet.css" />
-    <script src="leaflet.js"></script>
-    <script src="leaflet.markercluster-src.js"></script>
-    <script src="jquery-1.9.1.js"></script>
-    <script src="community_map.js"></script>
-    <link rel="stylesheet" href="custom-controls.css" />
-    <link rel="stylesheet" href="MarkerCluster.css" />
-    <link rel="stylesheet" href="MarkerCluster.Default.css" />
-    <!--[if lte IE 8]><link rel="stylesheet" href="MarkerCluster.Default.ie.css" /><![endif]-->
-    <style type="text/css">
-    body {
-        padding: 0;
-        margin: 0;
-    }
-    html, body, #map {
-        height: 100%;
-    }
-    </style>
-  </head>
-  <body>
-    <div id="map">
-      <div class="custom-controls">
-        <ul>
-          <li><a id="locationBtn" href="#"></a></li>
-        </ul>
-      </div>
+<head>
+  <title>freifunk community map example</title>
+  <link rel="stylesheet" href="leaflet.css" />
+  <link rel="stylesheet" href="MarkerCluster.css" />
+  <link rel="stylesheet" href="MarkerCluster.Default.css" />
+  <!--[if lte IE 8]><link rel="stylesheet" href="MarkerCluster.Default.ie.css" /><![endif]-->
+  <link rel="stylesheet" href="custom-controls.css" />
+  <style type="text/css">
+  body {
+      padding: 0;
+      margin: 0;
+  }
+  html, body, #map {
+      height: 100%;
+  }
+  </style>
+</head>
+<body>
+  <div id="map">
+    <div class="custom-controls">
+      <ul>
+        <li><a id="locationBtn" href="#"></a></li>
+      </ul>
     </div>
-    <script>
-      var widget = FFCommunityMapWidget();
-    </script>
-  </body>
+  </div>
+  <script type="text/javascript" src="leaflet.js"></script>
+  <script type="text/javascript" src="leaflet.markercluster-src.js"></script>
+  <script type="text/javascript" src="jquery-1.9.1.js"></script>
+  <script type="text/javascript" src="underscore-min.js"></script>
+  <script type="text/javascript" src="community_map.js"></script>
+  <script>
+    var widget = FFCommunityMapWidget();
+  </script>
+</body>
 </html>
