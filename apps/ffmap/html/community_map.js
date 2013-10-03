@@ -3,62 +3,72 @@ var FFCommunityMapWidget = function(options, map_options, link) {
     divId: 'map',
       geoJSONUrl: 'http://weimarnetz.de/ffmap/ffMap.json',
       getPopupHTML: function (props) {
-        var html = '';
-        if (props.name) {
-          if (props.url && !props.url.match(/^http([s]?):\/\/.*/)) {
-            html += '<b><a href=\"http://' + props.url + '\" target=\"_window\">'+ props.name + '</a></b><br/>';
-          }
-          else {
-            html += '<b><a href=\"' + props.url + '\" target=\"_window\">'+ props.name + '</a></b><br/>';
-          }
+        //clean up values before rendering
+        if (props.url && !props.url.match(/^http([s]?):\/\/.*/)) { 
+          props.url = "http://" + props.url; 
         }
-        if (props.metacommunity) {
-          html += props.metacommunity + '</br>';
+        if (props.twitter && !props.twitter.match(/^http([s]?):\/\/.*/)) {
+          props.twitter = "http://" + props.twitter;
         }
-        if (props.city){
-          html += props.city + '<br/>';
+        
+        props.contacts =  [];
+        if (props.url) {
+          props.contacts.push({
+            type: 'www',
+             url : props.url
+          });
         }
-        if (props.nodes) {
-          html += '<br/>Zug&auml;nge: ' +props.nodes + '<br/>';
-        }
-        if (props.phone) {
-          //html += '<br/><a href=\"tel:' + props.phone + '\"><img src=\"http://weimarnetz.de/ffmap/icons/icon_telefon.png\" width="30px" style="margin-right: 15px; vertical-align:middle;" /></a>' + props.phone + '<br/>' ;
-          html += '<br/>&#9990; ' + props.phone + '<br/>';
-        }
-        html += '<br/>';
-        if (props.url && !props.url.match(/^http([s]?):\/\/.*/)) {
-          html += '<a style="margin-right: 15px;" href=\"http://' + props.url + '\" target=\"_window\"><img src=\"http://weimarnetz.de/ffmap/icons/icon_www.png\" width="30px" /></a>';
-        }
-        else {
-          html += '<a style="margin-right: 15px;" href=\"' + props.url + '\" target=\"_window\"><img src=\"http://weimarnetz.de/ffmap/icons/icon_www.png\" width="30px"/></a>';
-        }
+
         if (props.email) {
-          html += '<a style="margin-right: 15px;" href=\"mailto:' + props.email + '\"><img src=\"http://weimarnetz.de/ffmap/icons/icon_email.png\" width="30px"/></a>';
+          props.contacts.push({
+            type: 'email',
+            url : 'mailto:' + props.email
+          });
         }
+
         if (props.facebook) {
-          html += '<a style="margin-right: 15px;" href=\"' + props.facebook + '\" target=\"_window\"><img src=\"http://weimarnetz.de/ffmap/icons/icon_facebook.png\" width="30px"/></a>';
+          props.contacts.push({
+            type: 'facebook',
+            url : props.facebook
+          });
         }
+
         if (props.twitter) {
-          if (props.twitter && !props.twitter.match(/^http([s]?):\/\/.*/)) {
-            html += '<a style="margin-right: 15px;" href=\"https://twitter.com/' + props.twitter + '\" target=\"_window\"><img src=\"http://weimarnetz.de/ffmap/icons/icon_twitter.png\" width="30px" alt=\"@' + props.twitter + '\" title=\"@' + props.twitter + '\"/></a>';
-          }
-          else {
-            html += '<a style="margin-right: 15px;" href=\"' + props.twitter + '\" target=\"_window\"><img src=\"http://weimarnetz.de/ffmap/icons/icon_twitter.png\" width="30px"/></a>';
-          }	
+          props.contacts.push({
+            type: 'twitter',
+            url : props.twitter
+          });
         }
+
         if (props.irc) {
-          html += '<a style="margin-right: 15px;" href=\"irc:' + props.irc + '\"><img src=\"http://weimarnetz.de/ffmap/icons/icon_irc.png\" width="30px"/></a>';
+          props.contacts.push({
+            type: 'irc',
+            url : 'irc:' + props.irc
+          });
         }
+
         if (props.jabber) {
-          html += '<a style="margin-right: 15px;" href=\"xmpp:' + props.jabber + '\"><img src=\"http://weimarnetz.de/ffmap/icons/icon_jabber.png\" width="30px"/></a>';
+          props.contacts.push({
+            type: 'jabber',
+            url : 'xmpp:' + props.jabber
+          });
         }
+
         if (props.identica) {
-          html += '<a style="margin-right: 15px;" href=\"identica:' + props.identicy + '\"><img src=\"http://weimarnetz.de/ffmap/icons/icon_identica.png\" width="30px" /></a>';
+          props.contacts.push({
+            type: 'identica',
+            url : 'identica:' + props.identicy
+          });
         }
+
         if (props.googleplus) {
-          html += '<a style="margin-right: 15px;" href=\"' + props.googleplus + '\" target=\"_window\"><img src=\"http://weimarnetz.de/ffmap/icons/icon_googleplus.png\" width="30px"/></a>';
+          props.contacts.push({
+            type: 'googleplus',
+            url : props.googleplus
+          });
         }
-        return html;
+        
+        return widget.communityTemplate(props);
       },
       fitBounds: [[46.5, 4.0], [55.5, 15.9]],
       zoom: 5,
@@ -118,6 +128,13 @@ var FFCommunityMapWidget = function(options, map_options, link) {
       timeout: 30000
     });
   });
+  
+  _.templateSettings.variable = "props";
+  widget.communityTemplate = _.template(
+    $( "script.template#comunity-popup" ).html()
+  );
+  
+  
   
   return widget;
 }
