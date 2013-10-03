@@ -50,6 +50,50 @@
         display: block;
         width: 30px;
         height: 30px;
+        border-radius: 4px;
+        background: url(images/contact_icons.png);
+        background-repeat:no-repeat;
+        background-position:right top;
+        background-size: 30px 390px;
+      }
+      .community-popup ul.contacts li.contact a.button.www {
+        background-position-y: 0px;
+      }
+      .community-popup ul.contacts li.contact a.button.email {
+        background-position-y: -30px;
+      }
+      .community-popup ul.contacts li.contact a.button.telefon {
+        background-position-y: -60px;
+      }
+      .community-popup ul.contacts li.contact a.button.twitter {
+        background-position-y: -90px;
+      }
+      .community-popup ul.contacts li.contact a.button.irc {
+        background-position-y: -120px;
+      }
+      .community-popup ul.contacts li.contact a.button.jabber {
+        background-position-y: -150px;
+      }
+      .community-popup ul.contacts li.contact a.button.rss {
+        background-position-y: -180px;
+      }
+      .community-popup ul.contacts li.contact a.button.facebook {
+        background-position-y: -210px;
+      }
+      .community-popup ul.contacts li.contact a.button.flickr {
+        background-position-y: -240px;
+      }
+      .community-popup ul.contacts li.contact a.button.googleplus {
+        background-position-y: -270px;
+      }
+      .community-popup ul.contacts li.contact a.button.identica {
+        background-position-y: -300px;
+      }
+      .community-popup ul.contacts li.contact a.button.vimeo {
+        background-position-y: -330px;
+      }
+      .community-popup ul.contacts li.contact a.button.youtube {
+        background-position-y: -360px;
       }
     </style>
 
@@ -76,10 +120,8 @@
 
     <ul class="contacts" style="height:<%- Math.round(props.contacts.length/6+0.4)*30+10 %>px">
     <% _.each(props.contacts, function(contact, index, list) { %>
-      <li class="contact icon <%- contact.type %>">
-        <a href="<%- contact.url %>" target="_window">
-         <img src="http://weimarnetz.de/ffmap/icons/icon_<%- contact.type %>.png" width="30px">
-        </a>
+      <li class="contact">
+        <a href="<%- contact.url %>" class="button <%- contact.type %>" target="_window"></a>
       </li>
     <% }); %>
     </ul>

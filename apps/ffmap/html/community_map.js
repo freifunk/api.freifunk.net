@@ -7,8 +7,20 @@ var FFCommunityMapWidget = function(options, map_options, link) {
         if (props.url && !props.url.match(/^http([s]?):\/\/.*/)) { 
           props.url = "http://" + props.url; 
         }
+        if (props.email && !props.email.match(/^mailto:.*/)) {
+          props.email = "mailto:" + props.email;
+        }
         if (props.twitter && !props.twitter.match(/^http([s]?):\/\/.*/)) {
-          props.twitter = "http://" + props.twitter;
+          props.twitter = "https://twitter.com/" + props.twitter;
+        }
+        if (props.irc && !props.irc.match(/^irc:.*/)) {
+          props.irc = "irc:" + props.irc;
+        }
+        if (props.jabber && !props.jabber.match(/^jabber:.*/)) {
+          props.jabber = "xmpp:" + props.jabber;
+        }
+        if (props.identica && !props.identica.match(/^identica:.*/)) {
+          props.identica = "identica:" + props.identica;
         }
         
         props.contacts =  [];
@@ -22,7 +34,7 @@ var FFCommunityMapWidget = function(options, map_options, link) {
         if (props.email) {
           props.contacts.push({
             type: 'email',
-            url : 'mailto:' + props.email
+            url : props.email
           });
         }
 
@@ -43,21 +55,21 @@ var FFCommunityMapWidget = function(options, map_options, link) {
         if (props.irc) {
           props.contacts.push({
             type: 'irc',
-            url : 'irc:' + props.irc
+            url : props.irc
           });
         }
 
         if (props.jabber) {
           props.contacts.push({
             type: 'jabber',
-            url : 'xmpp:' + props.jabber
+            url : props.jabber
           });
         }
 
         if (props.identica) {
           props.contacts.push({
             type: 'identica',
-            url : 'identica:' + props.identicy
+            url : props.identicy
           });
         }
 
@@ -68,6 +80,7 @@ var FFCommunityMapWidget = function(options, map_options, link) {
           });
         }
         
+        //render html and return
         return widget.communityTemplate(props);
       },
       fitBounds: [[46.5, 4.0], [55.5, 15.9]],
