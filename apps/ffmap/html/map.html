@@ -118,7 +118,7 @@
       <div class="phone">&#9742; <%- props.phone  %></div>
     <% } %>
 
-    <ul class="contacts" style="height:<%- Math.round(props.contacts.length/6+0.4)*30+10 %>px">
+    <ul class="contacts" style="height:<%- Math.round(props.contacts.length/6+0.4)*30+10 %>px; width: <%- 6*(30+5)%>px;">
     <% _.each(props.contacts, function(contact, index, list) { %>
       <li class="contact">
         <a href="<%- contact.url %>" class="button <%- contact.type %>" target="_window"></a>
