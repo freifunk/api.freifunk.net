@@ -27,42 +27,63 @@
     </div>
   </div>
   
-  <script type="text/template" class="template" id="comunity-popup">
+  <script type="text/template" class="template" id="community-popup">
+    <style type="text/css">
+      .community-popup h2, 
+      .community-popup h3 { 
+        font-size: 12px;
+        margin: 0px;
+      }
+      .community-popup .nodes {
+        margin: 10px 0px;
+      }
+      .community-popup ul.contacts {
+        list-style: none;
+        margin: 10px 0px 0px 0px;
+        padding: 0px;
+      }
+      .community-popup ul.contacts li.contact {
+        float: left;
+        margin: 5px 5px 0px 0px;
+      }
+      .community-popup ul.contacts li.contact a {
+        display: block;
+        width: 30px;
+        height: 30px;
+      }
+    </style>
+
+    <div class="community-popup">
     <% if ( props.name ) { %>
-      <b><a href="<%- props.url %>" target="_window">
-        <%- props.name %>
-      </a></b>
-      <br/>
+      <h2><a href="<%- props.url %>" target="_window"><%- props.name %></a></h2>
     <% } %>
     
     <% if (props.metacommunity) { %>
-      <%- props.metacommunity %>
-      <br/>
+      <h3><%- props.metacommunity %></h3>
     <% } %>
 
     <% if (props.city) { %>
-      <%- props.city  %>
-      <br/>
+      <div class="city"><%- props.city  %></div>
     <% } %>
-
+  
     <% if (props.nodes) { %>
-      <br/>
-      Zug&auml;nge: <%- props.nodes  %>
-      <br/>
+      <div class="nodes">Zug&auml;nge: <%- props.nodes  %></div>
     <% } %>
 
     <% if (props.phone) { %>
-      <br/>
-      &#9742; <%- props.phone  %>
-      <br/>
+      <div class="phone">&#9742; <%- props.phone  %></div>
     <% } %>
 
-    <br/>
+    <ul class="contacts" style="height:<%- Math.round(props.contacts.length/6+0.4)*30+10 %>px">
     <% _.each(props.contacts, function(contact, index, list) { %>
-      <a style="margin-right: 15px;" href="<%- contact.url %>" target="_window">
-       <img src="http://weimarnetz.de/ffmap/icons/icon_<%- contact.type %>.png" width="30px">
-      </a>
+      <li class="contact icon <%- contact.type %>">
+        <a href="<%- contact.url %>" target="_window">
+         <img src="http://weimarnetz.de/ffmap/icons/icon_<%- contact.type %>.png" width="30px">
+        </a>
+      </li>
     <% }); %>
+    </ul>
+    </div>
   </script>
   <script type="text/javascript" src="leaflet.js"></script>
   <script type="text/javascript" src="leaflet.markercluster-src.js"></script>

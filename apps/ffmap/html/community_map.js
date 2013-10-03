@@ -129,12 +129,11 @@ var FFCommunityMapWidget = function(options, map_options, link) {
     });
   });
   
+  //initialize underscore tamplating
   _.templateSettings.variable = "props";
   widget.communityTemplate = _.template(
-    $( "script.template#comunity-popup" ).html()
+    $( "script.template#community-popup" ).html()
   );
-  
-  
   
   return widget;
 }
