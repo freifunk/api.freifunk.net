@@ -39,6 +39,7 @@
         "gelsenkirchen" : "http://ge.freifunk.net/api.json",
         "graz" : "http://ffapi.graz.funkfeuer.at/ffapi.json",
         "giessen" : "http://www.benny.de/freifunk/giessen.json",
-        "kassel" : "http://www.benny.de/freifunk/kassel.json"
+        "kassel" : "http://www.benny.de/freifunk/kassel.json",
+        "mainz" : "http://www.familie-hallmann.info/freifunk-net.json"
         
 }
