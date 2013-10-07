@@ -29,7 +29,7 @@
 }
 
 .custom-controls a#locationBtn {
-  background-image: url(/images/location-icon.png);
+  background-image: url(images/location-icon.png);
 }
 
 .custom-controls a#locationBtn:hover,
