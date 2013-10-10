@@ -92,6 +92,7 @@ def geoJson(summary, geoJsonPath):
 		try: 
 			geometry = { "type" : "Point", "coordinates" : [ details['location']['lon'], details['location']['lat']] }
 			properties['name'] = details['name']
+			properties['metacommunity'] = details['metacommunity']
 			properties['city'] = details['location']['city']
 			if 'address' in details['location']:
 				properties['address'] = details['location']['address']
