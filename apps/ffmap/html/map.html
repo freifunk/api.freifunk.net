@@ -59,7 +59,8 @@
       .community-popup ul.contacts li.contact a.button.www {
        background-position: 0px 0px;
       }
-      .community-popup ul.contacts li.contact a.button.email {
+      .community-popup ul.contacts li.contact a.button.email,
+      .community-popup ul.contacts li.contact a.button.ml {
        background-position: 0px -30px;
       }
       .community-popup ul.contacts li.contact a.button.telefon {
@@ -118,12 +119,12 @@
       <div class="phone">&#9742; <%- props.phone  %></div>
     <% } %>
 
-    <ul class="contacts" style="height:<%- Math.round(props.contacts.length/6+0.4)*30+10 %>px; width: <%- 6*(30+5)%>px;">
-    <% _.each(props.contacts, function(contact, index, list) { %>
-      <li class="contact">
-        <a href="<%- contact.url %>" class="button <%- contact.type %>" target="_window"></a>
+    <ul class="contacts" style="height:<%- Math.round(Object.keys(props.contacts).length/6+0.4)*30+10 %>px; width: <%- 6*(30+5)%>px;">
+    <% for (contact in props.contacts) { %>
+      <li class="contact <%- contact %>">
+        <a href="<%- props.contacts[contact] %>" class="button <%- contact %>" target="_window"></a>
       </li>
-    <% }); %>
+    <% } %>
     </ul>
     </div>
   </script>
