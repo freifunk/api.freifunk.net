@@ -90,8 +90,6 @@ def geoJson(summary, geoJsonPath):
 	
 		#add data according to http://wiki.freifunk.net/Fields_we_should_use
 		try: 
-			for contacts in details['contact']:
-				properties[contacts] = details['contact'][contacts] 
 			geometry = { "type" : "Point", "coordinates" : [ details['location']['lon'], details['location']['lat']] }
 			properties['name'] = details['name']
 			properties['city'] = details['location']['city']
@@ -108,6 +106,7 @@ def geoJson(summary, geoJsonPath):
 				properties['nodes'] = details['state']['nodes']
 		
 			properties['mtime'] = details['state']['lastchange']
+			properties[contacts] = details['contact']
 		except BaseException as e:
 			log(1, "There's something wrong with the JSON file: " + str(e))
 			continue

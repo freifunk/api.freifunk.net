@@ -3,81 +3,25 @@ var FFCommunityMapWidget = function(options, map_options, link) {
     divId: 'map',
       geoJSONUrl: 'http://weimarnetz.de/ffmap/ffMap.json',
       getPopupHTML: function (props) {
+        
         //clean up values before rendering
         if (props.url && !props.url.match(/^http([s]?):\/\/.*/)) { 
           props.url = "http://" + props.url; 
         }
-        if (props.email && !props.email.match(/^mailto:.*/)) {
-          props.email = "mailto:" + props.email;
-        }
-        if (props.twitter && !props.twitter.match(/^http([s]?):\/\/.*/)) {
-          props.twitter = "https://twitter.com/" + props.twitter;
-        }
-        if (props.irc && !props.irc.match(/^irc:.*/)) {
-          props.irc = "irc:" + props.irc;
-        }
-        if (props.jabber && !props.jabber.match(/^jabber:.*/)) {
-          props.jabber = "xmpp:" + props.jabber;
-        }
-        if (props.identica && !props.identica.match(/^identica:.*/)) {
-          props.identica = "identica:" + props.identica;
-        }
-        
-        props.contacts =  [];
-        if (props.url) {
-          props.contacts.push({
-            type: 'www',
-             url : props.url
-          });
-        }
-
-        if (props.email) {
-          props.contacts.push({
-            type: 'email',
-            url : props.email
-          });
-        }
-
-        if (props.facebook) {
-          props.contacts.push({
-            type: 'facebook',
-            url : props.facebook
-          });
-        }
-
-        if (props.twitter) {
-          props.contacts.push({
-            type: 'twitter',
-            url : props.twitter
-          });
-        }
-
-        if (props.irc) {
-          props.contacts.push({
-            type: 'irc',
-            url : props.irc
-          });
-        }
-
-        if (props.jabber) {
-          props.contacts.push({
-            type: 'jabber',
-            url : props.jabber
-          });
-        }
-
-        if (props.identica) {
-          props.contacts.push({
-            type: 'identica',
-            url : props.identicy
-          });
-        }
-
-        if (props.googleplus) {
-          props.contacts.push({
-            type: 'googleplus',
-            url : props.googleplus
-          });
+        if (props.contacts) {
+            for (contact in props.contacts) {
+                if (contact == 'email' && !props.contacts['email'].match(/^mailto:.*/)) {
+                    props.contacts['email'] = "mailto:" + props.contacts['email'];
+                } else if (contact == 'twitter' && !props.contacts['twitter'].match(/^http([s]?):\/\/.*/)) {
+                    props.contacts['twitter'] = "https://twitter.com/" + props.contacts['twitter'];
+                } else if (contact == 'irc' && !props.contacts['irc'].match(/^irc:.*/)) {
+                    props.contacts['irc'] = "irc:" + props.contacts['irc'];
+                } else if (contact == 'jabber' && !props.contacts['jabber'].match(/^jabber:.*/)) {
+                    props.contacts['jabber'] = "xmpp:" + props.contacts['jabber'];
+                } else if (contact == 'identica' && !props.contacts['identica'].match(/^identica:.*/)) {
+                    props.contacts['identica'] = "identica:" + props.contacts['identica'];
+                }
+            } 
         }
         
         //render html and return
@@ -105,7 +49,7 @@ var FFCommunityMapWidget = function(options, map_options, link) {
   widget.map.addLayer(clusters);
 
   $.getJSON(options['geoJSONUrl'], function(geojson) {
-    var geoJsonLayer = L.geoJson(geojson, {
+	  var geoJsonLayer = L.geoJson(geojson, {
       onEachFeature: function(feature, layer) {
         layer.bindPopup(options['getPopupHTML'](feature.properties), { minWidth: 210 });
       },
