@@ -119,13 +119,11 @@
       <div class="phone">&#9742; <%- props.phone  %></div>
     <% } %>
 
-    <% if (props.contacts) { %>    
-      <ul class="contacts" style="height:<%- Math.round(Object.keys(props.contacts).length/6+0.4)*30+10 %>px; width: <%- 6*(30+5)%>px;">
-      <% for (contact in props.contacts) { %>
-        <li class="contact <%- contact %>">
-          <a href="<%- props.contacts[contact] %>" class="button <%- contact %>" target="_window"></a>
-        </li>
-      <% } %>
+    <ul class="contacts" style="height:<%- Math.round(Object.keys(props.contacts).length/6+0.4)*30+10 %>px; width: <%- 6*(30+5)%>px;">
+    <% for (contact in props.contacts) { %>
+      <li class="contact <%- contact %>">
+        <a href="<%- props.contacts[contact] %>" class="button <%- contact %>" target="_window"></a>
+      </li>
     <% } %>
     </ul>
     </div>
