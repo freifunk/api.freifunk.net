@@ -244,6 +244,45 @@
 					}
 				}
 			},
+			"nodeMaps":
+				"type":"array",
+				"description": "maps of nodes or topology your community provides",
+				"required":false,
+				"items":{
+					"type":"object",
+					"required":false,
+					"properties": {
+						"url": {
+							"title":"Url of the map",
+							"type":"string",
+							"description":"the url where the map is located",
+							"required":false
+						},
+						"interval": {
+							"title":"interval",
+							"type":"string",
+							"description":"how often the map will be refreshed",
+							"required":false
+                                                },
+						"technicalType": {
+							"title":"map technical type",
+							"type":"string",
+							"description":"the kind of map is used",
+							"enum":["", "ffmap", "olsr-dot","openwifimap"],
+							"default":"",
+							"required":false
+						},
+						"mapType": {
+							"title":"map type human readable",
+							"type":"string",
+							"description":"the kind of data the map provides",
+							"enum":["","geographical","structural","list/status"],
+							"default":"",
+							"required":false
+						}
+					}
+				}
+			},
 			"techDetails": {
 				"type":"object",
 				"id": "http://wiki.freifunk.net/Freifunk_Firmware/%C3%9Cbersicht_Communities",
