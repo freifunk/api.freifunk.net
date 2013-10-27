@@ -124,6 +124,12 @@ var handleSchema = function()
             "expandable": true,
             "items": "feeds"
         },
+	{
+	    "type": "fieldset",
+	    "title":"Node Maps",
+	    "expandable": true,
+	    "items":"nodeMaps"
+	}
         {
             "type": "fieldset",
             "title":"Technical Details",
@@ -158,4 +164,4 @@ var handleSchema = function()
 	};
 }();
 
-$.getJSON( "0.1.json", handleSchema );
+$.getJSON( "0.2.0.json", handleSchema );
