@@ -129,7 +129,7 @@ var handleSchema = function()
 	    "title":"Node Maps",
 	    "expandable": true,
 	    "items":"nodeMaps"
-	}
+	},
         {
             "type": "fieldset",
             "title":"Technical Details",
