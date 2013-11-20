@@ -100,6 +100,7 @@ var handleSchema = function()
         "name",
         "metacommunity",
         "url",
+	"events",
         "state",
         {
             "type": "fieldset",
@@ -114,9 +115,9 @@ var handleSchema = function()
         },
         {
             "type": "fieldset",
-            "title":"Events",
+            "title":"Timeline",
             "expandable": true,
-            "items": "events"
+            "items": "timeline"
         },
         {
             "type": "fieldset",
