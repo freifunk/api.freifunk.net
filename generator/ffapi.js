@@ -117,7 +117,17 @@ var handleSchema = function()
             "type": "fieldset",
             "title":"Timeline",
             "expandable": true,
-            "items": "timeline"
+            "items": "timeline",
+            onInsert: function (evt, node) {
+   				$('a', node.el).click(function () {
+      				//alert('Ni!');
+      				
+      				setTimeout(function(){
+        				addDatepickerToTimeline();	
+      				}, 500 );
+      				
+    			});
+  			}
         },
         {
             "type": "fieldset",
@@ -162,7 +172,56 @@ var handleSchema = function()
 		$('form').jsonForm( schema );
 
 		currentSchema = schema;
+		addPictureForDateTrigger("jsonform-0-elt-state.lastchange");
+		addDatepickerToTimeline();
 	};
 }();
 
 $.getJSON( "0.2.0.json", handleSchema );
+
+
+function jq( myid ) {
+    return "#" + myid.replace( /(:|\.|\[|\])/g, "\\$1" );
+}
+
+function addPictureForDateTrigger(id)
+{
+	var pictureID = id + "-picture";
+	$(jq(id)).after('<img id="' + pictureID + '" src="./calendar.gif">');
+	
+	$(jq(pictureID)).click(function() {
+		var date = new Date();
+		$(jq(id)).val(parseInt(date.getTime()/1000));
+	});
+}
+
+function addDatepickerToTimeline()
+{
+	var i = 0;
+	while(1)
+	{
+		var id = "jsonform-0-elt-timeline["+i+"].timestamp";
+		var pictureID = id + "-picture";
+		if ($(jq(id)).length > 0 )
+		{
+			$(jq(id)).datepicker({
+      			showOn: "button",
+      			buttonImage: "./calendar.gif",
+      			buttonImageOnly: true,
+      			dateFormat: '@',
+      			// Before read Timestamp change to JS Timestamp
+      			beforeShow: function(input, inst) {
+                	$(this).val(parseInt($(this).val()) * 1000);
+                }	
+      		});
+      		$(jq(id)).change( function()
+    		{
+        		// Change JS Timestamp to Unix Timestamp
+        		$(this).val(parseInt($(this).val()) / 1000);
+			});
+		}
+		else
+			break;
+		i++;
+	}
+}
