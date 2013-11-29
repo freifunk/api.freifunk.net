@@ -179,22 +179,46 @@ var handleSchema = function()
 
 $.getJSON( "0.2.0.json", handleSchema );
 
-
+/**
+ * Help function for json id´s with point   
+ */
 function jq( myid ) {
     return "#" + myid.replace( /(:|\.|\[|\])/g, "\\$1" );
 }
 
+/**
+ * Add Datetrigger to Timestamp Field 
+ */
 function addPictureForDateTrigger(id)
 {
 	var pictureID = id + "-picture";
 	$(jq(id)).after('<img id="' + pictureID + '" src="./calendar.gif">');
 	
 	$(jq(pictureID)).click(function() {
-		var date = new Date();
-		$(jq(id)).val(parseInt(date.getTime()/1000));
+		var d = new Date();
+		//$(jq(id)).val(parseInt(d.getTime()/1000));
+		$(jq(id)).val(addZeroIfNotExist(d.getFullYear())+ '-' + addZeroIfNotExist(d.getMonth()+1) + '-' +
+					 addZeroIfNotExist(d.getDate()) + 'T' + addZeroIfNotExist(d.getHours()) + ':' +
+					 addZeroIfNotExist(d.getMinutes()) + ':' + addZeroIfNotExist(d.getSeconds()));
+						
 	});
 }
 
+/**
+ * Add Zreos for values in date 
+ */
+function addZeroIfNotExist(number)
+{
+	var n = parseInt(number);
+	if (n <= 10)
+		return  '0' + number;
+	else 
+		return number; 
+}
+
+/**
+ * Add Datepicker to Timeline date fields 
+ */
 function addDatepickerToTimeline()
 {
 	var i = 0;
@@ -208,17 +232,19 @@ function addDatepickerToTimeline()
       			showOn: "button",
       			buttonImage: "./calendar.gif",
       			buttonImageOnly: true,
-      			dateFormat: '@',
+      			changeMonth: true,
+      			changeYear: true,
+      			dateFormat: 'yy-mm-dd',
       			// Before read Timestamp change to JS Timestamp
-      			beforeShow: function(input, inst) {
-                	$(this).val(parseInt($(this).val()) * 1000);
-                }	
+      			//beforeShow: function(input, inst) {
+                //	$(this).val(parseInt($(this).val()) * 1000);
+                //}	
       		});
-      		$(jq(id)).change( function()
+      		/*$(jq(id)).change( function()
     		{
         		// Change JS Timestamp to Unix Timestamp
         		$(this).val(parseInt($(this).val()) / 1000);
-			});
+			});*/
 		}
 		else
 			break;
