@@ -6,10 +6,24 @@ Freifunk Community Map
 
 Ein Beispiel gibt es hier: http://weimarnetz.de/ffmap/map.html
 
+Freifunk Community Tabellen Viewer
+--------------------------
+als Tabelle unter http://cholin.spline.de/freifunk/api-viewer
+(Entwicklung unter https://github.com/freifunk/viewer.api.freifunk.net)
+
+
 Freifunk Community Feed Merger
 ------------------------------
 
 Blogfeeds werden hier zusammengefast: http://weimarnetz.de/fffeed/feed.php
+
+Bedienung
+=========
+
+Neue Städte und Freifunk-Projekte tragen bitte hier ihre API-URL ein
+https://github.com/freifunk/directory.api.freifunk.net
+
+Anleitung unter http://xyz und Wizard zur Erstellung dieser Datei http://xyz
 
 
 Entstehung
