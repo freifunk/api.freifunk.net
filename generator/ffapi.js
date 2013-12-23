@@ -191,7 +191,7 @@ function addPictureForDateTrigger(id)
 	
 	$(jq(pictureID)).click(function() {
 		var date = new Date();
-		$(jq(id)).val(parseInt(date.getTime()/1000));
+		$(jq(id)).val(date.toISOString());
 	});
 }
 
@@ -208,16 +208,17 @@ function addDatepickerToTimeline()
       			showOn: "button",
       			buttonImage: "./calendar.gif",
       			buttonImageOnly: true,
-      			dateFormat: '@',
-      			// Before read Timestamp change to JS Timestamp
-      			beforeShow: function(input, inst) {
-                	$(this).val(parseInt($(this).val()) * 1000);
-                }	
+      			dateFormat: 'yy-mm-dd',
+      			// Before read timestamp change to JS Timestamp
+      		//	beforeShow: function(input, inst) {
+                //	$(this).val(parseInt($(this).val()) * 1000);
+                //}	
       		});
       		$(jq(id)).change( function()
     		{
         		// Change JS Timestamp to Unix Timestamp
-        		$(this).val(parseInt($(this).val()) / 1000);
+        		//$(this).val(parseInt($(this).val()) / 1000);
+        		$(this).val().toISOString;
 			});
 		}
 		else
