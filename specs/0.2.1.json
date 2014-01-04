@@ -282,6 +282,40 @@
 					}
 				}
 			},
+			"services" : {
+				"type" : "array",
+				"description" : "services provided by your community",
+				"required" : false,
+				"items" : {
+					"type" : "object",
+					"properties" : {
+						"serviceName" : {
+							"title" : "Service Name",
+							"type" : "string",
+							"description" : "name of your service (e.g. jabber...)",
+							"required" : false
+						},
+						"serviceDescription" : {
+							"title" : "Service Description",
+							"type" : "string",
+							"description" : "describe your service",
+							"required" : false
+						},
+						"externalUri" : {
+							"title" : "External URI",
+							"type" : "string",
+							"description" : "URI to use your service from the internet",
+							"required" : false
+						},
+						"internalUri" : {
+							"title" : "Internal URI",
+							"type" : "string",
+							"description" : "URI to use your service from freifunk or icvpn-networks",
+							"required" : false
+						}
+					}
+				}
+			},
 			"techDetails": {
 				"type":"object",
 				"id": "http://wiki.freifunk.net/Freifunk_Firmware/%C3%9Cbersicht_Communities",

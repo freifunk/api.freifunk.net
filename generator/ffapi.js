@@ -115,6 +115,12 @@ var handleSchema = function()
         },
         {
             "type": "fieldset",
+            "title":"Services",
+            "expandable": true,
+            "items": "services"
+        },
+        {
+            "type": "fieldset",
             "title":"Timeline",
             "expandable": true,
             "items": "timeline",
