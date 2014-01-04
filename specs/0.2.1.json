@@ -1,15 +1,15 @@
 { "schema" :
 	{
 	    	"type":"object",
-		"description": "Freifunk Community API 0.2.0",
+		"description": "Freifunk Community API 0.2.1",
 		"required":false,
 		"properties":{
 			"api": {
 				"title":"API",
 				"type":"string",
 				"description": "The Freifunk Community API version you use",
-				"enum" : ["0.1","0.2.0"],
-				"default" : "0.2.0",
+				"enum" : ["0.1","0.2.0","0.2.1"],
+				"default" : "0.2.1",
 				"required":true
 			},
 			"name": {
@@ -82,13 +82,14 @@
 					"email": {
 						"title":"Email",
 						"type":"string",
-						"pattern": "^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$"
-						"description": "Email address to which other people can contact your community",
+						"pattern": "^[A-Za-z0-9äöüÄÖUß_\\-\\.]+@[A-Za-z0-9äöüÄÖUß_\\-\\.]+\\.[A-Za-z]{2,}$",
+						"description": "Email address to which other people can contact your community (user@domain.com)",
 						"required":false
 					},
 					"facebook": {
 						"title":"facebook",
 						"type":"string",
+						"pattern" : "^(http|https)://[A-Za-zÄÖÜäöüß\\-_\\.]+",
 						"description":"URL to your community's facebook account",
 						"required":false
 					},
@@ -129,9 +130,10 @@
 						"required":false
 					},
 					"twitter": {
-						"title":"Twitter",
-						"type":"string",
-						"description":"URL to your community's twitter account",
+						"title" : "Twitter",
+						"type" : "string",
+						"pattern" : "^@[A-Za-z0-9]{1,15}"
+						"description":"Your community's twitter name (starts with @)",
 						"required":false
 					}
 				}
@@ -139,6 +141,7 @@
 			"url": {
 				"title":"Homepage",
 				"type":"string",
+				"pattern" : "^(http|https)://[A-Za-zÄÖÜäöüß\\-_\\.]+",
 				"description": "The main website",
 				"required":true
 			},
