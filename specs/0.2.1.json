@@ -142,7 +142,7 @@
 			"url": {
 				"title":"Homepage",
 				"type":"string",
-				"pattern" : "^(http|https)://[A-Za-zÄÖÜäöüß\\-_\\.]+",
+				"pattern" : "^(http|https)://[A-Za-z0-9ÄÖÜäöüß\\-_\\./]+",
 				"description": "The main website",
 				"required":true
 			},
