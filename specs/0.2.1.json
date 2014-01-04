@@ -89,8 +89,8 @@
 					"facebook": {
 						"title":"facebook",
 						"type":"string",
-						"pattern" : "^(http|https)://[A-Za-zÄÖÜäöüß\\-_\\.]+",
-						"description":"URL to your community's facebook account",
+						"pattern" : "^(http|https)://([a-z\\-]*\\.|)facebook\\.com/[A-Za-z0-9ÄÖÜäöüß\\-_\\.]+",
+						"description":"URL to your community's facebook account (https://facebook.com/...)",
 						"required":false
 					},
 					"identica": {
