@@ -89,6 +89,8 @@ var handleSchema = function()
 	        }
 	        else {
 	            $( '#result .message' ).show().text( 'Hello ' + values.name + '. This is your API file. Place it on a public webserver and add the URL to our directory.' );
+		    var date = new Date();
+		    values.state.lastchange = date.toISOString(); 
 	            $( '#jsonText' ).val( JSON.stringify( values, null, '  ' ) );
 	            $( 'body' ).scrollTop( 0 );
 	        }
@@ -101,7 +103,12 @@ var handleSchema = function()
         "metacommunity",
         "url",
 	"events",
-        "state",
+        "state.nodes",
+	"state.message",
+	{
+	    "key" : "state.lastchange",
+	    "type": "hidden"
+	},
         {
             "type": "fieldset",
             "expanded": true,
@@ -178,27 +185,14 @@ var handleSchema = function()
 		$('form').jsonForm( schema );
 
 		currentSchema = schema;
-		addPictureForDateTrigger("jsonform-0-elt-state.lastchange");
 		addDatepickerToTimeline();
 	};
 }();
 
 $.getJSON( "0.2.1.json", handleSchema );
 
-
 function jq( myid ) {
     return "#" + myid.replace( /(:|\.|\[|\])/g, "\\$1" );
-}
-
-function addPictureForDateTrigger(id)
-{
-	var pictureID = id + "-picture";
-	$(jq(id)).after('<img id="' + pictureID + '" src="./calendar.gif">');
-	
-	$(jq(pictureID)).click(function() {
-		var date = new Date();
-		$(jq(id)).val(date.toISOString());
-	});
 }
 
 function addDatepickerToTimeline()
