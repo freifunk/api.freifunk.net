@@ -1,3 +1,4 @@
+var apiVersion = "0.2.1";
 var handleSchema = function()
 {
 	var currentSchema;
@@ -90,6 +91,7 @@ var handleSchema = function()
 	        else {
 	            $( '#result .message' ).show().text( 'Hello ' + values.name + '. This is your API file. Place it on a public webserver and add the URL to our directory.' );
 		    var date = new Date();
+		    values.api = apiVersion;
 		    values.state.lastchange = date.toISOString(); 
 	            $( '#jsonText' ).val( JSON.stringify( values, null, '  ' ) );
 	            $( 'body' ).scrollTop( 0 );
@@ -189,7 +191,7 @@ var handleSchema = function()
 	};
 }();
 
-$.getJSON( "0.2.1.json", handleSchema );
+$.getJSON( apiVersion + ".json", handleSchema );
 
 function jq( myid ) {
     return "#" + myid.replace( /(:|\.|\[|\])/g, "\\$1" );
