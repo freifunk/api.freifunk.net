@@ -233,6 +233,7 @@
 						"title":"Last Change",
 						"type":"number",
 						"description": "At what (unix) timestamp has your community status lastly changed?",
+						"default" : 0,
 						"required":true
 					},
 					"message": {
