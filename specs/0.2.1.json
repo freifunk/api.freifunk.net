@@ -114,7 +114,8 @@
 					"ml": {
 						"title":"Mailinglist",
 						"type":"string",
-						"description": "The email address of your mailing list. If you use google groups then the email looks like your-group@googlegroups.com",
+						"description": "The email address of your mailing list or a link to the mailinglist info page ",
+						"pattern": "^([A-Za-z0-9äöüÄÖUß_\\-\\.]+@[A-Za-z0-9äöüÄÖUß_\\-\\.]+\\.[A-Za-z]{2,}|(http|https)://[A-Za-z0-9ÄÖÜäöüß\\-_\\./]+)$",
 						"required":false
 					},
 					"phone": {
