@@ -183,7 +183,7 @@ var handleSchema = function()
 	};
 }();
 
-$.getJSON( "0.2.0.json", handleSchema );
+$.getJSON( "0.2.1.json", handleSchema );
 
 
 function jq( myid ) {

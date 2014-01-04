@@ -288,6 +288,7 @@
 				"required" : false,
 				"items" : {
 					"type" : "object",
+					"required" : false,
 					"properties" : {
 						"serviceName" : {
 							"title" : "Service Name",
