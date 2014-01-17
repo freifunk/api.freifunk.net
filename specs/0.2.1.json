@@ -231,8 +231,8 @@
 					},
 					"lastchange": {
 						"title":"Last Change",
-						"type":"number",
-						"description": "At what (unix) timestamp has your community status lastly changed?",
+						"type":"state",
+						"description": "At what iso timestamp has your community status lastly changed?",
 						"default" : 0,
 						"required":true
 					},
