@@ -353,6 +353,32 @@
 						"description": "needs to be defined",
 						"required":false
 					},
+					"tld": {
+						"title":"Top Level Domain",
+						"description": "the top level domain used by your community",
+						"type":"object",
+						"required":false,
+						"properties":{
+							"domainname": {
+								"type":"string",
+								"description":"the top level domain name (e.g. ffhh, ffol)",
+								"pattern":"^[A-Za-z]{2,}$",
+								"required":false,
+								"title":"Top Level Domain Name"
+							},
+							"nameserver": {
+								"type":"array",
+								"title":"TLD Nameserver",
+								"description":"Nameservers servings zones of your top level domain",
+								"required":false,
+								"items":{
+									"type":"string",
+									"pattern":"^[A-Za-z0-9äöüÄÖUß_\\-\\.]*$",
+									"required":false
+								}
+							}
+						}
+					},
 					"networks": {
 						"title":"Networks",
 						"type":"object",
