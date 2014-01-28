@@ -146,12 +146,6 @@
 				"description": "The main website",
 				"required":true
 			},
-			"events": {
-				"title":"Events",
-				"type":"string",
-				"description": "URL to your calendar ics file that can be imported to a global calendar",
-				"required":false
-			},
 			"timeline": {
 				"type":"array",
 				"description": "These are lifetime events something like date of birth (and rebirth :-) of your community or other important milestones ",
@@ -196,9 +190,9 @@
 							"category": {
 								"title":"Feed category",
 								"type":"string",
-								"enum":["blog","forum","wiki","others",""],
+								"enum":["blog","forum","ics","wiki","others",""],
 								"default":"",
-								"description":"category of the feed like blog entries, forum messages, wiki articles, ...",
+								"description":"category of the feed like blog entries, calendars, forum messages, wiki articles, ...",
 								"required":false
 							},
 							"type": {
