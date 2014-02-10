@@ -104,7 +104,6 @@ var handleSchema = function()
         "name",
         "metacommunity",
         "url",
-	"events",
         "state.nodes",
 	"state.message",
 	{
