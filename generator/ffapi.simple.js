@@ -64,7 +64,36 @@ var handleSchema = function()
 	var validate = 
 		function(errors, values) {
 			takeJson();
-			handleSubmit();
+			//var JSV = require("./JSV").JSV;
+			var env = JSV.createEnvironment();
+			var schema = currentSchema.schema;
+			var report = env.validate(currentSchema.value, schema);
+			if (report.errors.length === 0) {
+	            		$( '#result .message' ).show().text( 'Congrats! Your API file is valid to version ' + apiVersion + ' of our specs.' );
+			} else if (report.errors.length === 1 && report.errors[0].schemaUri.match(/properties\/api$/)) {
+	            		$( '#result .message' ).show().text( 'Congrats! Your API file is valid to version ' + apiVersion + ' of our specs. We just updated the version and the date of change.' );
+		    		var date = new Date();
+		    		currentSchema.value.api = apiVersion;
+		    		currentSchema.value.state.lastchange = date.toISOString(); 
+	            		$( '#jsonText' ).val( JSON.stringify( currentSchema.value, null, '  ' ) );
+	            		$( 'body' ).scrollTop( 0 );
+
+			} else {
+				var errorText = 'Unfortunately there are ' + report.errors.length + ' errors in your file: <ul>';
+				$.each( report.errors, function(key, val) {
+					var path = val.uri.match(/.*#\/(.*$)/);
+					if (RegExp.$1 == "api") { 
+						errorText += '<li>' + RegExp.$1 + ' (don\'t care about, we\'ll update it on submit)</li>'; 
+					} else {
+						errorText +=  '<li>' + RegExp.$1 + '</li>';
+					}
+				});
+				errorText += '</ul> Please review the fields on the left side and submit your file again!';
+				$( '#result .alert' ).show().html( errorText);
+	        		$( 'body' ).scrollTop( 0 );
+			}
+			console.log(report.errors);
+
 		};
 
 	// ---
@@ -86,7 +115,18 @@ var handleSchema = function()
 		function (errors, values) {
 	        $( '.autohide' ).hide();
 	        if (errors) {
-	            showError( 'I beg your pardon?', JSON.stringify( errors ) );
+			var errorText = 'Unfortunately there are ' + errors.length + ' errors in your file: <ul>';
+			$.each( errors, function(key, val) {
+				var path = val.uri.match(/.*#\/(.*$)/);
+				if (RegExp.$1 == "api") { 
+					errorText += '<li>' + RegExp.$1 + ' (don\'t care about, we\'ll update it on submit)</li>'; 
+				} else {
+					errorText +=  '<li>' + RegExp.$1 + '</li>';
+				}
+			});
+			errorText += '</ul> Please review the fields on the left side and submit your file again!';
+			$( '#result .alert' ).show().html( errorText);
+	        	$( 'body' ).scrollTop( 0 );
 	        }
 	        else {
 	            $( '#result .message' ).show().text( 'Hello ' + values.name + '. This is your API file. Place it on a public webserver and add the URL to our directory.' );
@@ -126,8 +166,11 @@ var handleSchema = function()
             "type": "button",
 	    "onClick": function (evt) {
        		evt.preventDefault();
-	        alert('Thank you!');        
-      		},
+	        var r = confirm('Do you really want to only submit this simple version?\n\nThe advanced fields are used in several apps, i.e. to aggregate feeds or calendars, show more information on the comunity map, gather statistics data, creating timelines (to be continued). So if you have more pieces of information, please provide them with your API file');
+		if (r == true) {
+		    handleSubmit;
+		}
+      	    },
             "title": "OK - generate that simple API file!"
         },
 	{
