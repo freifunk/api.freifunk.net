@@ -65,6 +65,10 @@ var handleSchema = function()
 		});
 		errorText += '</ul> Please review the fields on the left side and submit your file again!';
 		$( '#error' ).show();
+		$( '#downloadButton' ).attr('disabled', 'disabled');
+		$( '#downloadButton' ).attr('title', 'You need a valid JSON to download your file');
+		$( '#validateButton' ).attr('class', 'btn btn-danger');
+		$( '#validateButton' ).attr('title', 'There are serious errors within your API file, please correct your file and submit again!');
 		$( '#error .message' ).show().html( errorText);
 	       	$( 'body' ).scrollTop( 0 );
 	};
@@ -79,12 +83,20 @@ var handleSchema = function()
 			var schema = currentSchema.schema;
 			var report = env.validate(currentSchema.value, schema);
 			if (report.errors.length === 0) {
+				$( '#downloadButton' ).removeAttr('disabled');
+				$( '#downloadButton' ).attr('title', 'Download the JSON contents');
+				$( '#validateButton' ).attr('class', 'btn btn-success');
+				$( '#validateButton' ).attr('title', 'Your file is clean and ready to be deployed');
 	            		$( '#result .message' ).show().text( 'Congrats! Your API file is valid to version ' + apiVersion + ' of our specs.' );
 			} else if (report.errors.length === 1 && report.errors[0].schemaUri.match(/properties\/api$/)) {
 	            		$( '#result .message' ).show().text( 'Congrats! Your API file is valid to version ' + apiVersion + ' of our specs. We just updated the version and the date of change.' );
 		    		var date = new Date();
 		    		currentSchema.value.api = apiVersion;
 		    		currentSchema.value.state.lastchange = date.toISOString(); 
+				$( '#downloadButton' ).removeAttr('disabled');
+				$( '#downloadButton' ).attr('title', 'Download the JSON contents');
+				$( '#validateButton' ).attr('title', 'There are little problems, but your API file is valid');
+				$( '#validateButton' ).attr('class', 'btn btn-warning');
 	            		$( '#jsonText' ).val( JSON.stringify( currentSchema.value, null, '  ' ) );
 	            		$( 'body' ).scrollTop( 0 );
 
@@ -100,7 +112,7 @@ var handleSchema = function()
 	
 	// ---
 
-	var download = 
+	var download =
 		function() {
 			window.location = "data:application/text,"+ $( '#jsonText' ).val();
 		};
@@ -113,6 +125,10 @@ var handleSchema = function()
 		function (errors, values) {
 	        $( '.autohide' ).hide();
 	        if (! errors ||(errors.length === 1 && errors[0].schemaUri.match(/properties\/api$/))) {
+			$( '#downloadButton' ).removeAttr('disabled');
+			$( '#downloadButton' ).attr('title', 'Download the JSON contents');
+			$( '#validateButton' ).attr('class', 'btn btn-success');
+			$( '#validateButton' ).attr('title', 'Your file is clean and ready to be deployed');
 	        	$( '#result .message' ).show().text( 'Hello ' + values.name + '. This is your API file. Place it on a public webserver and add the URL to our directory.' );
 			var date = new Date();
 			values.api = apiVersion;
