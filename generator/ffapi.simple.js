@@ -67,7 +67,7 @@ var handleSchema = function()
 		$( '#error' ).show();
 		$( '#downloadButton' ).attr('disabled', 'disabled');
 		$( '#downloadButton' ).attr('title', 'You need a valid JSON to download your file');
-		$( '#validateButton' ).attr('class', 'btn btn-danger');
+		$( '#downloadButton' ).attr('class', 'btn btn-danger');
 		$( '#validateButton' ).attr('title', 'There are serious errors within your API file, please correct your file and submit again!');
 		$( '#error .message' ).show().html( errorText);
 	       	$( 'body' ).scrollTop( 0 );
@@ -85,7 +85,7 @@ var handleSchema = function()
 			if (report.errors.length === 0) {
 				$( '#downloadButton' ).removeAttr('disabled');
 				$( '#downloadButton' ).attr('title', 'Download the JSON contents');
-				$( '#validateButton' ).attr('class', 'btn btn-success');
+				$( '#downloadButton' ).attr('class', 'btn btn-success');
 				$( '#validateButton' ).attr('title', 'Your file is clean and ready to be deployed');
 	            		$( '#result .message' ).show().text( 'Congrats! Your API file is valid to version ' + apiVersion + ' of our specs.' );
 			} else if (report.errors.length === 1 && report.errors[0].schemaUri.match(/properties\/api$/)) {
@@ -96,7 +96,7 @@ var handleSchema = function()
 				$( '#downloadButton' ).removeAttr('disabled');
 				$( '#downloadButton' ).attr('title', 'Download the JSON contents');
 				$( '#validateButton' ).attr('title', 'There are little problems, but your API file is valid');
-				$( '#validateButton' ).attr('class', 'btn btn-warning');
+				$( '#downloadButton' ).attr('class', 'btn btn-warning');
 	            		$( '#jsonText' ).val( JSON.stringify( currentSchema.value, null, '  ' ) );
 	            		$( 'body' ).scrollTop( 0 );
 
@@ -127,7 +127,7 @@ var handleSchema = function()
 	        if (! errors ||(errors.length === 1 && errors[0].schemaUri.match(/properties\/api$/))) {
 			$( '#downloadButton' ).removeAttr('disabled');
 			$( '#downloadButton' ).attr('title', 'Download the JSON contents');
-			$( '#validateButton' ).attr('class', 'btn btn-success');
+			$( '#downloadButton' ).attr('class', 'btn btn-success');
 			$( '#validateButton' ).attr('title', 'Your file is clean and ready to be deployed');
 	        	$( '#result .message' ).show().text( 'Hello ' + values.name + '. This is your API file. Place it on a public webserver and add the URL to our directory.' );
 			var date = new Date();
