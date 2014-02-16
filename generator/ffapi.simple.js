@@ -27,11 +27,23 @@ var handleSchema = function()
 	$( '#jsonTakeButton').bind( 'click', takeJson );
 
 	// ---
+
+	var sortObject = function(map) {
+		var keys = _.sortBy(_.keys(map), function(a) { return a; });
+		var newmap = {};
+		_.each(keys, function(k) {
+			newmap[k] = map[k];
+		});
+		return newmap;
+	}
+
+	// ---
 	
 	var dirSelect = 
 		function() {
 			$( '#dirselect' ).append($('<option>').text('choose a community from list'));
 			$.getJSON( "php-simple-proxy/ba-simple-proxy.php?url=https://raw.github.com/freifunk/directory.api.freifunk.net/master/directory.json", function(dir) {
+				dir.contents = sortObject(dir.contents);
 				$.each( dir.contents, function (key, val) {
 					$( '#dirselect' )
 						.append($('<option>', { value : val })
