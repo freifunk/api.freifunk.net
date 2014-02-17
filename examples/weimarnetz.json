@@ -1,40 +1,40 @@
 {
-  "techDetails": {
-    "firmware": {
-      "url": "http://www.weimarnetz.de/freifunk/firmware"
-    },
-    "networks": {
-      "ipv4": [
-        {
-          "netmask": 16,
-          "network": "10.63.0.0"
-        }
-      ]
-    },
-    "splashpage": "captive portal",
-    "topodata": "http://www.weimarnetz.de/freifunk/topology.dot",
-    "vpn": "vtun without ssl and lzo"
-  },
-  "api": "0.1",
-  "contact": {
-    "facebook": "https://www.facebook.com/weimarnetz",
-    "ml": "wireless-discuss@subsignal.org",
-    "phone": "+493643544304"
-  },
-  "location": {
-    "city": "Weimar",
-    "address": {
-      "Name": "Maschinenraum",
-      "Street": "Marienstr. 18",
-      "Zipcode": "99423"
-    },
-    "lat": 50.98953,
-    "lon": 11.338675
-  },
-  "name": "weimarnetz",
-  "state": {
-    "nodes": 49,
-    "lastchange": 1368711578
-  },
-  "url": "http://www.weimarnetz.de"
+	"techDetails": {
+		"firmware": {
+			"url": "http://www.weimarnetz.de/freifunk/firmware"
+		},
+		"networks": {
+			"ipv4": [
+			{
+				"netmask": 16,
+				"network": "10.63.0.0"
+			}
+			]
+		},
+		"splashpage": "captive portal",
+		"topodata": "http://www.weimarnetz.de/freifunk/topology.dot",
+		"vpn": "vtun without ssl and lzo"
+	},
+	"api": "0.1",
+	"contact": {
+		"facebook": "https://www.facebook.com/weimarnetz",
+		"ml": "wireless-discuss@subsignal.org",
+		"phone": "+493643544304"
+	},
+	"location": {
+		"city": "Weimar",
+		"address": {
+			"Name": "Maschinenraum",
+			"Street": "Marienstr. 18",
+			"Zipcode": "99423"
+		},
+		"lat": 50.98953,
+		"lon": 11.338675
+	},
+	"name": "weimarnetz",
+	"state": {
+		"nodes": 49,
+		"lastchange": 1368711578
+	},
+	"url": "http://www.weimarnetz.de"
 }

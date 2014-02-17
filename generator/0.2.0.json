@@ -1,6 +1,6 @@
 { "schema" :
 	{
-	    	"type":"object",
+		"type":"object",
 		"description": "Freifunk Community API 0.2.0",
 		"required":false,
 		"properties":{
@@ -152,66 +152,66 @@
 				"description": "These are lifetime events something like date of birth (and rebirth :-) of your community or other important milestones ",
 				"required":false,
 				"items":
-					{
-						"type":"object",
-						"required":false,
-						"properties":{
-							"decription": {
-								"title":"Description",
-								"type":"string",
-								"description": "description of your lifetime event",
-								"required":false
-							},
-							"timestamp": {
-								"title":"Timestamp",
-								"type":"string",
-								"description": "ISO timestamp when the event happened",
-								"required":false
-							}
+				{
+					"type":"object",
+					"required":false,
+					"properties":{
+						"decription": {
+							"title":"Description",
+							"type":"string",
+							"description": "description of your lifetime event",
+							"required":false
+						},
+						"timestamp": {
+							"title":"Timestamp",
+							"type":"string",
+							"description": "ISO timestamp when the event happened",
+							"required":false
 						}
 					}
-				
-	
+				}
+
+
 			},
 			"feeds": {
 				"type":"array",
 				"description":"Feeds you provide your community",
 				"required":false,
 				"items":
-					{
-						"type":"object",
-						"required":false,
-						"properties":{
-							"name": {
-								"title":"Feed name",
-								"type":"string",
-								"description":"name of the feed",
-								"required":false
-							},
-							"category": {
-								"title":"Feed category",
-								"type":"string",
-								"enum":["blog","forum","wiki","others",""],
-								"default":"",
-								"description":"category of the feed like blog entries, forum messages, wiki articles, ...",
-								"required":false
-							},
-							"type": {
-								"title":"Feed type",
-								"type":"string",
-								"description":"type of the feed like rss, atom, xml",
-								"required":false
-							},
-							"url": {
-								"title":"URL",
-								"type":"string",
-								"description":"url of the feed",
-								"required":false
-							}
+				{
+					"type":"object",
+					"required":false,
+					"properties":{
+						"name": {
+							"title":"Feed name",
+							"type":"string",
+							"description":"name of the feed",
+							"required":false
+						},
+						"category": {
+							"title":"Feed category",
+							"type":"string",
+							"enum":["blog","forum","wiki","others",""],
+							"default":"",
+							"description":"category of the feed like blog entries, forum messages, wiki articles, ...",
+							"required":false
+						},
+						"type": {
+							"title":"Feed type",
+							"type":"string",
+							"description":"type of the feed like rss, atom, xml",
+							"required":false
+						},
+						"url": {
+							"title":"URL",
+							"type":"string",
+							"description":"url of the feed",
+							"required":false
 						}
 					}
-				
-	
+				}
+
+
 			},
 			"state": {
 				"type":"object",
@@ -257,7 +257,7 @@
 							"type":"string",
 							"description":"how often the map will be refreshed",
 							"required":false
-                                                },
+						},
 						"technicalType": {
 							"title":"map technical type",
 							"type":"string",
@@ -329,47 +329,47 @@
 								"description": "ipv6 networks used by your community",
 								"required":false,
 								"items": {
-										"type":"object",
-										"title": "ipv6 network object",
-										"required":false,
-										"properties":{
-											"prefixlength": {
-												"type":"integer",
-												"description":"prefix length",
-												"required":false
-											},
-											"prefix": {
-												"type":"string",
-												"description": "ipv6 network prefix",
-												"required":false
-											}
+									"type":"object",
+									"title": "ipv6 network object",
+									"required":false,
+									"properties":{
+										"prefixlength": {
+											"type":"integer",
+											"description":"prefix length",
+											"required":false
+										},
+										"prefix": {
+											"type":"string",
+											"description": "ipv6 network prefix",
+											"required":false
 										}
 									}
+								}
 							},
 							"ipv4": {
 								"type":"array",
 								"description": "ipv4 networks used by your community",
 								"required":false,
 								"items":
-									{
-										"type":"object",
-										"title": "ipv4 network object",
-										"required":false,
-										"properties":{
-											"netmask": {
-												"type":"integer",
-												"description":"the netmask valid for this network",
-												"required":false
-											},
-											"network": {
-												"type":"string",
-												"description": "network name (e.g. 10.63.x.y)",
-												"required":false
-											}
+								{
+									"type":"object",
+									"title": "ipv4 network object",
+									"required":false,
+									"properties":{
+										"netmask": {
+											"type":"integer",
+											"description":"the netmask valid for this network",
+											"required":false
+										},
+										"network": {
+											"type":"string",
+											"description": "network name (e.g. 10.63.x.y)",
+											"required":false
 										}
 									}
-								
-	
+								}
+
+
 							}
 						}
 					},
@@ -377,7 +377,7 @@
 						"title":"Routing protocol",
 						"description": "routing protocol used within your community",
 						"required":false,
-				                "enum" : ["","OLSR","BATMAN","Babel","802.11s"],
+						"enum" : ["","OLSR","BATMAN","Babel","802.11s"],
 						"default":""
 					},
 					"splashpage": {
