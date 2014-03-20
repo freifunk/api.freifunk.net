@@ -108,7 +108,8 @@
 					"irc": {
 						"title":"IRC",
 						"type":"string",
-						"description":"your community's irc channel",
+						"pattern":"^irc://.*",
+						"description":"your community's irc channel, starts with irc://",
 						"required":false
 					},
 					"jabber": {
