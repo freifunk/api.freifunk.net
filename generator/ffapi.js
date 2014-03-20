@@ -164,8 +164,9 @@ var handleSchema = function()
 			"expanded": true,
 			"items": [ 
 				"location.city",
-			"location.lat",
-			"location.lon"
+				"location.country",
+				"location.lat",
+				"location.lon"
 				]
 		},
 		{
@@ -174,7 +175,7 @@ var handleSchema = function()
 			"title": "Contact",
 			"items": [ 
 				"contact.email",
-			"contact.phone"
+				"contact.phone"
 				]
 		},
 		{
