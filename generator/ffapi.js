@@ -55,7 +55,7 @@ var handleSchema = function()
 	// ---
 
 	$( '#dirselect' ).on('change', function() {
-		$.getJSON( "api/generator/php-simple-proxy/ba-simple-proxy.php?url=" + this.value, function(communityJson) {
+		$.getJSON( "api/generator/php-simple-proxy/ba-simple-proxy.php?url=" + encodeURIComponent(this.value), function(communityJson) {
 			$( '#jsonText' )
 			.empty()
 			.val(JSON.stringify( communityJson.contents, null, '  '));
@@ -325,7 +325,7 @@ function addDatepickerToTimeline()
 		{
 			$(jq(id)).datepicker({
 				showOn: "button",
-				buttonImage: "./calendar.gif",
+				buttonImage: "/api/generator/calendar.gif",
 				buttonImageOnly: true,
 				dateFormat: 'yy-mm-dd',
 				// Before read timestamp change to JS Timestamp
