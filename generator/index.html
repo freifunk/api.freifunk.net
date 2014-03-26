@@ -8,8 +8,39 @@
 <link rel="stylesheet" style="text/css" href="ffapi.css" />
 </head>
 <body>
-<div class="container-fluid">
-	<h1>The Freifunk API file generator</h1>
+
+<script>
+	// Wird aufgerufen bei einer neuen Nachricht
+	function listener(e){
+
+		var eventName = e.data[0],
+			data      = e.data[1];
+
+		switch (eventName) {
+			case 'referrer': setNewBase(data); break;
+			case 'styles':   injectStyles(data); break;
+		}
+
+	}
+
+	// Listener für alle Browser
+	if (window.addEventListener){
+		window.addEventListener("message", listener, false);
+	} else {
+		window.attachEvent("onmessage", listener);
+	}
+
+	// Aktualisiere Base-URL
+	function setNewBase(url) {
+		document.getElementsByTagName('base')[0].href = url;
+	}
+
+	// Styles empfangen und auf <body> anwenden
+	function injectStyles(styles) {
+		$(document.body).css(styles);
+	}
+</script>
+	<div class="container-fluid">
 	<div class="row-fluid">
 		<div class="span8">
 			<h2>Generator form</h2>
