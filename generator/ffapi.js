@@ -165,8 +165,8 @@ var handleSchema = function()
 			"items": [ 
 				"location.city",
 				"location.country",
-			"location.lat",
-			"location.lon"
+				"location.lat",
+				"location.lon"
 				]
 		},
 		{
@@ -175,7 +175,7 @@ var handleSchema = function()
 			"title": "Contact",
 			"items": [ 
 				"contact.email",
-			"contact.phone"
+				"contact.phone"
 				]
 		},
 		{
