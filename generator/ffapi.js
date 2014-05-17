@@ -42,7 +42,8 @@ var handleSchema = function()
 	var dirSelect = 
 		function() {
 			$( '#dirselect' ).append($('<option>').text('choose a community from list'));
-			$.getJSON( "api/generator/php-simple-proxy/ba-simple-proxy.php?url=https://raw.github.com/freifunk/directory.api.freifunk.net/master/directory.json", function(dir) {
+			$.getJSON( "api/generator/php-simple-proxy/ba-simple-proxy.php?url=https://rawgit.com/freifunk/directory.api.freifunk.net/master/directory.json", function(dir) {
+				//console.log(dir.contents);
 				dir.contents = sortObject(dir.contents);
 				$.each( dir.contents, function (key, val) {
 					$( '#dirselect' )
