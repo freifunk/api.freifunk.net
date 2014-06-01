@@ -6,6 +6,8 @@ directory
 - find a space to put the directory file
 - give a possibility to add new communities via web form (maybe ask the SpaceAPI developers)
 - provide a way to cache the json file, if the communities web server is weak
+  - why not try the obvious instead? Let the others know how often your API wants to be parsed.
+  - [http://spaceapi.net/documentation#documentation-ref-13-root-cache-schedule](http://spaceapi.net/documentation#documentation-ref-13-root-cache-schedule)
 
 generator
 ---------
