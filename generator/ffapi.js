@@ -18,7 +18,7 @@ var handleSchema = function()
 				$('form').empty().jsonForm( currentSchema );
 			}
 			catch ( e ) {
-				console.log( "JSON Syntax Error" );
+				console.error( "JSON Syntax Error" );
 			}
 		};
 
@@ -42,7 +42,7 @@ var handleSchema = function()
 	var dirSelect = 
 		function() {
 			$( '#dirselect' ).append($('<option>').text('choose a community from list'));
-			$.getJSON( "api/generator/php-simple-proxy/ba-simple-proxy.php?url=https://rawgit.com/freifunk/directory.api.freifunk.net/master/directory.json", function(dir) {
+			$.getJSON( "php-simple-proxy/ba-simple-proxy.php?url=https://rawgit.com/freifunk/directory.api.freifunk.net/master/directory.json", function(dir) {
 				//console.log(dir.contents);
 				dir.contents = sortObject(dir.contents);
 				$.each( dir.contents, function (key, val) {
@@ -56,7 +56,7 @@ var handleSchema = function()
 	// ---
 
 	$( '#dirselect' ).on('change', function() {
-		$.getJSON( "api/generator/php-simple-proxy/ba-simple-proxy.php?url=" + encodeURIComponent(this.value), function(communityJson) {
+		$.getJSON( "php-simple-proxy/ba-simple-proxy.php?url=" + encodeURIComponent(this.value), function(communityJson) {
 			$( '#jsonText' )
 			.empty()
 			.val(JSON.stringify( communityJson.contents, null, '  '));
@@ -295,8 +295,7 @@ var handleSchema = function()
 	// finally return the "handleSchema"-function-body
 	return function ( schema )
 	{
-		console.log(schema);
-
+		//console.log(schema);
 		schema.form = formTemplate;
 		schema.onSubmit = handleSubmit;
 
@@ -326,7 +325,7 @@ function addDatepickerToTimeline()
 		{
 			$(jq(id)).datepicker({
 				showOn: "button",
-				buttonImage: "/api/generator/calendar.gif",
+				buttonImage: "icon_calendar.svg",
 				buttonImageOnly: true,
 				dateFormat: 'yy-mm-dd',
 				// Before read timestamp change to JS Timestamp
