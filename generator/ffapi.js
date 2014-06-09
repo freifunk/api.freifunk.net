@@ -1,4 +1,4 @@
-var apiVersion = "0.3.0";
+var apiVersion = "0.3.1";
 var handleSchema = function()
 {
 	var currentSchema;
