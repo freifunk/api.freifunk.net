@@ -202,7 +202,7 @@
 						"category": {
 							"title":"Feed category",
 							"type":"string",
-							"enum":["blog","forum","ics","wiki","others",""],
+							"enum":["blog","forum","ics","podcast","wiki","others",""],
 							"default":"",
 							"description":"category of the feed like blog entries, calendars, forum messages, wiki articles, ...",
 							"required":false
