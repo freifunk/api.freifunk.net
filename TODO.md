@@ -15,4 +15,3 @@ generator
 api
 ---
 - use links instead of copying files between directories
-- create a cache mode for collectCommunities.py
