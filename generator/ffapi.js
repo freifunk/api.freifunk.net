@@ -43,7 +43,6 @@ var handleSchema = function()
 		function() {
 			$( '#dirselect' ).append($('<option>').text('choose a community from list'));
 			$.getJSON( "php-simple-proxy/ba-simple-proxy.php?url=https://rawgit.com/freifunk/directory.api.freifunk.net/master/directory.json", function(dir) {
-				//console.log(dir.contents);
 				dir.contents = sortObject(dir.contents);
 				$.each( dir.contents, function (key, val) {
 					$( '#dirselect' )
@@ -201,7 +200,21 @@ var handleSchema = function()
 			"items" : [
 				"metacommunity",
 			"state.nodes",
-			"state.message",
+			{
+				"key":"state.description",
+				"type":"textarea"
+			},
+			{
+				"key":"state.focus",
+				"type":"checkboxes",
+				"titleMap":{
+					"infrastructure/backbone":"We build infrastructure or backbone connections",
+                                        "Public Free Wifi":"We offer public free wifi",
+                                        "Social Community Building": "We do local socical networking",
+                                        "Local services and content": "We establish local services and provide local content",
+                                        "Free internet access":"We provide internet access within our network"
+				}
+			},
 			{
 				"type": "fieldset",
 				"title":"Advanced Contacts",
@@ -272,7 +285,29 @@ var handleSchema = function()
 				"type": "fieldset",
 				"title":"Technical Details",
 				"expandable": true,
-				"items": "techDetails"
+				"items": [
+          "techDetails.stoererhaftung",
+          "techDetails.bootstrap",
+          "techDetails.firmware",
+          "techDetails.tld",
+          "techDetails.networks",
+			  {
+				  "key":"techDetails.routing",
+  				"type":"checkboxes",
+	  			"titleMap":{
+		  			"802.11s":"802.11s",
+            "Babel":"Babel",
+            "batman-adv":"batman-adv",
+            "bmx6":"bmx6",
+            "cjdns":"cjdns",
+            "OLSR":"OLSR",
+            "OLSRv2":"OLSRv2"
+			  	}
+			 },
+          "techDetails.splashpage",
+          "techDetails.updatemode",
+          "techDetails.vpn"
+        ]
 			},
 			{
 				"key" : "state.lastchange",
