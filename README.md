@@ -20,10 +20,10 @@ Blogfeeds werden hier zusammengefast: http://weimarnetz.de/fffeed/feed.php
 Bedienung
 =========
 
-Neue Städte und Freifunk-Projekte tragen bitte hier ihre API-URL ein
+Neue Städte und Freifunk-Projekte tragen bitte hier ihre API-URL ein:
 https://github.com/freifunk/directory.api.freifunk.net
 
-Anleitung unter http://xyz und Wizard zur Erstellung dieser Datei http://xyz
+Es gibt auch einen [Anleitung](http://blog.freifunk.net/2014/6-schritten-zum-apifile) und einen [Wizard zur Erstellung](http://freifunk.net/api-generator/) dieser Datei.
 
 
 Entstehung
