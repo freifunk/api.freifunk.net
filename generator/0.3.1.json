@@ -483,12 +483,6 @@
 						"description": "what kind of splashpage does your community use?",
 						"required":false
 					},
-					"topodata": {
-						"title":"Topology data",
-						"type":"string",
-						"description": "link to your topology data (dot-files? needs to be defined)",
-						"required":false
-					},
 					"updatemode": {
 						"title":"Updatemode",
 						"type":"string",
