@@ -135,6 +135,7 @@
 						"title":"Google+",
 						"type":"string",
 						"description":"URL to your community's g+ account",
+						"pattern" : "^(http|https)://plus\\.google\\.com/[A-Za-z0-9ÄÖÜäöüß\\+\\-\\./_]+",
 						"required":false
 					},
 					"twitter": {
@@ -142,6 +143,12 @@
 						"type" : "string",
 						"pattern" : "^@[A-Za-z0-9]{1,15}",
 						"description":"Your community's twitter name (starts with @)",
+						"required":false
+					},
+					"webform": {
+						"title" : "Webform",
+						"type" : "string",
+						"description":"URL to your community's contact form",
 						"required":false
 					}
 				}
@@ -176,8 +183,6 @@
 						}
 					}
 				}
-
-
 			},
 			"feeds": {
 				"type":"array",
@@ -216,8 +221,6 @@
 						}
 					}
 				}
-
-
 			},
 			"state": {
 				"type":"object",
@@ -428,8 +431,6 @@
 										}
 									}
 								}
-
-
 							}
 						}
 					},
