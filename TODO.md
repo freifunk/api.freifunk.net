@@ -11,7 +11,3 @@ generator
 ---------
 - build a validator to approve given json files (as of now, we can only generate a file from a web form)
 - use the directory to load and approve the json files
-
-api
----
-- use links instead of copying files between directories
