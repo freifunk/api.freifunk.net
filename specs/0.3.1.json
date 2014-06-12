@@ -8,7 +8,7 @@
 				"title":"API",
 				"type":"string",
 				"description": "The Freifunk Community API version you use",
-				"enum" : ["0.1","0.2.0","0.2.1","0.3.1"],
+				"enum" : ["0.1","0.2.0","0.2.1","0.3.0","0.3.1"],
 				"default" : "0.3.1",
 				"required":true
 			},
@@ -178,7 +178,7 @@
 						"timestamp": {
 							"title":"Timestamp",
 							"type":"string",
-							"description": "ISO timestamp when the event happened",
+							"description": "ISO timestamp when the event happened (format yyyy-mm-dd)",
 							"required":false
 						}
 					}
@@ -245,6 +245,29 @@
 						"type":"string",
 						"description": "A free-form string something like 'open for public', 'members only' or whatever you want it to be)",
 						"required":false
+					},
+					"description": {
+						"title":"Description",
+						"type":"string",
+						"description": "Describe your community in a few lines",
+						"required":false
+					},
+					"focus": {
+						"title":"Focus",
+						"type":"array",
+						"description": "What's the focus of your local community?",
+						"required":false,
+						"items":{
+							"type":"string",
+							"title":"option",
+							"enum": [
+								"infrastructure/backbone",
+								"Public Free Wifi",
+								"Social Community Building",
+								"Local services and content",
+								"Free internet access"
+							]
+						}
 					}
 				}
 			},
@@ -397,6 +420,7 @@
 						"properties":{
 							"ipv6": {
 								"type":"array",
+                "title":"IPv6 networks",
 								"description": "ipv6 networks used by your community",
 								"required":false,
 								"items": {
@@ -438,8 +462,20 @@
 						"title":"Routing protocol",
 						"description": "routing protocol used within your community",
 						"required":false,
-						"enum" : ["","OLSR","BATMAN","Babel","802.11s","batman-adv","bmx","OLSRv2"],
-						"default":""
+            "type": "array",
+						"items":{
+							"type":"string",
+							"title":"option",
+							"enum": [
+								"802.11s",
+                "Babel",
+                "batman-adv",
+                "bmx6",
+								"cjdns",
+								"OLSR",
+                "OLSRv2"
+							]
+						}
 					},
 					"splashpage": {
 						"title":"Splash Page",
