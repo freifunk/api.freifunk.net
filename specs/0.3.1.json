@@ -420,7 +420,7 @@
 						"properties":{
 							"ipv6": {
 								"type":"array",
-                "title":"IPv6 networks",
+								"title":"IPv6 networks",
 								"description": "ipv6 networks used by your community",
 								"required":false,
 								"items": {
@@ -462,18 +462,18 @@
 						"title":"Routing protocol",
 						"description": "routing protocol used within your community",
 						"required":false,
-            "type": "array",
+						"type": "array",
 						"items":{
 							"type":"string",
 							"title":"option",
 							"enum": [
 								"802.11s",
-                "Babel",
-                "batman-adv",
-                "bmx6",
+								"Babel",
+								"batman-adv",
+								"bmx6",
 								"cjdns",
 								"OLSR",
-                "OLSRv2"
+								"OLSRv2"
 							]
 						}
 					},
