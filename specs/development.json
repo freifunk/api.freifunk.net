@@ -8,13 +8,7 @@
 				"title": "API",
 				"type": "string",
 				"description": "The Freifunk Community API version you use",
-				"enum": [
-					"0.1",
-					"0.2.0",
-					"0.2.1",
-					"0.3.0",
-					"0.3.1"
-				],
+				"enum": ["0.1", "0.2.0", "0.2.1", "0.3.0", "0.3.1"],
 				"default": "0.3.1",
 				"required": true
 			},
@@ -209,15 +203,7 @@
 						"category": {
 							"title": "Feed category",
 							"type": "string",
-							"enum": [
-								"blog",
-								"forum",
-								"ics",
-								"podcast",
-								"wiki",
-								"others",
-								""
-							],
+							"enum": ["blog", "forum", "ics", "podcast", "wiki", "others", ""],
 							"default": "",
 							"description": "category of the feed like blog entries, calendars, forum messages, wiki articles, ...",
 							"required": false
@@ -310,14 +296,7 @@
 							"title": "map technical type",
 							"type": "string",
 							"description": "the kind of map is used",
-							"enum": [
-								"",
-								"ffmap",
-								"olsr-dot",
-								"openwifimap",
-								"netmon",
-								"libremap"
-							],
+							"enum": ["", "ffmap", "ffsomething", "olsr-dot", "openwifimap", "netmon", "libremap", "nodewatcher", "kml"],
 							"default": "",
 							"required": false
 						},
@@ -325,12 +304,7 @@
 							"title": "map type human readable",
 							"type": "string",
 							"description": "the kind of data the map provides",
-							"enum": [
-								"",
-								"geographical",
-								"structural",
-								"list/status"
-							],
+							"enum": ["", "geographical", "structural", "list/status"],
 							"default": "",
 							"required": false
 						}
