@@ -289,7 +289,7 @@ var handleSchema = function()
           "techDetails.stoererhaftung",
           "techDetails.bootstrap",
           "techDetails.firmware",
-          "techDetails.tld",
+          "techDetails.dns",
           "techDetails.networks",
 			  {
 				  "key":"techDetails.routing",
