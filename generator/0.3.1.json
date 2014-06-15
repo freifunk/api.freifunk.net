@@ -102,7 +102,8 @@
 					"identica": {
 						"title":"Identica",
 						"type":"string",
-						"description": "URL to your community's identica account",
+						"pattern" : "^(http|https)://([a-z\\-]*\\.|)identi\\.ca/[A-Za-z0-9ÄÖÜäöüß\\-_\\.]+",
+						"description": "URL to your community's identica account (https://identi.ca/...)",
 						"required":false
 					},
 					"irc": {
@@ -115,7 +116,8 @@
 					"jabber": {
 						"title":"Jabber",
 						"type":"string",
-						"description":"a jabber account someone reads",
+						"pattern": "^[A-Za-z0-9äöüÄÖUß_\\-\\.]+@[A-Za-z0-9äöüÄÖUß_\\-\\.]+\\.[A-Za-z]{2,}$",
+						"description":"a jabber account someone reads (account@jabberserver.tld)",
 						"required":false
 					},
 					"ml": {
@@ -134,7 +136,7 @@
 					"googleplus": {
 						"title":"Google+",
 						"type":"string",
-						"description":"URL to your community's g+ account",
+						"description":"URL to your community's g+ account (https://plus.google.com/...)",
 						"pattern" : "^(http|https)://plus\\.google\\.com/[A-Za-z0-9ÄÖÜäöüß\\+\\-\\./_]+",
 						"required":false
 					},
@@ -148,7 +150,8 @@
 					"webform": {
 						"title" : "Webform",
 						"type" : "string",
-						"description":"URL to your community's contact form",
+						"description":"URL to your community's contact form (http{s}://...)",
+				    "pattern" : "^(http|https)://[A-Za-z0-9ÄÖÜäöüß\\-_\\./]+",
 						"required":false
 					}
 				}
@@ -386,32 +389,35 @@
 						"description": "needs to be defined",
 						"required":false
 					},
-					"tld": {
-						"title":"Top Level Domain",
-						"description": "the top level domain used by your community",
-						"type":"object",
-						"required":false,
-						"properties":{
-							"domainname": {
-								"type":"string",
-								"description":"the top level domain name (e.g. ffhh, ffol)",
-								"pattern":"^[A-Za-z]{2,}$",
-								"required":false,
-								"title":"Top Level Domain Name"
-							},
-							"nameserver": {
-								"type":"array",
-								"title":"TLD Nameserver",
-								"description":"Nameservers servings zones of your top level domain",
-								"required":false,
-								"items":{
-									"type":"string",
-									"pattern":"^[A-Za-z0-9äöüÄÖUß_\\-\\.]*$",
-									"required":false
-								}
-							}
-						}
-					},
+					"dns": {
+						"title":"DNS Servers",
+						"descripition":"dns servers for domains used by your community",
+            "type":"array",
+            "items":{
+              "type":"object",
+  						"required":false,
+	  					"properties":{
+		  					"domainname": {
+			  					"type":"string",
+				  				"description":"the domain name (e.g. ffhh, ffol)",
+					  			"pattern":"^[A-Za-z]{2,}$",
+						  		"required":false,
+							  	"title":"Domain Name"
+  							},
+	  						"nameserver": {
+		  						"type":"array",
+			  					"title":"Nameserver",
+				  				"description":"Nameservers servings zones of your domain",
+					  			"required":false,
+						  		"items":{
+							  		"type":"string",
+								  	"pattern":"^[A-Za-z0-9äöüÄÖUß_\\-\\.]*$",
+									  "required":false
+								  }
+							  }
+						  }
+					  }
+          },
 					"networks": {
 						"title":"Networks",
 						"type":"object",
