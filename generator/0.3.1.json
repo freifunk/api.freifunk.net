@@ -298,7 +298,7 @@
 							"title":"map technical type",
 							"type":"string",
 							"description":"the kind of map is used",
-							"enum":["", "ffmap", "olsr-dot","openwifimap", "netmon", "libremap", "nodewatcher", "kml"],
+							"enum":["", "ffmap", "ffsomething", "olsr-dot","openwifimap", "netmon", "libremap", "nodewatcher", "kml"],
 							"default":"",
 							"required":false
 						},
