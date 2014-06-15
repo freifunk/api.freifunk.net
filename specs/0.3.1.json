@@ -70,13 +70,13 @@
 					"lat": {
 						"title":"Latitude",
 						"type":"number",
-						"description": "Latitude of your city",
+						"description": "Latitude of your city in decimal degrees (e.g. 51.12345)",
 						"required":true
 					},
 					"lon": {
 						"title":"Longitude",
 						"type":"number",
-						"description": "Longitude of your city",
+						"description": "Longitude of your city in decimal degrees (e.g. 11.6789)",
 						"required":true
 					}
 				}
