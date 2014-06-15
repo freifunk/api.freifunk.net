@@ -128,7 +128,7 @@
 					"phone": {
 						"title":"Phone",
 						"type":"string",
-						"description":"if your community has a phone number",
+						"description":"if your community has a phone number (e.g. +49 1234 567890 based on E.123 notation)",
 						"required":false
 					},
 					"googleplus": {
