@@ -488,9 +488,18 @@
 					},
 					"updatemode": {
 						"title": "Updatemode",
-						"type": "string",
+						"type": "array",
 						"description": "how do you deploy firmware updates?",
-						"required": false
+						"required": false,
+						"items": {
+							"type": "string",
+							"title": "option",
+							"enum": [
+								"none",
+								"manual",
+								"autoupdate"
+							]
+						}
 					},
 					"vpn": {
 						"title": "VPN",
