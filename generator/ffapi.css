@@ -32,6 +32,10 @@ span.draggable.line {
 	font-weight: bold;
 }
 
+.controls .checkbox {
+	display: block;
+}
+
 ._jsonform-array-ul {
 	margin: 0 0 10px 10px;
 }
