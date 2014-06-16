@@ -1,11 +1,13 @@
-.expandable > legend:before {
+.expandable>legend:before {
 	content: '\25B8';
 	padding-right: 5px;
 }
-.expanded > legend:before {
+
+.expanded>legend:before {
 	content: '\25BE';
 }
-.jsonform-required > label:after {
+
+.jsonform-required>label:after {
 	content: ' *';
 	color: red;
 }
@@ -20,4 +22,22 @@
 .ui-datepicker-trigger {
 	padding-left: 5px;
 	height: 20px;
+}
+
+span.draggable.line {
+	display: none;
+}
+
+.control-label {
+	font-weight: bold;
+}
+
+._jsonform-array-ul {
+	margin: 0 0 10px 10px;
+}
+
+._jsonform-array-ul li {
+	border-left: 4px solid #ccc;
+	border-radius: 17px;
+	padding: 10px;
 }
