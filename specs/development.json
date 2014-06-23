@@ -358,12 +358,6 @@
 						"required": false,
 						"type": "string"
 					},
-					"bootstrap": {
-						"title": "Bootstrap",
-						"type": "string",
-						"description": "how to deal with fresh routers",
-						"required": false
-					},
 					"firmware": {
 						"type": "object",
 						"required": false,
