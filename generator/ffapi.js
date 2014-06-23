@@ -8,6 +8,31 @@ var handleSchema = function()
 	$( '.autohide' ).hide();
 
 	// ---
+	
+	var sanitizeOldVersions = 
+    function(schema) {
+      var message = "Due to updates in our specs, some fields changed and aren't backwards compatible. Please update the following details:\n";
+      var counter = 0;
+      //changes 0.3.0->0.3.1
+      // routing changed from String to Array
+      if (  Object.prototype.toString.call(schema.techDetails.routing) !== '[object Array]') {
+        schema.techDetails.routing = [];
+        counter++;
+        message += "Technical Details -> Routing\n";
+      }
+      // updatemode change from String to Array
+      if (  Object.prototype.toString.call(schema.techDetails.updatemode) !== '[object Array]') {
+        counter++
+        schema.techDetails.updatemode = [];
+        message += "Technical Details -> Update Mode\n";
+      }
+      if ( counter > 0 ) {
+        alert(message);
+      }
+      return schema;
+	};
+	
+  // ---
 
 	var takeJson =
 		function() {
@@ -15,6 +40,7 @@ var handleSchema = function()
 			var json = $( '#jsonText' ).val();
 			try {
 				currentSchema.value = JSON.parse( json );
+        currentSchema.value = sanitizeOldVersions(currentSchema.value);
 				$('form').empty().jsonForm( currentSchema );
 			}
 			catch ( e ) {
@@ -22,7 +48,7 @@ var handleSchema = function()
 			}
 		};
 
-	// ---
+  // ---
 
 	$( '#jsonTakeButton').bind( 'click', takeJson );
 
