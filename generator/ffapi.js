@@ -304,7 +304,15 @@ var handleSchema = function()
 			  	}
 			 },
           "techDetails.splashpage",
-          "techDetails.updatemode",
+      {
+        "key":"techDetails.updatemode",
+        "type":"checkboxes",
+        "titleMap": {
+          "none":"No automatic updates",
+          "manual":"Manual updates supported (e.g. via web interface)",
+          "autoupdate":"We provide automatic updates"
+        }
+      },
           "techDetails.vpn"
         ]
 			},
