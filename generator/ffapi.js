@@ -287,7 +287,6 @@ var handleSchema = function()
 				"expandable": true,
 				"items": [
           "techDetails.stoererhaftung",
-          "techDetails.bootstrap",
           "techDetails.firmware",
           "techDetails.dns",
           "techDetails.networks",
