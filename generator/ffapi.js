@@ -153,12 +153,6 @@ var handleSchema = function()
 			}
 		};
 
-	// ---
-
-	//var formTemplate = [];
-		
-	// ---
-
 	// finally return the "handleSchema"-function-body
 	return function ( schema )
 	{
