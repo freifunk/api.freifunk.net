@@ -363,9 +363,17 @@
 						"required": false,
 						"properties": {
 							"url": {
-								"title": "Firmware download and docs",
+								"title": "Firmware download",
 								"type": "string",
-								"description": "link to your firmware images or docs",
+				        "pattern": "^(http|https)://[A-Za-z0-9ÄÖÜäöüß\\-_\\./]+",
+								"description": "link to your firmware images",
+								"required": false
+							},
+							"docs": {
+								"title": "Firmware Documents",
+								"type": "string",
+				        "pattern": "^(http|https)://[A-Za-z0-9ÄÖÜäöüß\\-_\\./]+",
+								"description": "link to your firmware docs",
 								"required": false
 							},
 							"name": {
