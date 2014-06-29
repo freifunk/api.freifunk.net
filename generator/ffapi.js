@@ -184,6 +184,7 @@ var handleSchema = function()
 	{
 		//console.log(schema);
 		schema.form = ffapi.formTemplate;
+		schema.form[2].items[1].titleMap = ffapi.isoCountryCodes;
 		schema.onSubmit = handleSubmit;
 
 		directory = dirSelect();

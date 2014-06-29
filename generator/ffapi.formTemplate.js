@@ -7,8 +7,9 @@ ffapi.formTemplate =
 		"title": "Location",
 		"expanded": true,
 		"items": [
-			"location.city",
-			"location.country",
+			"location.city",{
+				"key": "location.country"
+			},
 			"location.lat",
 			"location.lon"
 		]
