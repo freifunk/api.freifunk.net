@@ -117,32 +117,55 @@ ffapi.formTemplate =
 				"title": "Technical Details",
 				"expandable": true,
 				"items": [
-					"techDetails.stoererhaftung",
-					"techDetails.firmware",
-					"techDetails.dns",
-					"techDetails.networks", {
-						"key": "techDetails.routing",
-						"type": "checkboxes",
-						"titleMap": {
-							"802.11s": "802.11s",
-							"Babel": "Babel",
-							"batman-adv": "batman-adv",
-							"bmx6": "bmx6",
-							"cjdns": "cjdns",
-							"OLSR": "OLSR",
-							"OLSRv2": "OLSRv2"
-						}
-					},
-					"techDetails.splashpage", {
-						"key": "techDetails.updatemode",
-						"type":"checkboxes",
-						"titleMap": {
-							"none": "No automatic updates",
-							"manual": "Manual updates supported (e.g. via web interface)",
-							"autoupdate": "We provide automatic updates"
-						}
-					},
-					"techDetails.vpn"
+					"techDetails.stoererhaftung", {
+						"type": "fieldset",
+						"title": "Firmware",
+						"items": [
+							"techDetails.firmware.name",
+							"techDetails.firmware.url",
+							"techDetails.firmware.docs",
+							]
+					}, {
+						"type": "fieldset",
+						"title": "Domain Names",
+						"items": "techDetails.dns"
+					}, {
+						"type": "fieldset",
+						"title": "Networks in Use",
+						"items": "techDetails.networks"
+					}, {
+						"type": "fieldset",
+						"title": "Routing Protocols and Updates",
+						"items": [ {
+								"key": "techDetails.routing",
+								"type": "checkboxes",
+								"titleMap": {
+									"802.11s": "802.11s",
+									"Babel": "Babel",
+									"batman-adv": "batman-adv",
+									"bmx6": "bmx6",
+									"cjdns": "cjdns",
+									"OLSR": "OLSR",
+									"OLSRv2": "OLSRv2"
+								}
+							}, {
+								"key": "techDetails.updatemode",
+								"type":"checkboxes",
+								"titleMap": {
+									"none": "No automatic updates",
+									"manual": "Manual updates supported (e.g. via web interface)",
+									"autoupdate": "We provide automatic updates"
+								}
+							} 
+						]
+					}, {
+						"type": "fieldset",
+						"title": "Splash pages and VPN",
+						"items": [
+							"techDetails.splashpage",
+							"techDetails.vpn"
+							]
+					}
 				]
 			}, {
 				"key": "state.lastchange",

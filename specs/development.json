@@ -419,7 +419,6 @@
 						}
 					},
 					"networks": {
-						"title": "Networks",
 						"type": "object",
 						"description": "networks used by your community",
 						"required": false,
@@ -464,8 +463,8 @@
 						}
 					},
 					"routing": {
-						"title": "Routing protocol",
-						"description": "routing protocol used within your community",
+						"title": "Routing protocols",
+						"description": "routing protocols used within your community",
 						"required": false,
 						"type": "array",
 						"items": {
