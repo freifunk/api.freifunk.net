@@ -118,7 +118,6 @@ ffapi.formTemplate =
 				"expandable": true,
 				"items": [
 					"techDetails.stoererhaftung",
-					"techDetails.bootstrap",
 					"techDetails.firmware",
 					"techDetails.dns",
 					"techDetails.networks", {
@@ -134,8 +133,15 @@ ffapi.formTemplate =
 							"OLSRv2": "OLSRv2"
 						}
 					},
-					"techDetails.splashpage",
-					"techDetails.updatemode",
+					"techDetails.splashpage", {
+						"key": "techDetails.updatemode",
+						"type":"checkboxes",
+						"titleMap": {
+							"none": "No automatic updates",
+							"manual": "Manual updates supported (e.g. via web interface)",
+							"autoupdate": "We provide automatic updates"
+						}
+					},
 					"techDetails.vpn"
 				]
 			}, {
@@ -151,3 +157,4 @@ ffapi.formTemplate =
 		"title": "OK - generate the full API file!"
 	}
 ];
+
