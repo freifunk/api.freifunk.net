@@ -354,12 +354,6 @@
 				"description": "technical details of your community's freifunk implementation",
 				"required": false,
 				"properties": {
-					"stoererhaftung": {
-						"title": "Störerhaftung",
-						"description": "how the German störerhaftung is handled",
-						"required": false,
-						"type": "string"
-					},
 					"firmware": {
 						"type": "object",
 						"required": false,
@@ -385,11 +379,6 @@
 								"required": false
 							}
 						}
-					},
-					"keyexchange": {
-						"type": "string",
-						"description": "needs to be defined",
-						"required": false
 					},
 					"dns": {
 						"title": "DNS Servers",
@@ -483,11 +472,26 @@
 							]
 						}
 					},
-					"splashpage": {
-						"title": "Splash Page",
-						"type": "string",
-						"description": "what kind of splashpage does your community use?",
-						"required": false
+					"legals": {
+						"title": "Legal Issues",
+						"description": "What do you use to handle legal issues, e.g. the German Störerhaftung or restrictions in your country?",
+						"required": false,
+						"type": "array",
+						"items": {
+							"type": "string",
+							"title": "option",
+							"enum": [
+								"nothing",
+								"vpnnational",
+								"vpninternational",
+								"zappscript",
+								"p2pblock",
+								"splashpage",
+								"termsconditions",
+								"anonymizer",
+								"institutions"
+							]
+						}
 					},
 					"updatemode": {
 						"title": "Updatemode",
@@ -503,12 +507,6 @@
 								"autoupdate"
 							]
 						}
-					},
-					"vpn": {
-						"title": "VPN",
-						"type": "string",
-						"description": "implementation of inner city vpn",
-						"required": false
 					}
 				}
 			}

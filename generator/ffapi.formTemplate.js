@@ -118,7 +118,7 @@ ffapi.formTemplate =
 				"title": "Technical Details",
 				"expandable": true,
 				"items": [
-					"techDetails.stoererhaftung", {
+					{
 						"type": "fieldset",
 						"title": "Firmware",
 						"items": [
@@ -149,9 +149,10 @@ ffapi.formTemplate =
 									"OLSR": "OLSR",
 									"OLSRv2": "OLSRv2"
 								}
+								
 							}, {
 								"key": "techDetails.updatemode",
-								"type":"checkboxes",
+								"type": "checkboxes",
 								"titleMap": {
 									"none": "No automatic updates",
 									"manual": "Manual updates supported (e.g. via web interface)",
@@ -161,10 +162,23 @@ ffapi.formTemplate =
 						]
 					}, {
 						"type": "fieldset",
-						"title": "Splash pages and VPN",
-						"items": [
-							"techDetails.splashpage",
-							"techDetails.vpn"
+						"title": "Legal Issues",
+						"items": [ 
+						{
+							"key": "techDetails.legals",
+							"type": "checkboxes",
+							"titleMap": {
+								"nothing": "We don't care and do nothing",
+							  "vpnnational": "We use national VPN connections",
+								"vpninternational": "Our traffic is rerouted to another county",
+								"zappscript": "Our communitiy uses the <a href=\"http://blog.freifunk-potsdam.de/zapp-zapp-zapp/\" target=\"_blank\">ZAPP Script</a> to prevent extreme network usage by individuals",
+								"p2pblock": "We block p2p traffic in general",
+								"splashpage": "Users will see a splash page to get informed on our network",
+								"termsconditions": "Users have to confirm terms and conditions before having internet access",
+								"anonymizer": "We use anonymizing technologies like tor",
+								"institutions": "We are a legal person to handle legal issues, e.g. an ISP, Foundation or Verein"
+							}
+						}
 							]
 					}
 				]
