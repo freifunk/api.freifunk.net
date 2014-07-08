@@ -41,7 +41,7 @@ var handleSchema = function()
 			try {
 				currentSchema.value = JSON.parse( json );
         currentSchema.value = sanitizeOldVersions(currentSchema.value);
-				$('form').empty().jsonForm( currentSchema );
+				$('#schemaform').empty().jsonForm( currentSchema );
 			}
 			catch ( e ) {
 				console.error( "JSON Syntax Error" );
@@ -120,6 +120,9 @@ var handleSchema = function()
 			var env = JSV.createEnvironment();
 			var schema = currentSchema.schema;
 			var report = env.validate(currentSchema.value, schema);
+			if ( currentSchema.value.name ) {
+				$( '#communityName' ).val(currentSchema.value.name.replace(/\s/g, ''));
+			}
 			if (report.errors.length === 0) {
 				$( '#downloadButton' ).removeAttr('disabled');
 				$( '#downloadButton' ).attr('title', 'Download the JSON contents');
@@ -156,13 +159,16 @@ var handleSchema = function()
 			window.location = "data:application/text,"+ $( '#jsonText' ).val();
 		};
 
-	$( '#downloadButton').bind( 'click', download);
+	//$( '#downloadButton').bind( 'click', download);
 
 	// ---
 
 	var handleSubmit =
 		function (errors, values) {
 			$( '.autohide' ).hide();
+			if ( values.name ) {
+				$( '#communityName' ).val(values.name.replace(/\s/g, ''));
+			}
 			if (! errors ||(errors.length === 1 && errors[0].schemaUri.match(/properties\/api$/))) {
 				$( '#downloadButton' ).removeAttr('disabled');
 				$( '#downloadButton' ).attr('title', 'Download the JSON contents');
@@ -190,7 +196,7 @@ var handleSchema = function()
 
 		directory = dirSelect();
 
-		$('form').jsonForm( schema );
+		$('#schemaform').jsonForm( schema );
 
 		currentSchema = schema;
 		addDatepickerToTimeline();

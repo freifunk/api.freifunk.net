@@ -1,3 +1,19 @@
+<?php 
+if(isset($_POST['result']))
+ {
+   if(isset($_POST['communityName']) && $_POST['communityName']!='')
+     {
+       $filename=$_POST['communityName'] . '-api.json';
+     } else
+     {
+       $filename='your-apifile.json';
+     }
+   header('Content-disposition: attachment; filename=' . $filename);
+   header('Content-type: application/json');
+   echo $_POST['result'];
+   exit; //stop writing
+ }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,15 +60,17 @@
 	<div class="row-fluid">
 		<div class="span8">
 			<h2>Generator form</h2>
-			<form class=""></form>
+			<form id="schemaform" class=""></form>
 		</div>
 		<div class="span4">
 			<h2>Results and Validation</h2>
 			<div id="directory">
 				<select id="dirselect"></select>
 			</div>
+			<form id="downloadform" name="download" action="" method="POST" target="_blank">
 			<div id="result">
-				<textarea id="jsonText" row="288" cols="50" style="margin: 0px 0px 10px; width: 100%; height: 500px;" placeholder="Select your community file from the list or paste your existing JSON here ... if you have one. ;-)"></textarea>
+				<textarea name="result" id="jsonText" row="288" cols="50" style="margin: 0px 0px 10px; width: 100%; height: 500px;" placeholder="Select your community file from the list or paste your existing JSON here ... if you have one. ;-)"></textarea>
+				<input id="communityName" name="communityName" type="hidden">
 				<div class="alert autohide message"></div>
 			</div>
 			<div id="error" class="alert autohide">
@@ -60,10 +78,11 @@
 				<div class="details"></div>
 			</div>
 			<div id="buttons">
-				<input id="jsonTakeButton" type="submit" value="JSON to form" class="btn" title="Load contents of your file to the form on the left side">
-				<input id="validateButton" type="submit" value="Validate Contents" class="btn" title="Validate your file or contents of the field above">
+				<input id="jsonTakeButton" type="button" value="JSON to form" class="btn" title="Load contents of your file to the form on the left side">
+				<input id="validateButton" type="button" value="Validate Contents" class="btn" title="Validate your file or contents of the field above">
 				<input id="downloadButton" type="submit" value="Download JSON" class="btn" title="Download the JSON contents" disabled="disabled">
 			</div>
+			</form>
 		</div>
 	</div>
 </div>
