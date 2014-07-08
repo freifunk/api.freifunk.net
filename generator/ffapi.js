@@ -126,6 +126,7 @@ var handleSchema = function()
 				$( '#downloadButton' ).attr('class', 'btn btn-success');
 				$( '#validateButton' ).attr('title', 'Your file is clean and ready to be deployed');
 				$( '#result .message' ).show().text( 'Congrats! Your API file is valid to version ' + apiVersion + ' of our specs.' );
+				$( 'body' ).scrollTop( 0 );
 			} else if (report.errors.length === 1 && report.errors[0].schemaUri.match(/properties\/api$/)) {
 				$( '#result .message' ).show().text( 'Congrats! Your API file is valid to version ' + apiVersion + ' of our specs. We just updated the version and the date of change.' );
 				var date = new Date();
