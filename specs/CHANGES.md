@@ -1,3 +1,5 @@
+== 0.4.1 ==
+* allow dots and ipv6 addresses in dns section
 == 0.4.0 ==
 * see release notes: https://github.com/freifunk/api.freifunk.net/releases/tag/v0.4.0
 == 0.3.3 ==

@@ -8,7 +8,7 @@
 				"title": "API",
 				"type": "string",
 				"description": "The Freifunk Community API version you use",
-				"enum": ["0.1", "0.2.0", "0.2.1", "0.3.0", "0.3.1", "X.X.X"],
+				"enum": ["0.1", "0.2.0", "0.2.1", "0.3.0", "0.3.1", "0.3.2,", "0.4.0", "X.X.X"],
 				"default": "X.X.X",
 				"required": true
 			},
@@ -391,7 +391,7 @@
 								"domainname": {
 									"type": "string",
 									"description": "the domain name (e.g. ffhh, ffol)",
-									"pattern": "^[A-Za-z]{2,}$",
+									"pattern": "^[A-Za-z0-9äöüÄÖÜß\\.\\-\\_]{2,}$",
 									"required": false,
 									"title": "Domain Name"
 								},
@@ -402,7 +402,7 @@
 									"required": false,
 									"items": {
 										"type": "string",
-										"pattern": "^[A-Za-z0-9äöüÄÖUß_\\-\\.]*$",
+										"pattern": "^[A-Za-z0-9äöüÄÖÜß_\\-\\.:]*$",
 										"required": false
 									}
 								}
