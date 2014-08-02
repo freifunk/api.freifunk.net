@@ -8,7 +8,7 @@ Ein Beispiel gibt es hier: http://weimarnetz.de/ffmap/map.html
 
 Freifunk Community Tabellen Viewer
 --------------------------
-als Tabelle unter http://cholin.spline.de/freifunk/api-viewer
+als Tabelle unter http://api-viewer.freifunk.net
 (Entwicklung unter https://github.com/freifunk/viewer.api.freifunk.net)
 
 
