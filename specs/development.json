@@ -394,6 +394,31 @@
 								}
 							}
 						}
+					},
+					"donations": {
+						"type": "array",
+						"title": "Donations",
+						"required": false,
+						"items": {
+							"type": "object",
+							"required": false,
+							"properties": {
+								"provider": {
+									"title": "Campaign Provider",
+									"type": "string",
+									"description": "Where do you host your donations?",
+									"enum": ["", "betterplace"],
+									"default": "",
+									"required": false
+								},
+								"projectid": {
+									"title": "Project ID",
+									"type": "string",
+									"description" :"ID of your project, betterplace ids are multiple digits and can be found within the url",
+									"required": false
+								}
+							}
+						}
 					}
 				}
 			},
