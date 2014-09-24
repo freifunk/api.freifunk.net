@@ -115,6 +115,11 @@ ffapi.formTemplate =
 				"items": "nodeMaps"
 			}, {
 				"type": "fieldset",
+				"title": "How to support you?",
+				"expandable": true,
+				"items": "support"
+			}, {
+				"type": "fieldset",
 				"title": "Technical Details",
 				"expandable": true,
 				"items": [
