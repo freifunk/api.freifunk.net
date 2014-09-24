@@ -410,26 +410,50 @@
 						}
 					},
 					"donations": {
-						"type": "array",
+						"type": "object",
 						"title": "Donations",
 						"required": false,
-						"items": {
-							"type": "object",
-							"required": false,
-							"properties": {
-								"provider": {
-									"title": "Campaign Provider",
-									"type": "string",
-									"description": "Where do you host your donations?",
-									"enum": ["", "betterplace"],
-									"default": "",
-									"required": false
-								},
-								"projectid": {
-									"title": "Project ID",
-									"type": "string",
-									"description" :"ID of your project, betterplace ids are multiple digits and can be found within the url",
-									"required": false
+						"properties": {
+							"bankaccount": {
+								"type": "object",
+								"title": "Bank Account",
+								"required": false,
+								"properties": {
+									"IBAN": {
+										"type": "string",
+										"title": "IBAN",
+										"required": false
+									},
+									"BIC": {
+										"type": "string",
+										"title": "BIC",
+										"required": false
+									}
+								}
+							},
+							"campaigns": {
+								"title": "Campagins",
+								"type": "array",
+								"required": false,
+								"items": {
+									"type": "object",
+									"required": false,
+									"properties": {
+										"provider": {
+											"title": "Campaign Provider",
+											"type": "string",
+											"description": "Where do you host your donations?",
+											"enum": ["", "betterplace"],
+											"default": "",
+											"required": false
+										},
+										"projectid": {
+											"title": "Project ID",
+											"type": "string",
+											"description" :"ID of your project, betterplace ids are multiple digits and can be found within the url",
+											"required": false
+										}
+									}
 								}
 							}
 						}
