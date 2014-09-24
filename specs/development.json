@@ -382,6 +382,20 @@
 								"description": "Address - City",
 								"required": false
 							},
+							"url": {
+								"title": "Homepage",
+								"type": "string",
+								"pattern": "^(http|https)://[A-Za-z0-9ÄÖÜäöüß\\-_\\./]+",
+								"description": "The club's website (http{s}://...)",
+								"required": true
+							},
+							"email": {
+								"title": "Email",
+								"type": "string",
+								"pattern": "^[A-Za-z0-9äöüÄÖUß_\\-\\.]+@[A-Za-z0-9äöüÄÖUß_\\-\\.]+\\.[A-Za-z]{2,}$",
+								"description": "Email address to contact the club (user@domain.com)",
+								"required": false
+							},
 							"board" : {
 								"title": "Board Members",
 								"type": "array",
