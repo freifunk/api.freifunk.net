@@ -348,6 +348,54 @@
 					}
 				}
 			},
+			"support": {
+				"type": "object",
+				"description": "support for your community, e.g. by a local club, and donations via campaigns e.g. by betterplace.de",
+				"required": false,
+				"properties": {
+					"club": {
+						"type": "object",
+						"required": false,
+						"properties": {
+							"name" : {
+								"title": "Club Name",
+								"type": "string",
+								"description": "Name of the Club",
+								"required": false
+							},
+							"street" : {
+								"title": "Street",
+								"type": "string",
+								"description": "Address - Street",
+								"required": false
+							},
+							"zip" : {
+								"title": "zip",
+								"type": "string",
+								"description": "Address - ZIP",
+								"required": false
+							},
+							"city" : {
+								"title": "City",
+								"type": "string",
+								"description": "Address - City",
+								"required": false
+							},
+							"board" : {
+								"title": "Board Members",
+								"type": "array",
+								"description": "Who are board members of the club?",
+								"required": false,
+								"items": {
+									"type": "string",
+									"title": "name",
+									"required": false
+								}
+							}
+						}
+					}
+				}
+			},
 			"techDetails": {
 				"type": "object",
 				"id": "http://wiki.freifunk.net/Freifunk_Firmware/%C3%9Cbersicht_Communities",
