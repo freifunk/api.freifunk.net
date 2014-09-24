@@ -354,6 +354,7 @@
 				"required": false,
 				"properties": {
 					"club": {
+						"title": "Supporting Club",
 						"type": "object",
 						"required": false,
 						"properties": {
