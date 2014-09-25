@@ -387,7 +387,7 @@
 								"type": "string",
 								"pattern": "^(http|https)://[A-Za-z0-9ÄÖÜäöüß\\-_\\./]+",
 								"description": "The club's website (http{s}://...)",
-								"required": true
+								"required": false
 							},
 							"email": {
 								"title": "Email",
