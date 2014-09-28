@@ -184,6 +184,12 @@
 							"type": "string",
 							"description": "ISO timestamp when the event happened (format yyyy-mm-dd)",
 							"required": false
+						},
+						"url": {
+							"title": "URL",
+							"type": "string",
+							"description": "url to details of this timeline-element",
+							"required": false
 						}
 					}
 				}
