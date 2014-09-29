@@ -1,4 +1,4 @@
-var apiVersion = "0.4.3";
+var apiVersion = "0.4.4";
 var handleSchema = function()
 {
 	var currentSchema;
@@ -9,30 +9,29 @@ var handleSchema = function()
 
 	// ---
 	
-	var sanitizeOldVersions = 
-    function(schema) {
-      var message = "Due to updates in our specs, some fields changed and aren't backwards compatible. Please update the following details:\n";
-      var counter = 0;
-      //changes 0.3.0->0.3.1
-      // routing changed from String to Array
-      if (  Object.prototype.toString.call(schema.techDetails.routing) !== '[object Array]') {
-        schema.techDetails.routing = [];
-        counter++;
-        message += "Technical Details -> Routing\n";
-      }
-      // updatemode change from String to Array
-      if (  Object.prototype.toString.call(schema.techDetails.updatemode) !== '[object Array]') {
-        counter++
-        schema.techDetails.updatemode = [];
-        message += "Technical Details -> Update Mode\n";
-      }
-      if ( counter > 0 ) {
-        alert(message);
-      }
-      return schema;
+	var sanitizeOldVersions = function(schema) {
+		var message = "Due to updates in our specs, some fields changed and aren't backwards compatible. Please update the following details:\n";
+		var counter = 0;
+		//changes 0.3.0->0.3.1
+		// routing changed from String to Array
+		if (Object.prototype.toString.call(schema.techDetails.routing) !== '[object Array]') {
+			schema.techDetails.routing = [];
+			counter++;
+			message += "Technical Details -> Routing\n";
+		}
+		// updatemode change from String to Array
+		if (Object.prototype.toString.call(schema.techDetails.updatemode) !== '[object Array]') {
+			counter++
+			schema.techDetails.updatemode = [];
+			message += "Technical Details -> Update Mode\n";
+		}
+		if (counter > 0) {
+			alert(message);
+		}
+		return schema;
 	};
 	
-  // ---
+	// ---
 
 	var takeJson =
 		function() {
@@ -40,7 +39,7 @@ var handleSchema = function()
 			var json = $( '#jsonText' ).val();
 			try {
 				currentSchema.value = JSON.parse( json );
-        currentSchema.value = sanitizeOldVersions(currentSchema.value);
+				currentSchema.value = sanitizeOldVersions(currentSchema.value);
 				$('#schemaform').empty().jsonForm( currentSchema );
 			}
 			catch ( e ) {
@@ -48,7 +47,7 @@ var handleSchema = function()
 			}
 		};
 
-  // ---
+	// ---
 
 	$( '#jsonTakeButton').bind( 'click', takeJson );
 
@@ -98,7 +97,7 @@ var handleSchema = function()
 			if (RegExp.$1 == "api") { 
 				errorText += '<li>' + RegExp.$1 + ' (don\'t care about, we\'ll update it on submit)</li>'; 
 			} else {
-				errorText +=  '<li>' + RegExp.$1 + '</li>';
+				errorText += '<li>' + RegExp.$1 + '</li>';
 			}
 		});
 		errorText += '</ul> Please review the fields on the left side and submit your file again!';
