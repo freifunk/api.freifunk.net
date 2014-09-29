@@ -1,3 +1,7 @@
+== 0.4.4 ==
+* changed timeline.decription to timeline.description
+* added url to timeline items
+
 == 0.4.1 ==
 * allow dots and ipv6 addresses in dns section
 == 0.4.0 ==
