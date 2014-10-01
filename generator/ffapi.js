@@ -67,13 +67,21 @@ var handleSchema = function()
 	var dirSelect = 
 		function() {
 			$( '#dirselect' ).append($('<option>').text('choose a community from list'));
-			$.getJSON( "php-simple-proxy/ba-simple-proxy.php?url=https://rawgit.com/freifunk/directory.api.freifunk.net/master/directory.json", function(dir) {
-				dir.contents = sortObject(dir.contents);
-				$.each( dir.contents, function (key, val) {
-					$( '#dirselect' )
-					.append($('<option>', { value : val })
-						.text(key));
-				});
+			var protocol = window.location.origin.split(':')[0] + ':';
+			var proxy = "php-simple-proxy/ba-simple-proxy.php?url=";
+			var directoryUrl = "//rawgit.com/freifunk/directory.api.freifunk.net/master/directory.json";
+			var url = proxy + protocol + directoryUrl;
+			$.getJSON(url, function(dir) {
+				if (dir.contents) {
+					dir.contents = sortObject(dir.contents);
+					$.each( dir.contents, function (key, val) {
+						$( '#dirselect' )
+						.append($('<option>', { value : val })
+							.text(key));
+					});
+				} else {
+					console.error("Could not load community directory: ", url);
+				}
 			}); 
 		};
 
