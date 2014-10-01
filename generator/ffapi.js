@@ -25,6 +25,20 @@ var handleSchema = function()
 			schema.techDetails.updatemode = [];
 			message += "Technical Details -> Update Mode\n";
 		}
+		
+		//changes 0.4.3->0.4.4
+		// renamed field: timeline.decription -> timeline.description
+		if (schema.timeline) {
+			_.each(schema.timeline, function(event, index) {
+				if (schema.timeline[index].decription) {
+					schema.timeline[index].description = event.decription;
+					delete schema.timeline[index].decription;
+					counter++;
+					message += "timeline["+index+"].decription -> timeline["+index+"].description\n";
+				}
+			})
+		}
+		
 		if (counter > 0) {
 			alert(message);
 		}
