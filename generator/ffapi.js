@@ -143,6 +143,7 @@ var handleSchema = function()
 			var report = env.validate(currentSchema.value, schema);
 			if ( currentSchema.value.name ) {
 				$( '#communityName' ).val(currentSchema.value.name.replace(/\s/g, ''));
+				addDatepickerToTimeline();
 			}
 			if (report.errors.length === 0) {
 				$( '#downloadButton' ).removeAttr('disabled');
@@ -162,11 +163,9 @@ var handleSchema = function()
 				$( '#downloadButton' ).attr('class', 'btn btn-warning');
 				$( '#jsonText' ).val( JSON.stringify( currentSchema.value, null, '  ' ) );
 				$( 'body' ).scrollTop( 0 );
-
 			} else {
 				showError(report.errors);
 			}
-
 		};
 
 	// ---
@@ -208,9 +207,7 @@ var handleSchema = function()
 		};
 
 	// finally return the "handleSchema"-function-body
-	return function ( schema )
-	{
-		//console.log(schema);
+	return function ( schema ) {;
 		schema.form = ffapi.formTemplate;
 		schema.form[2].items[1].titleMap = ffapi.isoCountryCodes;
 		schema.onSubmit = handleSubmit;
@@ -226,38 +223,23 @@ var handleSchema = function()
 
 $.getJSON( apiVersion + ".json", handleSchema );
 
-function jq( myid ) {
-	return "#" + myid.replace( /(:|\.|\[|\])/g, "\\$1" );
-}
-
-function addDatepickerToTimeline()
-{
+function addDatepickerToTimeline() {
 	var i = 0;
-	while(1)
-	{
-		var id = "jsonform-0-elt-timeline["+i+"].timestamp";
-		var pictureID = id + "-picture";
-		if ($(jq(id)).length > 0 )
-		{
-			$(jq(id)).datepicker({
+	while(i < 999) {
+		var $input = $('[name="timeline['+i+'].timestamp"]');
+		if ($input.length > 0 ) {
+			$input.datepicker({
 				showOn: "button",
 				buttonImage: "icon_calendar.svg",
 				buttonImageOnly: true,
-				dateFormat: 'yy-mm-dd',
-				// Before read timestamp change to JS Timestamp
-				//	beforeShow: function(input, inst) {
-				//	$(this).val(parseInt($(this).val()) * 1000);
-				//}	
+				dateFormat: 'yy-mm-dd'
 			});
-			$(jq(id)).change( function()
-					{
-						// Change JS Timestamp to Unix Timestamp
-						//$(this).val(parseInt($(this).val()) / 1000);
-						$(this).val().toISOString;
-					});
-		}
-		else
+			$input.change( function() {
+				$(this).val().toISOString;
+			});
+		} else {
 			break;
+		}
 		i++;
 	}
 }
