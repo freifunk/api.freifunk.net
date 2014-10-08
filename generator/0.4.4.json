@@ -182,7 +182,8 @@
 						"timestamp": {
 							"title": "Timestamp",
 							"type": "string",
-							"description": "ISO timestamp when the event happened (format yyyy-mm-dd)",
+							"pattern": "^([0-9]{4})(?:-?W([0-9]+)(?:-?([0-9]+)D?)?|(?:-([0-9]+))?-([0-9]+))(?:[T ]([0-9]+):([0-9]+)(?::([0-9]+)(?:\\.([0-9]+))?)?)?(?:Z(-?[0-9]*))?",
+							"description": "ISO 8601 timestamp when the event happened (format yyyy-mm-dd)",
 							"required": false
 						},
 						"url": {
@@ -479,14 +480,14 @@
 							"url": {
 								"title": "Firmware download",
 								"type": "string",
-				        "pattern": "^(http|https)://[A-Za-z0-9ÄÖÜäöüß\\-_\\./]+",
+								"pattern": "^(http|https)://[A-Za-z0-9ÄÖÜäöüß\\-_\\./]+",
 								"description": "link to your firmware images",
 								"required": false
 							},
 							"docs": {
 								"title": "Firmware Documents",
 								"type": "string",
-				        "pattern": "^(http|https)://[A-Za-z0-9ÄÖÜäöüß\\-_\\./]+",
+								"pattern": "^(http|https)://[A-Za-z0-9ÄÖÜäöüß\\-_\\./]+",
 								"description": "link to your firmware docs",
 								"required": false
 							},
