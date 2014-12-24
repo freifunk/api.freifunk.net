@@ -1,3 +1,7 @@
+0.4.5
+-----
+* added nodelist to api as technical node map type http://freifunk-karte.de 
+
 0.4.4
 -----
 * changed timeline.decription to timeline.description
