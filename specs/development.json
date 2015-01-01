@@ -435,6 +435,12 @@
 										"type": "string",
 										"title": "BIC",
 										"required": false
+									},
+									"usage": {
+										"type": "string",
+										"title": "Usage of the donation",
+										"description": "Please use this string as transfer-purpose to define a special usage of your donation.",
+										"required": false
 									}
 								}
 							},
