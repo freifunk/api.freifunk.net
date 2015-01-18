@@ -118,7 +118,7 @@
 					"jabber": {
 						"title": "Jabber",
 						"type": "string",
-						"pattern": "^[A-Za-z0-9äöüÄÖUß_\\-\\.]+@[A-Za-z0-9äöüÄÖUß_\\-\\.]+\\.[A-Za-z]{2,}(\\?join){0,1}$",
+						"pattern": "^[A-Za-z0-9äöüÄÖUß_\\-\\.]+@[A-Za-z0-9äöüÄÖUß_\\-\\.]+\\.[A-Za-z]{2,}$",
 						"description": "a jabber account someone reads (account@jabberserver.tld)",
 						"required": false
 					},
