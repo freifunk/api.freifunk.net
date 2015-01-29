@@ -1,29 +1,44 @@
-Anwendungen
-===========
+Worum geht's?
+=============
 
-Freifunk Community Map
-----------------------
+Die Freifunk-API stellt einen Mechanismus bereit, mit dem dezentral
+bereitgestellte Metadaten der einzelnen Freifunk-Communities gesammelt
+und anderen Nutzern bzw. weiteren Anwendungen bereitgestellt werden
+können.
 
-Ein Beispiel gibt es hier: http://weimarnetz.de/ffmap/map.html
+Metadaten der einzelnen Communities können z.B. die Adresse der Website
+der Community, der RSS-Newsfeed der Community oder die Angabe der
+benutzten Freifunk-Firmware sein.
 
-Freifunk Community Tabellen Viewer
---------------------------
-als Tabelle unter http://api-viewer.freifunk.net
-(Entwicklung unter https://github.com/freifunk/viewer.api.freifunk.net)
+Mit den gesammelten Daten können Anwendungen
+wie die **Übersichtskarte über die Freifunk-Communities**
+http://community.freifunk.net/ bzw. http://api-viewer.freifunk.net/
+oder auch **News-Aggregatoren** wie http://weimarnetz.de/fffeed/feed.php
+umgesetzt werden.
 
+Praktisch stellt jede Community ihre Daten in einem definierten Format
+an einer ihr zugänglichen Stelle (Webspace, Wiki, Webserver) bereit und
+trägt sich in das Verzeichnis ein.
+Das Verzeichnis besteht lediglich aus einer Zuordnung von Community-Namen
+zur URL einer Datei, die die Metadaten der Community enthält.
 
-Freifunk Community Feed Merger
-------------------------------
+Die API ist *keine* Datenbank für Freifunkknoten und *kein* Verzeichnis von Firmware-Einstellungen einzelner Communities.
 
-Blogfeeds werden hier zusammengefast: http://weimarnetz.de/fffeed/feed.php
+Dieses GitHub-Projekt stellt eine Komponente bereit,
+mit der formularbasiert die relevanten Community-Metadaten eingegeben
+und in das benötigte JSON-Format konvertiert werden können.
+Live ist dieser *Wizard* unter http://freifunk.net/api-generator/ zu bewundern.
+
 
 Bedienung
 =========
 
-Neue Städte und Freifunk-Projekte tragen bitte hier ihre API-URL ein:
-https://github.com/freifunk/directory.api.freifunk.net
+Neue Städte und Freifunk-Projekte erzeugen bitte mit dem [Wizard](http://freifunk.net/api-generator/) die benötigte JSON-Datei.
+Im Freifunk.net-Blog gibt es eine [Anleitung](http://blog.freifunk.net/2014/6-schritten-zum-apifile) zur Erstellung dieser Datei.
 
-Es gibt auch einen [Anleitung](http://blog.freifunk.net/2014/6-schritten-zum-apifile) und einen [Wizard zur Erstellung](http://freifunk.net/api-generator/) dieser Datei.
+Die erzeugte Datei bitte dann in projekteigenen Webspace hochladen und die
+URL der Datei hier eintragen lassen:
+https://github.com/freifunk/directory.api.freifunk.net
 
 
 Entstehung
@@ -37,27 +52,16 @@ Communities eine einfache Möglichkeit zu bieten, eigene Daten selbst
 aktuell zu halten.
 
 In Anlehnung an die Hackerspaces API (http://hackerspaces.nl/spaceapi/)
-wurde die Idee einer Freifunk API geboren: Jede Community stellt ihre
-Daten in einem definierten Format an einer ihr zugänglichen Stelle
-(Webspace, Wiki, Webserver) bereit und trägt sich in das Verzeichnis
-ein. Das Verzeichnis besteht lediglich aus einer Zuordnung von
-Communitynamen und URL zu den den bereitgestellten Daten. Die erste
-Anwendung soll eine Karte mit darin angezeigten Freifunkcommunities
-sein, um Besuchern und Interessierten einen Überblick zu geben und
-lokale Ansprechpartner zu vermitteln.
+wurde die Idee einer Freifunk-API geboren.
 
-Die Freifunk API soll die Metadaten der Communities dezentral sammeln und anderen Nutzern zur Verfügung stellen. Die API ist nicht zu verwechseln mit einer Datenbank für Freifunkknoten oder als Verzeichnis von Firmwareeintellungen einzelner Communities.
-
-Weitere Informationen zur API sind in einem Blogartikel unter http://blog.freifunk.net/2013/die-neue-freifunk-api-aufruf-zum-mitmachen zusammengefasst.
 
 History
 =======
 
 At the Wireless Community Weekend 2013 in Berlin there was a first meeting to relaunch freifunk.net. To represent local communities without collecting and storing data centrally, a way had to be found. Another requirement was to enable local communities to keep their data up to date easily.
 
-Based on the Hackerspaces API (http://hackerspaces.nl/spaceapi/) the idea of the freifunk API was born: Each community provides its data in a well defined format, hosted on their places (web space, wiki, web servers) and contributes a link to the directory. This directory only consists of the name and an url per community. First services supported by our freifunk API are the global community map and a community feed aggregator.
+Based on the Hackerspaces API (http://hackerspaces.nl/spaceapi/) the idea of the Freifunk API was born.
 
-The freifunk API is designed to collect metadata of communities in a decentral way and make it available to other users. It's not designated to be a freifunk node database or a directory of individual community firmware settings.
 
 License
 =======
