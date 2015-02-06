@@ -1,6 +1,8 @@
 0.4.6
 -----
 * added boost as donation campaign provider
+* allow a "?join" at the end of contact.jabber
+* added support.donations.bankaccount.usage
 
 0.4.5
 -----
