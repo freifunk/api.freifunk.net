@@ -1,3 +1,7 @@
+0.4.6
+-----
+* added boost as donation campaign provider
+
 0.4.5
 -----
 * added nodelist to api as technical node map type http://freifunk-karte.de 
