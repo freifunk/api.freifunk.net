@@ -456,7 +456,7 @@
 											"title": "Campaign Provider",
 											"type": "string",
 											"description": "Where do you host your donations?",
-											"enum": ["", "betterplace"],
+											"enum": ["", "betterplace", "boost"],
 											"default": "",
 											"required": false
 										},
