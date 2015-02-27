@@ -8,7 +8,7 @@
 				"title":"API",
 				"type":"string",
 				"description": "The Freifunk Community API version you use",
-				"enum" : ["0.2.1"],
+				"enum" : ["0.1","0.2.0","0.2.1"],
 				"default" : "0.2.1",
 				"required":true
 			},
@@ -225,7 +225,7 @@
 					},
 					"lastchange": {
 						"title":"Last Change",
-						"type":"state",
+						"type":"string",
 						"description": "At what iso timestamp has your community status lastly changed?",
 						"default" : 0,
 						"required":true
