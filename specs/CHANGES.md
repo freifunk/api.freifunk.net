@@ -1,3 +1,7 @@
+0.4.7
+-----
+* added bmxd as routing protocol (ffdresden uses bmxd)
+
 0.4.6
 -----
 * added boost as donation campaign provider

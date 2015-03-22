@@ -150,6 +150,7 @@ ffapi.formTemplate =
 									"Babel": "Babel",
 									"batman-adv": "batman-adv",
 									"bmx6": "bmx6",
+									"bmxd": "bmxd",
 									"cjdns": "cjdns",
 									"OLSR": "OLSR",
 									"OLSRv2": "OLSRv2"
