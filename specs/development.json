@@ -111,7 +111,7 @@
 					"irc": {
 						"title": "IRC",
 						"type": "string",
-						"pattern": "^irc://.*",
+						"pattern": "^(irc|ircs)://.*",
 						"description": "your community's irc channel, starts with irc://",
 						"required": false
 					},
