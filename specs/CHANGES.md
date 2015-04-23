@@ -1,3 +1,7 @@
+0.4.8
+-----
+* add ircs support
+
 0.4.7
 -----
 * added bmxd as routing protocol (ffdresden uses bmxd)
