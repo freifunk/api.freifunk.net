@@ -62,7 +62,7 @@ $.getJSON("config.json", function(config) {
 				$( '#dirselect' ).append($('<option>').text('choose a community from list'));
 				var protocol = window.location.origin.split(':')[0] + ':';
 				var proxy = "php-simple-proxy/ba-simple-proxy.php?url=";
-				var directoryUrl = "//rawgit.com/fossasia/directory.api.fossasia.net/master/directory.json";
+				var directoryUrl = "//rawgit.com/freifunk/directory.api.freifunk.net/master/directory.json";
 				var url = proxy + protocol + directoryUrl;
 				$.getJSON(url, function(dir) {
 					if (dir.contents) {
@@ -253,9 +253,9 @@ $.getJSON("config.json", function(config) {
 	    // set zoom center and marker position
 	    var marker = L.marker(config.defaultMapCenter).addTo(map);
 	    if (!latInput.val() || !lngInput.val()) {
-	        map.setView(config.defaultMapCenter, 3);
+	        map.setView(config.defaultMapCenter, 5);
 	    } else {
-	        map.setView([latInput.val(), lngInput.val()], 3);
+	        map.setView([latInput.val(), lngInput.val()], 9);
 	        updateMarker();
 	    }
 
