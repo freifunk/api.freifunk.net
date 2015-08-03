@@ -1,4 +1,4 @@
-                                                  {
+{
 	"schema": {
 		"type": "object",
 		"description": "Freifunk Community API X.X.X",
@@ -591,7 +591,7 @@
 								"Babel",
 								"batman-adv",
 								"bmx6",
-                "bmxd",
+								"bmxd",
 								"cjdns",
 								"OLSR",
 								"OLSRv2"
@@ -633,10 +633,28 @@
 								"autoupdate"
 							]
 						}
+					},
+					"SSID": {
+						"title": "Service Set Identifier",
+						"type": "string",
+						"description": "the name of your access-point network",
+						"required": false
+					},
+					"BSSID": {
+						"title": "Basic Service Set Identification",
+						"type": "string",
+						"description": "the 'MAC address' of the mesh network",
+						"required": false
+					},
+					"IBSS": {
+						"title": "Independent Basic Service Set",
+						"type": "string",
+						"description": "the name of your mesh network",
+						"required": false
 					}
 				}
 			}
 		},
-    "$schema" : "http://json-schema.org/draft-03/schema#"
+	"$schema" : "http://json-schema.org/draft-03/schema#"
 	}
 }
