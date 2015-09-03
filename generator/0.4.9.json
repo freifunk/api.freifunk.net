@@ -1,15 +1,15 @@
 {
 	"schema": {
 		"type": "object",
-		"description": "Freifunk Community API X.X.X",
+		"description": "Freifunk Community API 0.4.9",
 		"required": false,
 		"properties": {
 			"api": {
 				"title": "API",
 				"type": "string",
 				"description": "The Freifunk Community API version you use",
-				"enum": ["0.1", "0.2.0", "0.2.1", "0.3.0", "0.3.1", "0.3.2,", "0.4.0", "0.4.1", "0.4.2", "0.4.3", "0.4.4", "0.4.5", "0.4.6", "0.4.7", "0.4.8", "0.4.9", "X.X.X"],
-				"default": "X.X.X",
+				"enum": ["0.1", "0.2.0", "0.2.1", "0.3.0", "0.3.1", "0.3.2,", "0.4.0", "0.4.1", "0.4.2", "0.4.3", "0.4.4", "0.4.5", "0.4.6", "0.4.7", "0.4.8", "0.4.9"],
+				"default": "0.4.9",
 				"required": true
 			},
 			"name": {
@@ -305,7 +305,7 @@
 							"title": "map technical type",
 							"type": "string",
 							"description": "the kind of map is used",
-							"enum": ["", "ffmap", "ffsomething", "olsr-dot", "openwifimap", "netmon", "libremap", "nodewatcher", "kml", "nodelist"],
+							"enum": ["", "ffmap", "ffsomething", "olsr-dot", "openwifimap", "netmon", "libremap", "nodewatcher", "kml", "nodelist", "meshviewer"],
 							"default": "",
 							"required": false
 						},
@@ -463,7 +463,7 @@
 										"projectid": {
 											"title": "Project ID",
 											"type": "string",
-											"description" : "ID of your project, betterplace ids are multiple digits and can be found within the url",
+											"description" :"ID of your project, betterplace ids are multiple digits and can be found within the url",
 											"required": false
 										}
 									}

@@ -1,3 +1,7 @@
+0.4.9
+-----
+* added "meshviewer" to nodeMaps.technicalType
+
 0.4.8
 -----
 * add ircs support
