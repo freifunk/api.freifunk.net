@@ -129,7 +129,24 @@ ffapi.formTemplate =
 						"items": [
 							"techDetails.firmware.name",
 							"techDetails.firmware.url",
-							"techDetails.firmware.docs",
+							"techDetails.firmware.docs", {
+								"key" : "techDetails.firmware.vpnaccess", 
+								"enum" : ["", "automatic", "fwimage", "mail", "webform", "else"],
+								"titleMap" : {
+									"automatic" : "Automatic Deployment",
+									"fwimage" : "Embedded in firmware image",
+									"mail" : "Request via mail",
+									"webform" : "Request via webform",
+									"else" : "Something else, see org restrictions",
+								}
+							}
+							"techDetails.firmware.registrationurl", {
+								"key" : "techDetails.firmware.orgrestrictions",
+								"type" : "textarea"
+								}, {
+									"key" : "techDetails.firmware.techrestrictions",
+									"type" : "textarea"
+								}
 							]
 					}, {
 						"type": "fieldset",
