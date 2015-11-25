@@ -139,7 +139,7 @@ ffapi.formTemplate =
 									"webform" : "Request via webform",
 									"else" : "Something else, see org restrictions",
 								}
-							}
+							},
 							"techDetails.firmware.registrationurl", {
 								"key" : "techDetails.firmware.orgrestrictions",
 								"type" : "textarea"
