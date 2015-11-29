@@ -1,3 +1,7 @@
+0.4.10
+------
+* added more details for firmware section
+
 0.4.9
 -----
 * added "meshviewer" to nodeMaps.technicalType
