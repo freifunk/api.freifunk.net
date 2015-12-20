@@ -1,3 +1,7 @@
+0.4.11
+------
+* added new section for social and refugees support projects 
+
 0.4.10
 ------
 * added more details for firmware section

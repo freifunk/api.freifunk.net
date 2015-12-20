@@ -115,6 +115,11 @@ ffapi.formTemplate =
 				"items": "nodeMaps"
 			}, {
 				"type": "fieldset",
+				"title": "Refugees and Social Projects",
+				"expandable": true,
+				"items": "socialprojects"
+			}, {
+				"type": "fieldset",
 				"title": "How to support you?",
 				"expandable": true,
 				"items": "support"
