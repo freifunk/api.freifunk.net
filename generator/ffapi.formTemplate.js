@@ -198,7 +198,7 @@ ffapi.formTemplate =
 							"titleMap": {
 								"nothing": "We don't care and do nothing",
 							  "vpnnational": "We use national VPN connections",
-								"vpninternational": "Our traffic is rerouted to another county",
+								"vpninternational": "Our traffic is rerouted to another country",
 								"zappscript": "Our communitiy uses the <a href=\"http://blog.freifunk-potsdam.de/zapp-zapp-zapp/\" target=\"_blank\">ZAPP Script</a> to prevent extreme network usage by individuals",
 								"p2pblock": "We block p2p traffic in general",
 								"splashpage": "Users will see a splash page to get informed on our network",
