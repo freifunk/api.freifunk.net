@@ -49,7 +49,7 @@ ffapi.formTemplate =
 				"titleMap": {
 					"infrastructure/backbone": "We build infrastructure or backbone connections",
 					"Public Free Wifi": "We offer public free wifi",
-					"Social Community Building": "We do local socical networking",
+					"Social Community Building": "We do local social networking",
 					"Local services and content": "We establish local services and provide local content",
 					"Free internet access": "We provide internet access within our network"
 				}
