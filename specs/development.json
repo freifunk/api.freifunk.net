@@ -576,7 +576,7 @@
 								"nameserver": {
 									"type": "array",
 									"title": "Nameserver",
-									"description": "Nameservers servings zones of your domain",
+									"description": "Nameservers serving zones of your domain",
 									"required": false,
 									"items": {
 										"type": "string",
