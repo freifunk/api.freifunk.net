@@ -208,7 +208,8 @@ ffapi.formTemplate =
 							}
 						}
 							]
-					}
+					},
+            "privacy"
 				]
 			}, {
 				"key": "state.lastchange",

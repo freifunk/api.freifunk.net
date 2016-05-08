@@ -1,3 +1,7 @@
+0.4.13
+------
+* added new section for privacy policy information of the communities
+
 0.4.11
 ------
 * added new section for social and refugees support projects 
