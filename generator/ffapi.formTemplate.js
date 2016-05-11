@@ -124,6 +124,11 @@ ffapi.formTemplate =
 				"expandable": true,
 				"items": "support"
 			}, {
+				"items" : "privacy",
+				"title": "Privacy description of your services",
+				"expandable": true,
+				"type" : "fieldset"
+			}, {
 				"type": "fieldset",
 				"title": "Technical Details",
 				"expandable": true,
@@ -207,9 +212,8 @@ ffapi.formTemplate =
 								"institutions": "We are a legal person to handle legal issues, e.g. an ISP, Foundation or Verein"
 							}
 						}
-							]
-					},
-            "privacy"
+						]
+					}
 				]
 			}, {
 				"key": "state.lastchange",

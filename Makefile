@@ -8,6 +8,10 @@ pre-build:
 	mkdir -p $(WEBTARGET)
 	mkdir -p $(SRCTARGET)
 	mkdir -p $(SCRIPTTARGET)
+	git clone -q https://github.com/freifunk/common.api.freifunk.net.git $(SRCTARGET)/common
+	cp -r $(SRCTARGET)/common/collector $(SCRIPTTARGET)/
+	mkdir -p $(WEBTARGET)/calendar
+	cp -r $(SRCTARGET)/common/ics-collector $(WEBTARGET)/calendar
 
 map: pre-build
 	git clone -q https://github.com/freifunk/cmap.api.freifunk.net.git $(SRCTARGET)/map

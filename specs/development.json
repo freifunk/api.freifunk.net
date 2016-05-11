@@ -499,6 +499,20 @@
 					}
 				}
 			},
+          		"privacy" : {
+				"title" : "Privacy Policy",
+				"type" : "object",
+				"required" : false,
+				"properties" : {
+					"policyurl" : {
+						"title" : "Privacy Policy URL",
+						"description" : "URL to your privacy policy description",
+						"type" : "string",
+						"pattern": "^(http|https)://[A-Za-z0-9ÄÖÜäöüß\\-_\\./]+",
+						"required" : false
+					}
+				}
+			},
 			"techDetails": {
 				"type": "object",
 				"id": "http://wiki.freifunk.net/Freifunk_Firmware/%C3%9Cbersicht_Communities",
@@ -672,20 +686,6 @@
 							]
 						}
 					},
-          "privacy" : {
-            "title" : "Privacy Policy",
-            "type" : "object",
-            "required" : false,
-            "properties" : {
-              "policyurl" : {
-                "title" : "Privacy Policy URL",
-                "description" : "URL to privacy policy",
-                "type" : "string",
-				        "pattern": "^(http|https)://[A-Za-z0-9ÄÖÜäöüß\\-_\\./]+",
-                "required" : false
-              }
-            }
-          },
 					"updatemode": {
 						"title": "Updatemode",
 						"type": "array",
