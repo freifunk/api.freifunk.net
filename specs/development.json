@@ -33,7 +33,7 @@
 					"city": {
 						"title": "City",
 						"type": "string",
-						"description": "Name of your city or region",
+						"description": "Name of your city",
 						"required": true
 					},
 					"country": {
