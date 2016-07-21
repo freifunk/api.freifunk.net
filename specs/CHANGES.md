@@ -1,3 +1,7 @@
+0.4.14
+------
+* add hopglass option to maps
+
 0.4.13
 ------
 * added new section for privacy policy information of the communities
