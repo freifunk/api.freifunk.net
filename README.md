@@ -51,7 +51,7 @@ präsentieren kann, ohne alle Daten zentral zu erfassen und zudem den
 Communities eine einfache Möglichkeit zu bieten, eigene Daten selbst
 aktuell zu halten.
 
-In Anlehnung an die Hackerspaces API (http://hackerspaces.nl/spaceapi/)
+In Anlehnung an die Hackerspaces API (http://spaceapi.net/)
 wurde die Idee einer Freifunk-API geboren.
 
 
@@ -60,7 +60,7 @@ History
 
 At the Wireless Community Weekend 2013 in Berlin there was a first meeting to relaunch freifunk.net. To represent local communities without collecting and storing data centrally, a way had to be found. Another requirement was to enable local communities to keep their data up to date easily.
 
-Based on the Hackerspaces API (http://hackerspaces.nl/spaceapi/) the idea of the Freifunk API was born.
+Based on the Hackerspaces API (http://spaceapi.net/) the idea of the Freifunk API was born.
 
 
 License
