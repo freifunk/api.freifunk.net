@@ -14,4 +14,6 @@ For the complete JSON schema, visit [here](https://github.com/freifunk/api.freif
 To create an instance of the generator, follow these simple steps : 
 * clone the repo `git clone https://github.com/freifunk/api.freifunk.net.git`
 * create the configuration file, name it `config.json` and put it in the current folder. A sample configuration file is available for you to make a copy.
+* copy all spec files from <gitRoot>/specs/0.*.json to <gitRoot>/generator/
+* let your local webserver point its document root to <gitRoot>/generator/
 * Visit the generator at `localhost/[..]/api.freifunk.net/generator`
