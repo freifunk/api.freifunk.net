@@ -63,3 +63,6 @@ fabric.properties
 
 /.idea
 /*.iml
+
+#generator: ignore config and redundant (manual copied) JSON schema files
+/generator/*.json
