@@ -1,0 +1,55 @@
+name: Freifunk-QA
+
+on: [push]
+
+jobs:
+  schemaValidation:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Lint all shell scripts
+      run: ./pipeline/lintShellScripts.sh
+    - name: Extract `draft-03` schema (from "empty schema)
+      run: ./pipeline/extractJsonSchema.sh
+      env:
+        SOURCE_PATTERN: "./specs/*.json"
+    - name: Validate `draft-03` schema (extracted schema)
+      uses: docker://freifunkhamm/jsonschema:3.2.0
+      with:
+        entrypoint: /bin/bash
+        args: ./pipeline/validateJsonSchema.sh
+      env:
+        DRAFT: "draft-03"
+        SOURCE_PATTERN: "./specs_clean/*.json"
+    - name: Validate `draft-03` schema
+      uses: docker://freifunkhamm/jsonschema:3.2.0
+      with:
+        entrypoint: /bin/bash
+        args: ./pipeline/validateJsonSchema.sh
+      env:
+        DRAFT: "draft-03"
+        SOURCE_PATTERN: "./specs/draft-03/*.json"
+    - name: Validate `draft-04` schema
+      uses: docker://freifunkhamm/jsonschema:3.2.0
+      with:
+        entrypoint: /bin/bash
+        args: ./pipeline/validateJsonSchema.sh
+      env:
+        DRAFT: "draft-04"
+        SOURCE_PATTERN: "./specs/draft-04/*.json"
+    - name: Validate `draft-06` schema
+      uses: docker://freifunkhamm/jsonschema:3.2.0
+      with:
+        entrypoint: /bin/bash
+        args: ./pipeline/validateJsonSchema.sh
+      env:
+        DRAFT: "draft-06"
+        SOURCE_PATTERN: "./specs/draft-06/*.json"
+    - name: Validate `draft-07` schema
+      uses: docker://freifunkhamm/jsonschema:3.2.0
+      with:
+        entrypoint: /bin/bash
+        args: ./pipeline/validateJsonSchema.sh
+      env:
+        DRAFT: "draft-07"
+        SOURCE_PATTERN: "./specs/draft-07/*.json"
