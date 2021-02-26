@@ -1,5 +1,5 @@
 var ffapi = {};
-ffapi.formTemplate = 
+ffapi.formTemplate =
 [
 	"name",
 	"url", {
@@ -71,7 +71,8 @@ ffapi.formTemplate =
 				"title": "Location Details",
 				"expandable": true,
 				"items": [
-					"location.address"
+					"location.address",
+					"location.additionalLocations"
 				]
 			}, {
 				"type": "fieldset",
@@ -140,7 +141,7 @@ ffapi.formTemplate =
 							"techDetails.firmware.name",
 							"techDetails.firmware.url",
 							"techDetails.firmware.docs", {
-								"key" : "techDetails.firmware.vpnaccess", 
+								"key" : "techDetails.firmware.vpnaccess",
 								"enum" : ["", "automatic", "fwimage", "mail", "webform", "else"],
 								"titleMap" : {
 									"automatic" : "Automatic Deployment",
@@ -182,7 +183,7 @@ ffapi.formTemplate =
 									"OLSR": "OLSR",
 									"OLSRv2": "OLSRv2"
 								}
-								
+
 							}, {
 								"key": "techDetails.updatemode",
 								"type": "checkboxes",
@@ -191,12 +192,12 @@ ffapi.formTemplate =
 									"manual": "Manual updates supported (e.g. via web interface)",
 									"autoupdate": "We provide automatic updates"
 								}
-							} 
+							}
 						]
 					}, {
 						"type": "fieldset",
 						"title": "Legal Issues",
-						"items": [ 
+						"items": [
 						{
 							"key": "techDetails.legals",
 							"type": "checkboxes",
@@ -228,4 +229,3 @@ ffapi.formTemplate =
 		"title": "OK - generate the full API file!"
 	}
 ];
-

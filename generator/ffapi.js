@@ -9,19 +9,19 @@ $.getJSON("config.json", function(config) {
 		$( '.autohide' ).hide();
 
 		// ---
-		
+
 		var sanitizeOldVersions = function(schema) {
 			var message = "Due to updates in our specs, some fields changed and aren't backwards compatible. Please update the following details:\n";
 			var counter = 0;
 
 	    // if schema updates aren't backwards compatible you can try to correct it right here...
-			
+
 			if (counter > 0) {
 				alert(message);
 			}
 			return schema;
 		};
-		
+
 		// ---
 
 		var takeJson =
@@ -37,7 +37,8 @@ $.getJSON("config.json", function(config) {
 					console.error( "JSON Syntax Error" );
 	                return;
 				}
-	            addMapPickerToLocation();
+	      addMapPickerToLocation();
+				addMapPickerToAdditionalLocations();
 			};
 
 		// ---
@@ -57,7 +58,7 @@ $.getJSON("config.json", function(config) {
 
 		// ---
 
-		var dirSelect = 
+		var dirSelect =
 			function() {
 				$( '#dirselect' ).append($('<option>').text('choose a community from list'));
 				var protocol = window.location.origin.split(':')[0] + ':';
@@ -75,7 +76,7 @@ $.getJSON("config.json", function(config) {
 					} else {
 						console.error("Could not load community directory: ", url);
 					}
-				}); 
+				});
 			};
 
 		// ---
@@ -95,8 +96,8 @@ $.getJSON("config.json", function(config) {
 			var errorText = 'Unfortunately there are ' + errors.length + ' errors in your file validated against our API version ' + config.apiVersion + ': <ul>';
 			$.each( errors, function(key, val) {
 				var path = val.uri.match(/.*#\/(.*$)/);
-				if (RegExp.$1 == "api") { 
-					errorText += '<li>' + RegExp.$1 + ' (don\'t care about, we\'ll update it on submit)</li>'; 
+				if (RegExp.$1 == "api") {
+					errorText += '<li>' + RegExp.$1 + ' (don\'t care about, we\'ll update it on submit)</li>';
 				} else {
 					errorText += '<li>' + RegExp.$1 + '</li>';
 				}
@@ -113,7 +114,7 @@ $.getJSON("config.json", function(config) {
 
 		// ---
 
-		var validate = 
+		var validate =
 			function() {
 				takeJson();
 				//var JSV = require("./JSV").JSV;
@@ -135,7 +136,7 @@ $.getJSON("config.json", function(config) {
 					$( '#result .message' ).show().text( 'Congrats! Your API file is valid to version ' + config.apiVersion + ' of our specs. We just updated the version and the date of change.' );
 					var date = new Date();
 					currentSchema.value.api = config.apiVersion;
-					currentSchema.value.state.lastchange = date.toISOString(); 
+					currentSchema.value.state.lastchange = date.toISOString();
 					$( '#downloadButton' ).removeAttr('disabled');
 					$( '#downloadButton' ).attr('title', 'Download the JSON contents');
 					$( '#validateButton' ).attr('title', 'There are little problems, but your API file is valid');
@@ -176,7 +177,7 @@ $.getJSON("config.json", function(config) {
 					$( '#result .message' ).show().text( 'Hello ' + values.name + '. This is your API file. Place it on a public webserver and add the URL to our directory.' );
 					var date = new Date();
 					values.api = config.apiVersion;
-					values.state.lastchange = date.toISOString(); 
+					values.state.lastchange = date.toISOString();
 					$( '#jsonText' ).val( JSON.stringify( values, null, '  ' ) );
 					$( 'body' ).scrollTop( 0 );
 				}
@@ -226,21 +227,34 @@ $.getJSON("config.json", function(config) {
 	}
 
 	function addMapPickerToLocation() {
-	    var latInput = $('input[name="location.lat"]');
-	    var lngInput = $('input[name="location.lon"]');
+		var latInput = $('input[name="location.lat"]');
+		var lngInput = $('input[name="location.lon"]');
+		addMapPickerToInput(latInput, lngInput);
+	}
 
-	    $(("<div id=\"map\" class=\"span6\"></div>")).insertAfter(lngInput.parent(".controls"));
+	function addMapPickerToAdditionalLocations() {
+		$.each($('.jsonform-error-location---additionalLocations li'), function(index, element) {
+			var idx = $(element).data('idx');
+			var latInput = $('input[name="location.additionalLocations[' + idx + '].lat"]')
+			var lngInput = $('input[name="location.additionalLocations[' + idx + '].lon"]');
+			addMapPickerToInput(latInput, lngInput, idx);
+		});
+	}
 
-	    var map = L.map('map');
+	function addMapPickerToInput(latInput, lngInput, idx = 'main') {
 
-	    L.tileLayer('https://{s}.tiles.mapbox.com/v3/freienetzwerke.i2lgkb76/{z}/{x}/{y}.png', {
-	        maxZoom: 18,
-	        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-	        '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-	        'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-	        id: 'examples.map-i875mjb7',
-	        noWrap : true
-	    }).addTo(map);
+	    $(("<div id=\"map" + idx + "\" class=\"span6 location-map\"></div>")).insertAfter(lngInput.parent(".controls"));
+
+	    var map = L.map('map' + idx);
+
+			var mapboxLayer = L.tileLayer('https://api.mapbox.com/styles/v1/freienetzwerke/ckatogpoebrsz1io160d3e80i/tiles/{z}/{x}/{y}?access_token=' + config.mapboxKey, {
+					maxZoom: 18,
+          attribution: '© <a href="https://apps.mapbox.com/feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+          //tileSize: 512,
+          zoomOffset: -1,
+					id: 'examples.map-i875mjb7',
+					noWrap : true
+  		}).addTo(map);
 
 	    var updateMarker = function() {
 	        marker

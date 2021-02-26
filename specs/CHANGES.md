@@ -1,3 +1,7 @@
+0.4.15
+------
+* multiple locations can be set next to the primary location
+
 0.4.14
 ------
 * add hopglass option to maps

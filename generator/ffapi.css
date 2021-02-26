@@ -23,7 +23,7 @@
 	height: 20px;
 }
 
-#map {
+.location-map {
     height : 300px;
     margin-left : 0;
 }
