@@ -250,10 +250,8 @@ $.getJSON("config.json", function(config) {
 			var mapboxLayer = L.tileLayer('https://api.mapbox.com/styles/v1/freienetzwerke/ckatogpoebrsz1io160d3e80i/tiles/{z}/{x}/{y}?access_token=' + config.mapboxKey, {
 					maxZoom: 18,
           attribution: '© <a href="https://apps.mapbox.com/feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-          //tileSize: 512,
-          zoomOffset: -1,
-					id: 'examples.map-i875mjb7',
-					noWrap : true
+          tileSize: 512,
+          zoomOffset: -1
   		}).addTo(map);
 
 	    var updateMarker = function() {
