@@ -1,3 +1,8 @@
+0.4.16
+------
+* add matrix as contact option
+* remove g+ from generator
+
 0.4.15
 ------
 * multiple locations can be set next to the primary location
@@ -12,7 +17,7 @@
 
 0.4.11
 ------
-* added new section for social and refugees support projects 
+* added new section for social and refugees support projects
 
 0.4.10
 ------
@@ -38,7 +43,7 @@
 
 0.4.5
 -----
-* added nodelist to api as technical node map type http://freifunk-karte.de 
+* added nodelist to api as technical node map type http://freifunk-karte.de
 
 0.4.4
 -----

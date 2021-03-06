@@ -64,7 +64,7 @@ ffapi.formTemplate =
 					"contact.identica",
 					"contact.facebook",
 					"contact.twitter",
-					"contact.googleplus"
+					"contact.matrix"
 				]
 			}, {
 				"type": "fieldset",
