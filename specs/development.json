@@ -607,6 +607,13 @@
 								"description": "Link to your firmware docs",
 								"required": false
 							},
+							"siteConf": {
+								"title": "Firmware Configuration Repository",
+								"type": "string",
+								"pattern": "^(http|https)://[A-Za-z0-9ÄÖÜäöüß\\-_\\./]+",
+								"description": "Link to your community firmware configuration files",
+								"required": false
+							},
 							"vpnaccess": {
 								"title": "VPN Access",
 								"type": "string",
