@@ -53,10 +53,16 @@
 0.4.3
 -----
 * added fields for donations and clubs
+* added support->club->email
+* added support->club->url
+
+0.4.2
+-----
+* added support 
 
 0.4.1
 -----
-* allow dots and ipv6 addresses in dns section
+* updated patterns of techDetails->dns->domainname and techDetails->dns->nameserver
 
 0.4.0
 -----
@@ -71,3 +77,35 @@
 0.3.2
 -----
 * techDetails.updatemode is now an array ["none","manual","autoupdate"]
+
+0.3.1
+-----
+* added webform in the contact
+* added patterns googleplus, identica, jabber
+* added podcasts in feeds category
+* added ffsomething, netmon, libremap, nodewatcher, kml to nodeMaps->techinicalType
+* added state->description and state->focus
+* added techDetails->dns
+* updated routing to array
+* removed techDetails->tld and techDetails->topodata
+
+0.3.0
+-----
+* added pattern for irc
+* added country to location
+* added batman-adv, bmx, OLSRv2 for routing
+
+0.2.1
+-----
+* added services
+* removed events
+* added ics to feeds->category
+* added default for state->lastChange also changed type from number to string
+* added tld to techDetails
+* updated ipv4 and ipv6
+
+0.2.0
+-----
+* updated events to a string field
+* added nodemaps
+* added timeline
