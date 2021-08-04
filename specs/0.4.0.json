@@ -100,7 +100,8 @@
                 "country": { "$ref": "#/definitions/country" },
                 "address": { "$ref": "#/definitions/address" },
                 "lat": { "$ref": "#/definitions/lat" },
-                "lon": { "$ref": "#/definitions/lon" },
+                "lon": { "$ref": "#/definitions/lon" }
+            },
             "required": ["city", "lat", "lon"]
         },
 
@@ -188,7 +189,7 @@
                     "timestamp": {
                         "type": "string",
                         "title": "Timestamp",
-                        "description": "ISO 8601 timestamp of the event's date (format yyyy-mm-dd)",
+                        "description": "ISO 8601 timestamp of the event's date (format yyyy-mm-dd)"
                     }
                 }
             }
@@ -380,7 +381,7 @@
                                 "description": "Nameservers servings zones of your domain",
                                 "items": {
                                     "type": "string",
-                                    "pattern": "^[A-Za-z0-9äöüÄÖUß_\\-\.]*$"
+                                    "pattern": "^[A-Za-z0-9äöüÄÖUß_\\-.]*$"
                                 }
                             }
                         }

@@ -92,8 +92,9 @@
                 "city": { "$ref": "#/definitions/city" },
                 "address": { "$ref": "#/definitions/address" },
                 "lat": { "$ref": "#/definitions/lat" },
-                "lon": { "$ref": "#/definitions/lon" },
-            "required": ["city", "lat", "lon"]
+                "lon": { "$ref": "#/definitions/lon" }
+            },
+            "required": [ "city", "lat", "lon" ]
         },
 
         "contact": {
@@ -114,17 +115,17 @@
                 "identica": {
                     "type": "string",
                     "title": "identica",
-                    "description": "URL to your community's identica account",
+                    "description": "URL to your community's identica account"
                 },
                 "irc": {
                     "type":"string",
                     "title": "IRC",
-                    "description": "Your community's ICR channel",
+                    "description": "Your community's ICR channel"
                 },
                 "jabber": {
                     "type": "string",
                     "title": "Jabber",
-                    "description": "A jabber account someone reads",
+                    "description": "A jabber account someone reads"
                 },
                 "ml": {
                     "type": "string",
@@ -135,7 +136,7 @@
                 "googleplus": {
                     "type": "string",
                     "title": "Google+",
-                    "description": "URL to your community's g+ account",
+                    "description": "URL to your community's g+ account"
                 },
                 "twitter": {
                     "type": "string",
@@ -235,7 +236,7 @@
                     "type":"number",
                     "title": "Last Change",
                     "format": "date-time",
-                    "description": "At what ISO 8601 timestamp has your community status lastly changed?",
+                    "description": "At what ISO 8601 timestamp has your community status lastly changed?"
                 },
                 "message": {
                     "type": "string",
@@ -294,7 +295,7 @@
                                         "description": "prefix length",
                                         "type": "integer"
                                     }
-                                },
+                                }
                             }
                         },
                         "ipv4": {

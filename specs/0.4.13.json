@@ -100,7 +100,8 @@
                 "country": { "$ref": "#/definitions/country" },
                 "address": { "$ref": "#/definitions/address" },
                 "lat": { "$ref": "#/definitions/lat" },
-                "lon": { "$ref": "#/definitions/lon" },
+                "lon": { "$ref": "#/definitions/lon" }
+            },
             "required": ["city", "lat", "lon"]
         },
 

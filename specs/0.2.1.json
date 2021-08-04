@@ -92,7 +92,8 @@
                 "city": { "$ref": "#/definitions/city" },
                 "address": { "$ref": "#/definitions/address" },
                 "lat": { "$ref": "#/definitions/lat" },
-                "lon": { "$ref": "#/definitions/lon" },
+                "lon": { "$ref": "#/definitions/lon" }
+            },
             "required": ["city", "lat", "lon"]
         },
 
@@ -114,17 +115,17 @@
                 "identica": {
                     "type": "string",
                     "title": "identica",
-                    "description": "URL to your community's identica account",
+                    "description": "URL to your community's identica account"
                 },
                 "irc": {
                     "type":"string",
                     "title": "IRC",
-                    "description": "Your community's ICR channel",
+                    "description": "Your community's ICR channel"
                 },
                 "jabber": {
                     "type": "string",
                     "title": "Jabber",
-                    "description": "A jabber account someone reads",
+                    "description": "A jabber account someone reads"
                 },
                 "ml": {
                     "type": "string",
@@ -135,7 +136,7 @@
                 "googleplus": {
                     "type": "string",
                     "title": "Google+",
-                    "description": "URL to your community's g+ account",
+                    "description": "URL to your community's g+ account"
                 },
                 "twitter": {
                     "type": "string",
@@ -171,7 +172,7 @@
                     "timestamp": {
                         "type": "string",
                         "title": "Timestamp",
-                        "description": "ISO 8601 timestamp of the event's date (format yyyy-mm-dd)",
+                        "description": "ISO 8601 timestamp of the event's date (format yyyy-mm-dd)"
                     }
                 }
             }
@@ -403,7 +404,7 @@
                         "nameserver": {
                             "description": "Nameservers servings zones of your top level domain",
                             "items": {
-                                "pattern": "^[A-Za-z0-9äöüÄÖUß_\\-\.]*$",
+                                "pattern": "^[A-Za-z0-9äöüÄÖUß_\\-.]*$",
                                 "type": "string"
                             },
                             "title": "TLD Nameserver",
