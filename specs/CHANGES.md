@@ -1,3 +1,7 @@
+0.5.0
+------
+* embedded lat, lon into geoCode in location as well as in additionalLocations
+
 0.4.16
 ------
 * add matrix as contact option
