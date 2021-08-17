@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
-    "description": "Freifunk Community API 0.4.15",
+    "description": "Freifunk Community API 0.5.0",
     "type": "object",
     "definitions": {
 
@@ -39,16 +39,21 @@
             }
         },
 
-        "lat": {
-            "type": "number",
-            "title": "Latitude",
-            "description": "Lattitude of your city in decimal degrees"
-        },
-
-        "lon": {
-            "type": "number",
-            "title": "Longitude",
-            "description": "Longitude of your city in decimal degrees"
+        "geoCode" :{
+            "type": "object",
+            "properties":{
+                "lat": {
+                    "type": "number",
+                    "title": "Latitude",
+                    "description": "Lattitude of your city in decimal degrees"
+                },
+                "lon": {
+                    "type": "number",
+                    "title": "Longitude",
+                    "description": "Longitude of your city in decimal degrees"
+                }
+            },
+            "required": ["lat", "lon"]
         },
 
         "email": {
@@ -75,8 +80,8 @@
             "type": "string",
             "title": "API",
             "description": "The Freifunk Community API version you use",
-            "enum": ["0.1", "0.2.0", "0.2.1", "0.3.0", "0.3.1", "0.3.2", "0.4.0", "0.4.1", "0.4.2", "0.4.3", "0.4.4", "0.4.5", "0.4.6", "0.4.7", "0.4.8", "0.4.9", "0.4.10", "0.4.11", "0.4.12", "0.4.13", "0.4.14", "0.4.15"],
-            "default": "0.4.15"
+            "enum": ["0.1", "0.2.0", "0.2.1", "0.3.0", "0.3.1", "0.3.2", "0.4.0", "0.4.1", "0.4.2", "0.4.3", "0.4.4", "0.4.5", "0.4.6", "0.4.7", "0.4.8", "0.4.9", "0.4.10", "0.4.11", "0.4.12", "0.4.13", "0.4.14", "0.4.15", "0.4.16", "0.5.0"],
+            "default": "0.5.0"
         },
 
         "name": {
@@ -99,8 +104,7 @@
                 "city": { "$ref": "#/definitions/city" },
                 "country": { "$ref": "#/definitions/country" },
                 "address": { "$ref": "#/definitions/address" },
-                "lat": { "$ref": "#/definitions/lat" },
-                "lon": { "$ref": "#/definitions/lon" },
+                "geoCode": { "$ref": "#/definitions/geoCode" },
                 "additionalLocations": {
                     "type": "array",
                     "title": "Additional Locations",
@@ -112,14 +116,13 @@
                             "city": { "$ref": "#/definitions/city" },
                             "country": { "$ref": "#/definitions/country" },
                             "address": { "$ref": "#/definitions/address" },
-                            "lat": { "$ref": "#/definitions/lat" },
-                            "lon": { "$ref": "#/definitions/lon" }
+                            "geoCode": { "$ref": "#/definitions/geoCode" }
                         },
-                        "required": ["city", "lat", "lon"]
+                        "required": ["city", "geoCode"]
                     }
                 }
             },
-            "required": ["city", "lat", "lon"]
+            "required": ["city", "geoCode"]
         },
 
         "contact": {
@@ -166,6 +169,12 @@
                     "title": "Google+",
                     "description": "URL to your community's g+ account (https://plus.google.com/...)",
                     "pattern": "^(http|https)://plus\\.google\\.com/[A-Za-z0-9ÄÖÜäöüß\\+\\-\\./_]+"
+                },
+                "matrix": {
+                    "type": "string",
+                    "title": "Matrix",
+                    "description": "URL to your community's matrix channel (https://matrix.to/#/!...)",
+                    "pattern": "^https://matrix\\.to/#/!"
                 },
                 "twitter": {
                     "type": "string",
