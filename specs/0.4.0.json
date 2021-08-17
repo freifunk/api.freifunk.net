@@ -21,17 +21,17 @@
             "type":"object",
             "description": "The address of the place you meet",
             "properties": {
-                "name": {
+                "Name": {
                     "type": "string",
                     "title": "Name of your place",
                     "description": "The name of the place you meet"
                 },
-                "street": {
+                "Street": {
                     "type": "string",
                     "title": "Street",
                     "description": "The street address of your meeting place"
                 },
-                "zipcode": {
+                "Zipcode": {
                     "type": "string",
                     "title": "ZIP",
                     "description": "The zip code of your meeting place"

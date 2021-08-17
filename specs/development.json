@@ -26,12 +26,12 @@
                     "title": "Name of your place",
                     "description": "The name of the place you meet"
                 },
-                "street": {
+                "Street": {
                     "type": "string",
                     "title": "Street",
                     "description": "The street address of your meeting place"
                 },
-                "zipcode": {
+                "Zipcode": {
                     "type": "string",
                     "title": "ZIP",
                     "description": "The zip code of your meeting place"
@@ -383,7 +383,7 @@
                             "title": "Club Name",
                             "description": "Name of the Club"
                         },
-                        "street": {
+                        "Street": {
                             "type": "string",
                             "title": "Street",
                             "description": "Address - Street"
