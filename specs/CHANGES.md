@@ -1,6 +1,7 @@
 0.5.0
 ------
 * embedded lat, lon into geoCode in location as well as in additionalLocations
+* lower case syntax for address fields
 
 0.4.16
 ------
