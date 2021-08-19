@@ -567,6 +567,5 @@
             }
         }
     },
-    "required": ["name", "location", "contact", "url", "state" ],
-    "additionalProperties": false
+    "required": ["name", "location", "contact", "url", "state" ]
 }
