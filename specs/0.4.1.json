@@ -2,6 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema",
     "description": "Freifunk Community API 0.4.1",
     "type": "object",
+    "additionalProperties": false,
     "definitions": {
 
         "city": {
@@ -19,6 +20,7 @@
 
         "address": {
             "type":"object",
+            "additionalProperties": false,
             "description": "The address of the place you meet",
             "properties": {
                 "Name": {
@@ -94,6 +96,7 @@
         "location": {
             "title": "Location",
             "type": "object",
+            "additionalProperties": false,
             "description": "Position data such as a postal address or geographic coordinates",
             "properties": {
                 "city": { "$ref": "#/definitions/city" },
@@ -107,6 +110,7 @@
 
         "contact": {
             "type": "object",
+            "additionalProperties": false,
             "minProperties": 1,
             "properties": {
                 "email": { 
@@ -180,6 +184,7 @@
             "description": "These are lifetime events something like date of birth (and rebirth :-) of your community or other important milestones",
             "items": {
                 "type": "object",
+                "additionalProperties": false,
                 "properties": {
                     "decription": {
                         "type": "string",
@@ -201,6 +206,7 @@
             "description": "Feeds you provide your community",
             "items": {
                 "type": "object",
+                "additionalProperties": false,
                 "properties": {
                     "name": {
                         "type": "string",
@@ -230,6 +236,7 @@
 
         "state": {
             "type": "object",
+            "additionalProperties": false,
             "title": "States",
             "description": "A collection of status-related data. Actual open/closed status, icons, last change timestamp etc.",
             "properties": {
@@ -276,6 +283,7 @@
             "description": "Maps of nodes or topology your community provides",
             "items": {
                 "type": "object",
+                "additionalProperties": false,
                 "title": "node",
                 "properties": {
                     "url": {
@@ -312,6 +320,7 @@
             "description": "Services Provided by your community",
             "items": {
                 "type": "object",
+                "additionalProperties": false,
                 "properties": {
                     "serviceName": {
                         "type": "string",
@@ -339,10 +348,12 @@
 
         "techDetails": {
             "type": "object",
+            "additionalProperties": false,
             "description": "Technical details of your community's Freifunk implementation",
             "properties": {
                 "firmware": {
                     "type": "object",
+                    "additionalProperties": false,
                     "properties": {
                         "url": {
                             "$ref": "#/definitions/url",
@@ -367,6 +378,7 @@
                     "description": "DNS servers for domains used by your community",
                     "items": {
                         "type": "object",
+                        "additionalProperties": false,
                         "title": "dns",
                         "properties": {
                             "domainname": {
@@ -389,6 +401,7 @@
                 },
                 "networks": {
                     "type": "object",
+                    "additionalProperties": false,
                     "description": "Networks used by your community",
                     "properties": {
                         "ipv6": {
@@ -397,6 +410,7 @@
                             "description": "IPv6 networks used by your community",
                             "items": {
                                 "type": "object",
+                                "additionalProperties": false,
                                 "title": "ipv6 network object",
                                 "properties": {
                                     "network": {
@@ -412,6 +426,7 @@
                             "description": "IPv4 networks used by your community",
                             "items": {
                                 "type": "object",
+                                "additionalProperties": false,
                                 "title": "ipv4 network object",
                                 "properties": {
                                     "network": {
@@ -458,6 +473,5 @@
             }
         }
     },
-    "required": ["name", "location", "contact", "url", "state" ],
-    "additionalProperties": false
+    "required": ["name", "location", "contact", "url", "state" ]
 }
