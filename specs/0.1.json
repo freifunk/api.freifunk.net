@@ -2,6 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema",
     "description": "Freifunk Community API 0.1.0",
     "type": "object",
+    "additionalProperties": false,
     "definitions": {
 
         "city": {
@@ -12,6 +13,7 @@
 
         "address": {
             "type":"object",
+            "additionalProperties": false,
             "description": "The address of the place you meet",
             "properties": {
                 "Name": {
@@ -87,6 +89,7 @@
         "location": {
             "title": "Location",
             "type": "object",
+            "additionalProperties": false,
             "description": "Position data such as a postal address or geographic coordinates",
             "properties": {
                 "city": { "$ref": "#/definitions/city" },
@@ -99,6 +102,7 @@
 
         "contact": {
             "type": "object",
+            "additionalProperties": false,
             "minProperties": 1,
             "properties": {
                 "email": { 
@@ -183,7 +187,8 @@
                         "type": "string"
                     }
                 },
-                "type": "object"
+                "type": "object",
+                "additionalProperties": false,
             },
             "type": "array"
         },
@@ -194,6 +199,7 @@
             "description": "Feeds you provide your community",
             "items": {
                 "type": "object",
+                "additionalProperties": false,
                 "properties": {
                     "name": {
                         "type": "string",
@@ -223,6 +229,7 @@
 
         "state": {
             "type": "object",
+            "additionalProperties": false,
             "title": "States",
             "description": "A collection of status-related data. Actual open/closed status, icons, last change timestamp etc.",
             "properties": {
@@ -249,6 +256,7 @@
 
         "techDetails": {
             "type": "object",
+            "additionalProperties": false,
             "description": "Technical details of your community's Freifunk implementation",
             "properties": {
                 "bootstrap": {
@@ -258,6 +266,7 @@
                 },
                 "firmware": {
                     "type": "object",
+                    "additionalProperties": false,
                     "properties": {
                         "url": {
                             "$ref": "#/definitions/url",
@@ -277,6 +286,7 @@
                 },
                 "networks": {
                     "type": "object",
+                    "additionalProperties": false,
                     "title": "Networks",
                     "description": "Networks used by your community",
                     "properties": {
@@ -285,6 +295,7 @@
                             "description": "IPv6 networks used by your community",
                             "items": {
                                 "type": "object",
+                                "additionalProperties": false,
                                 "title": "ipv6 network object",
                                 "properties": {
                                     "prefix": {
@@ -303,6 +314,7 @@
                             "description": "IPv4 networks used by your community",
                             "items": {
                                 "type": "object",
+                                "additionalProperties": false,
                                 "title": "ipv4 network object",
                                 "properties": {
                                     "netmask": {
@@ -358,6 +370,5 @@
             }
         }
     },
-    "required": ["name", "location", "contact", "url", "state" ],
-    "additionalProperties": false
+    "required": ["name", "location", "contact", "url", "state" ]
 }
