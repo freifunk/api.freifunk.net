@@ -427,7 +427,7 @@
                     },
                     "title": "Top Level Domain",
                     "type": "object",
-                    "additionalProperties": false,
+                    "additionalProperties": false
                 },
                 "topodata": {
                     "description": "link to your topology data (dot-files? needs to be defined)",
