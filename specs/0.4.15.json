@@ -360,7 +360,7 @@
                         "title": "External URI",
                         "description": "URI to use your service from the internet"
                     },
-                    "internalURI": {
+                    "internalUri": {
                         "type": "string",
                         "title": "Internal URI",
                         "description": "URI to use your service from Freifunk or icvpn-networks"
