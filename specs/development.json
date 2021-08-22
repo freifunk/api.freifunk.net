@@ -26,17 +26,18 @@
                     "title": "Name of your place",
                     "description": "The name of the place you meet"
                 },
-                "Street": {
+                "street": {
                     "type": "string",
                     "title": "Street",
                     "description": "The street address of your meeting place"
                 },
-                "Zipcode": {
+                "zipcode": {
                     "type": "string",
                     "title": "ZIP",
                     "description": "The zip code of your meeting place"
                 }
-            }
+            },
+            "additionalProperties": false
         },
 
         "geoCode" :{
@@ -53,7 +54,8 @@
                     "description": "Longitude of your city in decimal degrees"
                 }
             },
-            "required": ["lat", "lon"]
+            "required": ["lat", "lon"],
+            "additionalProperties": false
         },
 
         "email": {
@@ -118,11 +120,13 @@
                             "address": { "$ref": "#/definitions/address" },
                             "geoCode": { "$ref": "#/definitions/geoCode" }
                         },
-                        "required": ["city", "geoCode"]
+                        "required": ["city", "geoCode"],
+                        "additionalProperties": false
                     }
                 }
             },
-            "required": ["city", "geoCode"]
+            "required": ["city", "geoCode"],
+            "additionalProperties": false
         },
 
         "contact": {
@@ -192,7 +196,8 @@
                     "title": "Phone",
                     "description": "If your community has a phone number (e.g. +49 1234 567890 based on the E.123 notation)"
                 }
-            }
+            },
+            "additionalProperties": false
         },
 
         "url": {
@@ -224,7 +229,8 @@
                         "title": "URL",
                         "description": "URL to details of this timeline-element"
                     }
-                }
+                },
+                "additionalProperties": false
             }
         },
 
@@ -257,7 +263,8 @@
                         "title": "URL",
                         "description": "URL of the feed"
                     }
-                }
+                },
+                "additionalProperties": false
             }
         },
 
@@ -300,7 +307,8 @@
                     }
                 }
             },
-            "required": [ "lastchange" ]
+            "required": [ "lastchange" ],
+            "additionalProperties": false
         },
 
         "nodeMaps": {
@@ -335,7 +343,8 @@
                         "enum": [ "", "geographical", "structural", "list/status" ],
                         "default": ""
                     }
-                }
+                },
+                "additionalProperties": false
             }
         },
 
@@ -366,7 +375,8 @@
                         "title": "Internal URI",
                         "description": "URI to use your service from Freifunk or icvpn-networks"
                     }
-                }
+                },
+                "additionalProperties": false
             }
         },
 
@@ -383,7 +393,7 @@
                             "title": "Club Name",
                             "description": "Name of the Club"
                         },
-                        "Street": {
+                        "street": {
                             "type": "string",
                             "title": "Street",
                             "description": "Address - Street"
@@ -412,7 +422,8 @@
                                 "title": "Name"
                             }
                         }
-                    }
+                    },
+                    "additionalProperties": false
                 },
                 "donations": {
                     "type": "object",
@@ -435,7 +446,8 @@
                                     "title": "Usage of the donations",
                                     "description": "Please use this string as transfer-purpose to define a special usage of your donation."
                                 }
-                            }
+                            },
+                            "additionalProperties": false
                         },
                         "campaigns": {
                             "type": "array",
@@ -456,12 +468,15 @@
                                         "title": "Project ID",
                                         "description": "ID of your project, Betterplace-IDs are multiple digits and can be found within the URL"
                                     }
-                                }
+                                },
+                                "additionalProperties": false
                             }
                         }
-                    }
+                    },
+                    "additionalProperties": false
                 }
-            }
+            },
+            "additionalProperties": false
         },
 
         "socialprojects": {
@@ -484,7 +499,8 @@
                     "title": "Contact Email",
                     "description": "Please provide an email address to contact you on refugees and social projects"
                 }
-            }
+            },
+            "additionalProperties": false
         },
 
         "privacy": {
@@ -496,7 +512,8 @@
                     "title": "Privacy Policy URL",
                     "description": "URL to your privacy policy description"
                 }
-            }
+            },
+            "additionalProperties": false
         },
 
         "techDetails": {
@@ -543,7 +560,8 @@
                             "title": "Firmware Name",
                             "description": "Name of your firmware"
                         }
-                    }
+                    },
+                    "additionalProperties": false
                 },
                 "dns": {
                     "type": "array",
@@ -568,7 +586,8 @@
                                     "pattern": "^[A-Za-z0-9äöüÄÖÜß_\\-\\.:]*$"
                                 }
                             }
-                        }
+                        },
+                        "additionalProperties": false
                     }
                 },
                 "networks": {
@@ -588,7 +607,8 @@
                                         "description": "IPv6 network network (e.g.2620:0:2d0:200::7/32) in CIDR notation",
                                         "pattern": "^\\s*((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:)))(%.+)?\\s*(\\/(\\d|\\d\\d|1[0-1]\\d|12[0-8]))$"
                                     }
-                                }
+                                },
+                                "additionalProperties": false
                             }
                         },
                         "ipv4": {
@@ -603,10 +623,12 @@
                                         "description": "IPv4 network name (e.g. 10.w.x.y/z) in CIDR notation",
                                         "pattern": "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(\\d|[1-2]\\d|3[0-2]))$"
                                     }
-                                }
+                                },
+                                "additionalProperties": false
                             }
                         }
-                    }
+                    },
+                    "additionalProperties": false
                 },
                 "routing": {
                     "type": "array",
@@ -638,8 +660,8 @@
                         "enum": [ "none", "manual", "autoupdate" ]
                     }
                 }
-
-            }
+            },
+            "additionalProperties": false
         }
     },
     "required": ["name", "location", "contact", "url", "state" ],
