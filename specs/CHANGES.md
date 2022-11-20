@@ -1,3 +1,11 @@
+0.5.2
+------
+* allow all matrix links
+
+0.5.1
+------
+* introduce mastodon as contact option 
+
 0.5.0
 ------
 * embedded lat, lon into geoCode in location as well as in additionalLocations
