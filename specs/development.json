@@ -465,8 +465,10 @@
                                         "type": "string",
                                         "title": "Campaign Providers",
                                         "description": "Where do you host your donations?",
-                                        "enum": [ "", "betterplace", "boost" ],
-                                        "default": ""
+                                        "enum": ["", "betterplace", "wecanhelp"],
+       					"default": "",
+        				"deprecated": true,
+        				"deprecatedDescription": "This provider is deprecated and will be removed in a future version."
                                     },
                                     "projectid": {
                                         "type": "string",
