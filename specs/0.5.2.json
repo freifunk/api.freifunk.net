@@ -669,6 +669,6 @@
             "additionalProperties": false
         }
     },
-    "required": ["name", "location", "contact", "url", "state" ],
+    "required": ["name", "location", "contact", "url", "state", "techDetails" ],
     "additionalProperties": false
 }
