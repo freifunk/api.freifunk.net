@@ -191,7 +191,8 @@
                 },
                 "mastodon": {
                     "title": "Mastodon",
-                    "$ref": "#/definitions/url",
+                    "type": "string",
+                    "pattern": "^https://[^\\s/]+/@[\\w.-]+(@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,})?$",
                     "description": "URL to your community's mastodon profile (https://...)"
                 },
                 "twitter": {

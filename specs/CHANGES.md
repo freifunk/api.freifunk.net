@@ -1,3 +1,8 @@
+0.5.3
+------
+* add country state as new field
+* allow @ symbols in mastodon links
+
 0.5.2
 ------
 * allow all matrix links
