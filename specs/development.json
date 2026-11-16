@@ -89,7 +89,7 @@
             "type": "string",
             "title": "API",
             "description": "The Freifunk Community API version you use",
-            "enum": ["0.1", "0.2.0", "0.2.1", "0.3.0", "0.3.1", "0.3.2", "0.4.0", "0.4.1", "0.4.2", "0.4.3", "0.4.4", "0.4.5", "0.4.6", "0.4.7", "0.4.8", "0.4.9", "0.4.10", "0.4.11", "0.4.12", "0.4.13", "0.4.14", "0.4.15", "0.4.16", "0.5.0", "0.5.1", "0.5.2", "0.5.3", "X.X.X"],
+            "enum": ["0.1", "0.2.0", "0.2.1", "0.3.0", "0.3.1", "0.3.2", "0.4.0", "0.4.1", "0.4.2", "0.4.3", "0.4.4", "0.4.5", "0.4.6", "0.4.7", "0.4.8", "0.4.9", "0.4.10", "0.4.11", "0.4.12", "0.4.13", "0.4.14", "0.4.15", "0.4.16", "0.5.0", "0.5.1", "0.5.2", "0.5.3", "0.5.4", "X.X.X"],
             "default": "X.X.X"
         },
 
@@ -223,21 +223,34 @@
 
         "timeline": {
             "type": "array",
-            "description": "These are lifetime events something like date of birth (and rebirth :-) of your community or other important milestones",
+            "description": "These are lifetime events something like date of birth (and rebirth :-) of your community or other important milestones. Categories: Lifecycle (founding, restart, end), Organization (association, restructuring), Milestone (nodes, users), Technical (infrastructure, firmware, services), Outreach (locations, events, press, awards)",
             "items": {
                 "type": "object",
                 "properties": {
-                    "description": {
-                        "type": "string",
-                        "title": "Description",
-                        "description": "Description of your lifetime event"
-                    },
                     "timestamp": {
                         "type": "string",
                         "title": "Timestamp",
                         "format": "date",
                         "description": "ISO 8601 timestamp of the event's date (format yyyy-mm-dd)",
                         "pattern": "^([0-9]{4})(?:-?W([0-9]+)(?:-?([0-9]+)D?)?|(?:-([0-9]+))?-([0-9]+))(?:[T ]([0-9]+):([0-9]+)(?::([0-9]+)(?:\\.([0-9]+))?)?)?(?:Z(-?[0-9]*))?"
+                    },
+                    "category": {
+                        "type": "string",
+                        "title": "Category",
+                        "description": "Category of this lifetime event",
+                        "oneOf": [
+                            { "const": "lifecycle",    "title": "Lifecycle",    "description": "Founding, (re)start, first meeting or end of the community" },
+                            { "const": "organization", "title": "Organization", "description": "Association, non-profit status, restructuring, mergers or splits" },
+                            { "const": "milestone",    "title": "Milestone",    "description": "Number of nodes, clients or users reached" },
+                            { "const": "technical",    "title": "Technical",    "description": "Infrastructure, gateways, firmware, map, website and other services" },
+                            { "const": "outreach",     "title": "Outreach",     "description": "Supplying locations, events, press coverage and awards" },
+                            { "const": "other",        "title": "Other",        "description": "Anything else" }
+                        ]
+                    },
+                    "description": {
+                        "type": "string",
+                        "title": "Description",
+                        "description": "Description of your lifetime event"
                     },
                     "url": {
                         "$ref": "#/definitions/url",
