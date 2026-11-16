@@ -1,3 +1,7 @@
+0.5.4
+------
+* add optional category to timeline entries (lifecycle, organization, milestone, technical, outreach, other)
+
 0.5.3
 ------
 * add country state as new field
